@@ -2,17 +2,22 @@
 
 ## Project Overview
 
-Rebuild the B2B landing page for form.bar (a custom furniture manufacturer). The current page is at `form.bar/de-DE/service/business-service`. We are building a standalone HTML landing page that will replace it later.
+Rebuild the B2B landing page for **form.bar** (custom furniture manufacturer by okinlab GmbH, Saarbrücken). The current page lives at `form.bar/de-DE/service/business-service`. We are building a standalone HTML landing page that will replace it later.
 
 **Client:** form.bar (by okinlab GmbH, Saarbrücken)
+**Founders:** Nikolas Feth (architect) & Alessandro Quaranta
+**Founded:** 2013
+**Team:** ~20 employees
+**Partner network:** 80+ carpentry workshops across Germany and Europe
 **Middleman:** Patrick (relays questions to the form.bar client)
 **Budget:** max 20 hours for first version
 **Deadline:** End of September 2026
 
 ## What Patrick Wants Improved
 
-- Better reference images (current page shows images only on mobile — known bug)
-- Better target audience addressing
+From the original briefing:
+- "Bessere Referenzen Bilder" — better reference/project images (current page has a bug where images only show on mobile)
+- "Bessere Ansprache" — better addressing of target audiences
 - The page should look and feel like it belongs to the form.bar ecosystem
 
 ## Target Audiences
@@ -32,32 +37,36 @@ Rebuild the B2B landing page for form.bar (a custom furniture manufacturer). The
 
 ## Main Products to Feature
 
-- **Empfangstheke** (reception desks)
-- **Designregale** (design shelves / display shelving)
-- **Individuelle Konstruktionen** (custom constructions — e.g. restaurant interiors, bar counters, wall cladding, room dividers)
+- **Empfangstheken** (reception desks) — organic-shaped reception counters for lobbies, practices, agencies
+- **Designregale** (design shelves) — display shelving for retail, showrooms, offices
+- **Individuelle Konstruktionen** (custom constructions) — restaurant interiors, bar counters, wall cladding, room dividers, conference tables, acoustic elements
 
-## Current Business Page Structure (what exists now)
+## Current Business Page (what exists now — to be replaced)
 
-1. Hero: "Du arbeitest im Bereich..." with industry list (Design & Architektur, Einzelhandel & Showrooms, Healthcare, Praxen, Kita/Schule & Ferienhäuser, Büroausstattung, Hotel & Gastronomie)
-2. CTA: "Dann werde Mitglied und inspiriere deine Kunden & deine Mitarbeiter" with "JETZT BEITRETEN" button
+Based on screenshots of `form.bar/de-DE/service/business-service`:
+
+1. Hero: "Du arbeitest im Bereich..." listing industries: Design & Architektur, Einzelhandel & Showrooms, Healthcare, Praxen, Kita/Schule & Ferienhäuser, Büroausstattung, Hotel & Gastronomie
+2. CTA: "Dann werde Mitglied und inspiriere deine Kunden & deine Mitarbeiter" + "JETZT BEITRETEN" button
 3. "Schnelle Lieferzeiten auf Anfrage"
-4. Project showcase with tabs: Ladengeschäfte, Messen, Gastronomie, Büros
+4. Project showcase with category tabs: Ladengeschäfte, Messen, Gastronomie, Büros — with project images
 5. Another "JETZT BEITRETEN" button
-6. Contact section: "Deine Kontaktmöglichkeiten" — Live-Chat, E-Mail, Rückruf, Direkt anrufen, WhatsApp
-7. "Weitere Farben auf Anfrage" section about custom materials
-8. "Das sagen unsere Kunden" — testimonials with star ratings
-9. Footer
+6. Contact section: "Deine Kontaktmöglichkeiten" — Live-Chat starten, E-Mail schreiben, Rückruf buchen, Podcast buchen, Direkt anrufen, WhatsApp
+7. "Weitere Farben auf Anfrage" — info about custom materials and colors
+8. "Das sagen unsere Kunden" — customer testimonials with star ratings
+9. Footer with 4.74 rating badge, newsletter signup, links (SERVICE, FORM.BAR, FORM.BAR+, BUSINESS), social icons
 
 ## Tone & Language
 
 - German language
-- Uses "du" (informal) — consistent with the rest of form.bar
+- Uses "du" (informal) — consistent with the rest of form.bar's site
 - Friendly, professional, design-forward
 - Not corporate stiff — approachable but competent
 
 ---
 
 ## Design System
+
+All values extracted from the actual form.bar LESS source files (variables-base.less, variables.less, fonts.less).
 
 ### Fonts
 
@@ -144,213 +153,275 @@ All font files hosted on `static.form.bar/fe-ressources/fonts/`. Use these @font
 }
 ```
 
-**Font usage by context:**
-- Headings: "Carnero W01 Bold"
-- Subheadings: "Carnero W01 Regular"
-- Labels / Buttons: "Carnero W01 Regular"
-- Body / Paragraphs: "Carnero W01 Light" (small), "Carnero W01 Book" (medium+)
-- Links: "Carnero W01 Semibold" with underline
-- Quotes: "Carnero W01 Book Italic"
-- Logo text: "Carnero W01 Semibold Italic"
-- Fallback stack: "Segoe UI", Roboto, Arial, sans-serif
+**Font usage by context (from the LESS mixins):**
+| Context | Font Family | Line Height |
+|---------|-----------|-------------|
+| Headings | "Carnero W01 Bold" | 120% |
+| Subheadings | "Carnero W01 Regular" | 140% |
+| Labels | "Carnero W01 Regular" | 140% |
+| Buttons | "Carnero W01 Regular" (m/s/xs), "Carnero W01 Semibold" (l) | 140% |
+| Paragraphs (s) | "Carnero W01 Light" | 140% |
+| Paragraphs (m+) | "Carnero W01 Book" (m), "Carnero W01 Light" (m alt) | 140% |
+| Links | "Carnero W01 Semibold" + underline | 140% |
+| Quotes | "Carnero W01 Book Italic" | 140% |
+| Logo text | "Carnero W01 Semibold Italic" | 140% |
+| Fallback | "Segoe UI", Roboto, Arial, sans-serif | — |
 
-**Font sizes (desktop):**
-- Heading L: 116px
-- Heading M: 89px (XL screens: 116px, below 1023px: 55px)
-- Heading S: 55px
-- Heading XS: 34px
-- Subheading L: 55px
-- Subheading M: 34px
-- Subheading S: 28px
-- Subheading XS: 21px
-- Text L: 28px
-- Text M: 21px
-- Text S: 16px
-- Text XS: 13px
-- Line heights: 120% (headings), 140% (everything else)
+**Font sizes (desktop → mobile below 1023px):**
+| Token | Desktop | Mobile |
+|-------|---------|--------|
+| Heading L | 116px | 89px |
+| Heading M | 89px (116px on XL 1700px+, 70px on 1023-1400px, 55px below 1023px) | 55px |
+| Heading S | 55px | 55px |
+| Heading XS | 34px | 34px |
+| Subheading L | 55px | 55px |
+| Subheading M | 34px | 34px |
+| Subheading S | 28px | 28px |
+| Subheading XS | 21px | 21px |
+| Text L | 28px | 28px |
+| Text M | 21px | 21px |
+| Text S | 16px | 16px |
+| Text XS | 13px | 13px |
 
 ### Colors
 
 **Primary (anthracite blue-grey):**
-- `#383B4A` — primary (text, dark backgrounds)
-- `#5B5E6E` — primary shade light (hover text, descriptions)
-- `rgba(91, 94, 110, 0.7)` — primary transparent
+- `#383B4A` — primary (text color, dark backgrounds, primary buttons)
+- `#5B5E6E` — primary shade light (hover text, description text)
+- `rgba(91, 94, 110, 0.7)` — primary transparent (overlays)
 
-**Secondary (mint green — used for CTAs, accents):**
-- `#91E3B7` — secondary (CTA buttons, highlights)
+**Secondary (mint green — CTA buttons, success states, accents):**
+- `#91E3B7` — secondary (CTA buttons, active states, logo highlight)
 - `#63B48A` — secondary shade dark (text highlights)
-- `#C9ECD9` — secondary shade light (hover states)
+- `#C9ECD9` — secondary shade light (hover states, success backgrounds)
 - `#EEFDF4` — secondary shade lighter
-- `rgba(145, 227, 183, 0.8)` — secondary transparent
 
-**Tertiary (grey):**
-- `#B4B6BE` — tertiary
-- `#ECEFF0` — tertiary light (light backgrounds, borders)
-- `#FAFAFA` — tertiary lighter (almost white backgrounds)
+**Tertiary (neutral grey):**
+- `#B4B6BE` — tertiary (disabled text, placeholders, dividers)
+- `#ECEFF0` — tertiary light (light backgrounds, borders, inactive areas)
+- `#FAFAFA` — tertiary lighter (near-white section backgrounds)
 
 **Neutral:**
-- `#FFFFFF` — white
+- `#FFFFFF` — white (default background, neutral controls)
 
-**Accent colors:**
+**Accent colors (used sparingly for variety):**
 - `#C9FFF5` — blue lagoon
 - `#FFDCD4` — red oxide
 - `#FFFFBD` — yellow sand
 - `#E8E7F3` — lilac
 
-**Alert/Warning:**
-- `#A94442` — warning (error text)
-- `#FFBAAA` — warning light
-- `#FFDCD4` — warning lighter
-
 ### Spacing Scale
 
-Fibonacci-near progression (skips 5):
-- 4xs: 3px
-- 3xs: 8px
-- 2xs: 13px
-- xs: 21px
-- s: 34px
-- m: 55px
-- l: 89px
-- xl: 144px
-- 2xl: 233px
-- 3xl: 377px
-- 4xl: 610px
-- 5xl: 987px
+Values from `variables-base.less`. Fibonacci-near progression:
+
+| Token | Value | Used for |
+|-------|-------|----------|
+| 4xs | 3px | Tiny gaps, border widths |
+| 3xs | 8px | Small padding, icon gaps |
+| 2xs | 13px | Inner padding, small gaps |
+| xs | 21px | Default gap, standard padding |
+| s | 34px | Section inner spacing |
+| m | 55px | Large gaps, section padding |
+| l | 89px | Major section spacing |
+| xl | 144px | Hero-level spacing |
+| 2xl | 233px | Page-level spacing |
+| 3xl | 377px | — |
+| 4xl | 610px | — |
+| 5xl | 987px | Max content widths |
 
 ### Border Radii
-- xs: 3px
-- s: 8px
-- m: 21px
-- l: 34px
-- xl: 55px
+| Token | Value |
+|-------|-------|
+| xs | 3px |
+| s | 8px |
+| m | 21px |
+| l | 34px |
+| xl | 55px |
 
-### Borders
-- xs: 1px
-- s: 2px
-- m: 3px
+form.bar uses generous rounded corners — product cards and images typically use radius-m (21px) or radius-l (34px). The product images on the Möbel page use large rounded corners (visible in screenshots).
 
 ### Breakpoints
-- xs: 480px
-- s: 768px
-- m: 1023px
-- l: 1400px
-- xl: 1700px
+| Token | Value |
+|-------|-------|
+| xs | 480px |
+| s | 768px |
+| m | 1023px |
+| l | 1400px |
+| xl | 1700px |
 
-### Page Margins (% based, responsive)
-**Body margins:**
-- xs/s: 5%
-- m: 5%
-- l: 8%
-- xl: 10%
+### Page Margins (responsive, percentage-based)
 
-**Section margins:**
-- xs/s: 5%
-- m: 10%
-- l: 15%
-- xl: 20%
+| Screen | Body margin | Section margin |
+|--------|------------|----------------|
+| xs (< 480px) | 5% | 5% |
+| s (480-767px) | 5% | 5% |
+| m (768-1023px) | 5% | 10% |
+| l (1024-1399px) | 8% | 15% |
+| xl (1400+) | 10% | 20% |
 
-### Shadows
-- Default: `3px 3px 8px 0 #ECEFF0`
+### Other Tokens
+- **Shadows:** `3px 3px 8px 0 #ECEFF0`
+- **Transitions:** short 0.1s, default 0.3s, long 1s
+- **Menu height:** 59px
+- **Borders:** xs=1px, s=2px, m=3px
 
-### Transitions
-- Short: 0.1s
-- Default: 0.3s
-- Long: 1s
+### Scroll Reveal Animations
 
-### Menu Height
-- 59px
+The site uses a `.sr` (scroll reveal) system from `baseClasses.less`:
+- `.sr` — base class, starts hidden (opacity: 0)
+- `.sr.sr-visible` — revealed state (opacity: 1)
+- Variants: `.sr-fade-up`, `.sr-fade-down`, `.sr-fade-left`, `.sr-fade-right`, `.sr-zoom-in`
+- Transition: 1s ease-out
 
----
-
-## Reference Content — Magazine Links
-
-These are existing form.bar magazine articles about business customers. Use them for reference images, testimonials, and case study content. Visit each to pull photos and quotes.
-
-### Empfangstheken (Reception Desks)
-- Honighalle: `https://www.form.bar/de-DE/inspiration/magazin/honighalle`
-- Agentur-Theke (Benjamin Knur): `https://www.form.bar/de-DE/inspiration/magazin/benjamin-knur`
-
-### Office / Büro
-- Michael Hilgers – Office Produkte: `https://www.form.bar/de-DE/inspiration/magazin/michael-hilgers`
-- Office Regal (Konstantin Küspert): `https://www.form.bar/de-DE/inspiration/magazin/konstantin-küspert`
-- Homeoffice (Paula Biesenkamp): `https://www.form.bar/de-DE/inspiration/magazin/paula-biesenkamp`
-
-### Marketing / Agentur
-- Dennis Lück – Marketing Agentur des Jahres: `https://www.form.bar/de-DE/inspiration/magazin/dennis-lück`
-- Sideboard/Sitzbank Agentur (Claudia Henze): `https://www.form.bar/de-DE/inspiration/magazin/claudia-henze`
-
-### Retail / Showroom
-- Black Henn – Verkaufsregal: `https://www.form.bar/de-DE/inspiration/magazin/blackhen`
-  - Video: `https://www.instagram.com/reel/DbF7s-BoyFG/`
-
-### Gastronomie / Food
-- SterneKoch Erfurt, Akustikregal (Klaus Erfort): `https://www.form.bar/de-DE/inspiration/magazin/klaus-erfort`
-
-### Gaming / Creative
-- Fabienne – Gaming Industry: `https://www.form.bar/de-DE/inspiration/magazin/fabiennexiii`
-
-### Musik
-- Holger – Berufsmusiker: `https://www.form.bar/de-DE/inspiration/magazin/holger-wohlfahrt`
-
-### Besprechung / Konferenz
-- Besprechungstisch (Alexandra Jürgens): `https://www.form.bar/de-DE/inspiration/magazin/alexandra-jürgens`
-
-### Brand / Corporate
-- Adidas Brand Regal: `https://www.form.bar/de-DE/inspiration/magazin/filmstars`
-
-### Healthcare / Praxis
-- Zahnarztpraxis: `https://okinlab.com/work/zahnarztpraxis/`
-
-### Kita / Education
-- Kita Blümchen: `https://okinlab.com/work/kinderkrippe/`
-
-### Gallery (filter by Business-Design)
-`https://www.form.bar/de-DE/inspiration/galerie`
-
-### YouTube
-`https://www.youtube.com/c/FormBar`
-
-## Business Customers (for social proof / logo strip)
-
-These are actual form.bar business customers:
-Bosch, Villeroy & Boch, Audi, Adidas, Google, Sky, Globus, Augenklinik Sulzbach, Bose, HKS, Roccat, Universität des Saarlandes, Spiegel, Kaffeehaus Soest, Airyoga, Evangelische Kirche Hannover, Grundschule Sudweyhe, Forschungsgruppe Verhaltensbiologie, Passlack Consulting, Wohnungswesen Münster, Luxembourg Science Center, Tourismus Zentrale Merzig, Polarforschung, Caritas, MunichMed
+Implement scroll reveal with IntersectionObserver in the landing page.
 
 ---
 
-## Build Instructions
+## Reference Content
+
+### Magazine Articles (visit each for images, quotes, case studies)
+
+These are form.bar magazine articles featuring real business customers. **Visit each link to extract real photos and real customer quotes** — do not invent quotes.
+
+| Category | Customer | Product | Link |
+|----------|----------|---------|------|
+| Empfangstheke | Julius Schießer, Honighalle (unpackaged store, Friedrichsdorf) | Reception desk/counter | `https://www.form.bar/de-DE/inspiration/magazin/honighalle` |
+| Agentur-Theke | Benjamin Knur | Agency reception counter | `https://www.form.bar/de-DE/inspiration/magazin/benjamin-knur` |
+| Office | Michael Hilgers | Office furniture products | `https://www.form.bar/de-DE/inspiration/magazin/michael-hilgers` |
+| Office Regal | Konstantin Küspert | Office shelf | `https://www.form.bar/de-DE/inspiration/magazin/konstantin-küspert` |
+| Homeoffice | Paula Biesenkamp | Home office setup | `https://www.form.bar/de-DE/inspiration/magazin/paula-biesenkamp` |
+| Marketing-Agentur | Dennis Lück (BrinkertLück Creatives, top EU ad professional) | Shelf — quote: "The shape of the shelf inspires me" | `https://www.form.bar/de-DE/inspiration/magazin/dennis-lück` |
+| Agentur Sideboard | Claudia Henze | Sideboard & bench | `https://www.form.bar/de-DE/inspiration/magazin/claudia-henze` |
+| Verkaufsregal | Black Henn | Retail display shelf | `https://www.form.bar/de-DE/inspiration/magazin/blackhen` |
+| Gastronomie | Klaus Erfort (2-Michelin-star chef, GästeHaus, Saarbrücken) | Acoustic shelf | `https://www.form.bar/de-DE/inspiration/magazin/klaus-erfort` |
+| Gaming | Fabienne | Gaming industry setup | `https://www.form.bar/de-DE/inspiration/magazin/fabiennexiii` |
+| Musik | Holger Wohlfahrt | Musician's shelf | `https://www.form.bar/de-DE/inspiration/magazin/holger-wohlfahrt` |
+| Besprechung | Alexandra Jürgens | Conference table | `https://www.form.bar/de-DE/inspiration/magazin/alexandra-jürgens` |
+| Corporate | Adidas | Brand shelf | `https://www.form.bar/de-DE/inspiration/magazin/filmstars` |
+| Healthcare | Zahnarztpraxis (dental practice) | Practice furniture | `https://okinlab.com/work/zahnarztpraxis/` |
+| Education | Kita Blümchen (daycare) | Children's furniture | `https://okinlab.com/work/kinderkrippe/` |
+
+**Video:** Black Henn Instagram Reel — `https://www.instagram.com/reel/DbF7s-BoyFG/`
+**Gallery** (filter by Business-Design): `https://www.form.bar/de-DE/inspiration/galerie`
+**YouTube:** `https://www.youtube.com/c/FormBar`
+
+### Business Customers (social proof)
+
+These are verified form.bar business customers (from internal reference document). Use for a "Vertrauen uns" / "Trusted by" logo strip or name list:
+
+**Big names:** Bosch, Villeroy & Boch, Audi, Adidas, Google, Sky, Bose, Spiegel
+**Institutions:** Universität des Saarlandes, Luxembourg Science Center, Evangelische Kirche Hannover, Grundschule Sudweyhe, Forschungsgruppe Verhaltensbiologie, Polarforschung, Caritas
+**Healthcare:** Augenklinik Sulzbach, MunichMed
+**Business:** HKS, Roccat, Passlack Consulting, Wohnungswesen Münster, Tourismus Zentrale Merzig, Kaffeehaus Soest, Airyoga, Globus
+
+---
+
+## Build Plan
 
 ### Output
-Single `index.html` file with all CSS inline. No external dependencies except the Carnero font files from static.form.bar.
+Single `index.html` file with all CSS inline (in `<style>` tags). No external dependencies except the Carnero W01 font files from `static.form.bar`.
 
 ### Visual Direction
-- Match form.bar's existing aesthetic: clean, white backgrounds, rounded corners, spacious layout
-- Mint green (#91E3B7) CTA buttons with dark text (#383B4A)
-- Dark anthracite (#383B4A) header/footer sections
-- Product images in rounded containers
-- Subtle, modern — not loud or salesy
 
-### Page Sections to Build
+Study the existing form.bar site (screenshots provided + live site at form.bar) to match their aesthetic:
+- **Clean white backgrounds** with `#FAFAFA` alternate sections
+- **Mint green (#91E3B7) CTA buttons** with dark `#383B4A` text
+- **Dark anthracite (#383B4A)** for text, header area, and footer band
+- **Generous rounded corners** (21px-34px on cards and images, matching the Möbel page product tiles)
+- **Spacious layout** with percentage-based responsive margins
+- Product images shown in soft green archway/niche backgrounds (as seen on the Möbel page — the rendered product images sit in sage-green arched alcoves)
+- Navigation: "formbar" logo in Carnero Semibold Italic, with main nav items: SELBST FORMEN (green pill button), MÖBEL, INSPIRATION, SERVICE, plus flag/phone/cart/profile icons
+- Bottom banner: dark anthracite background with "Let's work together!" text + photo, "Jetzt teilnehmen" green CTA
 
-1. **Navigation** — formbar logo (in Carnero Semibold Italic), simple nav
-2. **Hero** — B2B focused headline addressing business owners, subtitle about custom furniture for commercial spaces
-3. **Industry tabs/cards** — Target audiences with relevant imagery (from magazine links above)
-4. **Products** — Empfangstheken, Designregale, Sonderkonstruktionen with real images from the magazine articles
-5. **Client logos** — Social proof strip with the business customer names listed above
-6. **Process** — How it works (Beratung, Entwurf, Fertigung, Lieferung)
-7. **References/Testimonials** — Pull real quotes from the magazine articles
-8. **Contact/CTA** — Multiple contact options (matching current page: Live-Chat, E-Mail, Rückruf, WhatsApp, phone)
-9. **Footer** — formbar branding
+### Page Sections (in order)
+
+#### 1. Navigation Bar
+- Match the existing form.bar nav exactly: logo left, centered nav items, utility icons right
+- Height: 59px
+- Logo: "formbar" in Carnero Semibold Italic, with "BUSINESS" subtitle
+
+#### 2. Hero Section
+- Full-width, addressing business owners directly with "du"
+- Headline that speaks to the value proposition for businesses
+- Industry list (from target audiences above) — styled as tags or a visual list
+- Large hero image showing an impressive business installation (use best image from magazine articles, or placeholder)
+- CTA: "Jetzt beitreten" (matching existing) or "Beratung anfragen"
+
+#### 3. Project Showcase (with category tabs)
+- Tabbed gallery: Ladengeschäfte, Messen, Gastronomie, Büros (matching current page's tabs)
+- Pull real project images from the magazine article links above
+- Each project card: image + brief description + link to magazine article
+- This is the section Patrick specifically wants improved with better images
+
+#### 4. Products / Leistungen
+- Three product cards: Empfangstheken, Designregale, Sonderkonstruktionen
+- Each with a strong image, short description, and CTA
+- Use images from magazine articles that match each product type
+
+#### 5. Target Audience Section
+- Two columns or cards:
+  1. "Repräsentative Geschäftsräume" — Praxen, Kanzleien, Agenturen, Architekten, Friseure
+  2. "Gehobener Einzelhandel" — Mode, Keramik/Geschirr, Kaffee, Concept Stores
+- Industry tags for each
+- Relevant imagery
+
+#### 6. Social Proof / Kundenlogos
+- "Vertrauen uns" or similar heading
+- Display the big-name business customers: Bosch, Adidas, Google, Audi, Bose, Sky, Villeroy & Boch, Spiegel
+- Simple text list or logo strip (logos would need to be sourced separately)
+
+#### 7. Testimonials
+- "Das sagen unsere Kunden" — pull REAL quotes from the magazine articles only
+- Verified quote from Dennis Lück: "The shape of the shelf inspires me"
+- Visit other magazine links to extract more real quotes
+- Star ratings if available from the articles
+- The current page has a 4.74 rating badge — keep this if the source can be verified
+
+#### 8. Process / So funktioniert's
+- 4 steps: Beratung → Entwurf → Fertigung → Lieferung
+- Simple, clean step cards
+
+#### 9. Contact / Kontaktmöglichkeiten
+- Match the current page's contact options:
+  - Live-Chat starten
+  - E-Mail schreiben
+  - Rückruf buchen
+  - Direkt anrufen
+  - WhatsApp
+- Each as a card/button with icon
+
+#### 10. CTA Band
+- Dark anthracite background
+- "Let's work together!" or similar
+- "Jetzt beitreten" green CTA button
+- Photo of team/business context
+
+#### 11. Footer
+- Match existing form.bar footer structure
+- formbar logo + "forme deine Welt"
+- Contact info, links (SERVICE, FORM.BAR, FORM.BAR+, BUSINESS)
+- Rating badge (4.74)
+- Newsletter signup
+- Social icons
+- Legal links (AGB, Datenschutz, Widerruf, Impressum)
+
+### Responsive Behavior
+- Use the breakpoints and margin system from the design system above
+- Mobile-first approach
+- Product grids: 3 columns desktop → 2 tablet → 1 mobile
+- Nav collapses to hamburger on mobile
 
 ### Image Strategy
-- Visit each magazine link above and download/reference the best business-relevant images
-- For image placeholders where real images aren't available yet, use dashed-border boxes with descriptive text of what image should go there
-- Prioritize: reception desks, retail shelving, office setups, restaurant/gastro interiors
+
+1. **First priority:** Visit each magazine link and extract the best business-relevant photos (reception desks, retail shelving, office setups, restaurant interiors)
+2. **For any section where real images aren't available:** Use dashed-border placeholder boxes (`border: 2px dashed #ECEFF0`) with descriptive text of what image should go there
+3. **Image treatment:** Rounded corners (radius-m 21px or radius-l 34px), matching the product tile style on the Möbel page
 
 ### Do NOT
-- Invent statistics (like "64.000+ Kunden") unless verified from the actual site
-- Make up testimonial quotes — only use real ones from the magazine articles
-- Use any font other than Carnero W01 variants
-- Use warm/wood-tone color palettes — stick to the cool anthracite + mint green
-- Use serif fonts like Fraunces or Georgia
+- Invent statistics — only use numbers that can be verified from the actual site or official sources (verified: 80+ partner carpentries, ~20 employees, founded 2013)
+- Make up testimonial quotes — only use real ones found on the magazine article pages
+- Use any font other than Carnero W01 variants with the exact font-face declarations above
+- Use warm/wood-tone color schemes — stick to the cool anthracite (#383B4A) + mint green (#91E3B7) palette
+- Use serif fonts like Fraunces, Georgia, or any Google Font
 - Add dark mode (form.bar doesn't have one)
+- Invent a design system — use the exact values documented above from the LESS source files
