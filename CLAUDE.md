@@ -417,6 +417,80 @@ Study the existing form.bar site (screenshots provided + live site at form.bar) 
 2. **For any section where real images aren't available:** Use dashed-border placeholder boxes (`border: 2px dashed #ECEFF0`) with descriptive text of what image should go there
 3. **Image treatment:** Rounded corners (radius-m 21px or radius-l 34px), matching the product tile style on the Möbel page
 
+### Animations & Motion
+
+The page should feel alive and polished — not static. form.bar's own site uses scroll-reveal animations and smooth transitions. Implement the following:
+
+#### Scroll Reveal (matching form.bar's system)
+- Elements fade/slide in as they enter the viewport
+- Use IntersectionObserver (vanilla JS, no library needed)
+- Variants to use:
+  - **Fade up** — most content sections, cards, text blocks (translate Y 30-40px → 0)
+  - **Fade in** — images, logos (opacity 0 → 1)
+  - **Staggered** — grid items (cards, logos, process steps) appear one after another with 100-150ms delay between each
+- Timing: 0.6-0.8s ease-out, trigger when element is ~20% visible
+- Elements should only animate once (not re-trigger on scroll back up)
+
+#### Hover Effects
+- **CTA buttons:** subtle scale (1.02-1.03) + slight shadow increase on hover, 0.3s transition
+- **Product/project cards:** gentle lift (translateY -4px) + shadow deepening on hover
+- **Contact option cards:** background color shift to mint green lighter (#EEFDF4) on hover
+- **Links:** color transition to secondary shade dark (#63B48A)
+- **Tab buttons:** active tab gets mint green underline/background with smooth transition
+
+#### Hero Section
+- Hero image or content area: subtle parallax or scale effect on scroll (optional, keep it subtle)
+- Headline: fade-up on page load with slight delay between headline and subtitle
+- CTA buttons: fade-in after headline, staggered
+
+#### Tab/Category Switching (Project Showcase)
+- Smooth crossfade between tab content (opacity transition, 0.3s)
+- Active tab indicator animates (slides) to selected tab position
+- Content inside tabs can have a subtle slide-left/slide-right depending on direction
+
+#### Logo/Client Strip
+- Optional: slow continuous horizontal scroll (CSS marquee-style animation) for the client names/logos
+- Or: static grid that fades in with staggered timing
+
+#### Counter/Stats (if included)
+- Count-up animation for any numbers when they scroll into view
+- Use requestAnimationFrame for smooth counting
+
+#### Smooth Scrolling
+- `scroll-behavior: smooth` on html
+- Anchor links (nav → sections) scroll smoothly
+- Optional: slightly offset scroll position to account for sticky nav
+
+#### Performance
+- Use `will-change: transform, opacity` sparingly on animated elements
+- Prefer CSS transforms over layout-triggering properties
+- Use `prefers-reduced-motion` media query to disable animations for accessibility:
+```css
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+```
+
+#### What NOT to animate
+- No heavy parallax or scroll-jacking
+- No loading spinners or skeleton screens (it's a static page)
+- No bouncing or elastic effects (doesn't match form.bar's calm aesthetic)
+- No auto-playing video backgrounds
+- Keep it elegant and subtle — form.bar is a design brand, not a gaming site
+
+### Technology Note
+
+form.bar's main site is built with Vue.js (evidence: Vue `:deep()` selectors in their CSS, component-based architecture). However, for this standalone landing page:
+- **Build as a single HTML file** with inline `<style>` and `<script>` tags
+- This keeps it framework-agnostic and easy to integrate later into their Vue/Nuxt app or GrapeJS editor
+- All animations should be vanilla CSS + vanilla JS (IntersectionObserver, requestAnimationFrame)
+- No external JS libraries needed — GSAP is overkill for what we need
+- If you want a library for scroll animations, you may use a lightweight one loaded from CDN (e.g., `gsap` from cdnjs), but vanilla JS is preferred
+
 ### Do NOT
 - Invent statistics — only use numbers that can be verified from the actual site or official sources (verified: 80+ partner carpentries, ~20 employees, founded 2013)
 - Make up testimonial quotes — only use real ones found on the magazine article pages
