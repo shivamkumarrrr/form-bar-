@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>form.bar Business: Möbel nach Maß für dein Unternehmen</title>
 <meta name="description" content="Empfangstheken, Designregale und individuelle Konstruktionen nach Maß, entworfen in deinem Stil und gefertigt von regionalen Partner-Schreinereien.">
+<link rel="preconnect" href="https://static.form.bar" crossorigin>
 
 <style>
   /* ============ FONTS (Carnero W01, hosted by form.bar) ============ */
@@ -345,11 +346,11 @@
 
   /* ============ CTA BAND ============ */
   .cta-band { background: var(--c-primary); color: var(--c-white); padding: var(--sp-l) 0; position:relative; overflow:hidden; }
-  .cta-band .wrap { display:grid; grid-template-columns: 1.2fr 1fr; gap: var(--sp-l); align-items:center; }
+  .cta-band .wrap { display:grid; grid-template-columns: 1fr 1.2fr; gap: var(--sp-l); align-items:center; }
   .cta-band h2 { color: var(--c-white); font-size: var(--fs-heading-xs); margin-bottom: var(--sp-2xs); }
   .cta-band p { font-family: var(--font-book); font-size: var(--fs-text-m); color: rgba(255,255,255,.72); max-width: 460px; margin-bottom: var(--sp-s); }
-  .cta-visual { border-radius: var(--r-l); overflow:hidden; }
-  .cta-visual img { width:100%; aspect-ratio: 4/3; object-fit:cover; }
+  .cta-visual { border-radius: var(--r-l); overflow:hidden; background: var(--c-primary-light); }
+  .cta-visual img { width:100%; aspect-ratio: 4/3; object-fit:cover; display:block; }
 
   /* ============ FOOTER ============ */
   .footer { background: var(--c-tertiary-lighter); color: var(--c-primary); padding: var(--sp-m) 0 0; }
@@ -413,6 +414,9 @@
   }
   @media (max-width: 420px) {
     .contact-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 480px) {
+    .products-grid, .showcase-grid, .testi-grid { grid-template-columns: 1fr; }
   }
 
   /* ============ CONTACT MODAL ============ */
