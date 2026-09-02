@@ -1,670 +1,645 @@
-<title>form.bar Business</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>form.bar Business: Möbel nach Maß für dein Unternehmen</title>
+<meta name="description" content="Empfangstheken, Designregale und individuelle Konstruktionen nach Maß, entworfen in deinem Stil und gefertigt von regionalen Partner-Schreinereien.">
 
 <style>
+  /* ============ FONTS (Carnero W01, hosted by form.bar) ============ */
+  @font-face {
+    font-family: "Carnero W01 Light";
+    font-display: swap;
+    src: url("https://static.form.bar/fe-ressources/fonts/5769275/919a2130-c858-48ac-ab81-57d322308e09.woff2") format("woff2"),
+         url("https://static.form.bar/fe-ressources/fonts/5769275/01c6b44f-408f-4297-a149-11eec4aa91eb.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Carnero W01 Light Italic";
+    font-display: swap;
+    src: url("https://static.form.bar/fe-ressources/fonts/5769283/0eb538c9-492e-40d1-939f-cec781ce1684.woff2") format("woff2"),
+         url("https://static.form.bar/fe-ressources/fonts/5769283/7fd40b62-80b9-4e66-8abf-292aa004d43e.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Carnero W01 Book";
+    font-display: swap;
+    src: url("https://static.form.bar/fe-ressources/fonts/5769291/eda3d5a2-6c59-44b9-95b6-15448937cbe6.woff2") format("woff2"),
+         url("https://static.form.bar/fe-ressources/fonts/5769291/adfa959a-0970-4b31-ac74-5dcdb30dd4ee.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Carnero W01 Book Italic";
+    font-display: swap;
+    src: url("https://static.form.bar/fe-ressources/fonts/5769299/3b3d5ea8-4c29-4fbd-9b01-5613d3d491ba.woff2") format("woff2"),
+         url("https://static.form.bar/fe-ressources/fonts/5769299/039a60b0-f97a-4596-9dbd-2da3b5aff3e2.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Carnero W01 Regular";
+    font-display: swap;
+    src: url("https://static.form.bar/fe-ressources/fonts/5769304/6e2aa19a-7c07-464f-a7f5-d77c3e88a25c.woff2") format("woff2"),
+         url("https://static.form.bar/fe-ressources/fonts/5769304/df488456-1e38-44ee-9615-e76b634db259.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Carnero W01 Italic";
+    font-display: swap;
+    src: url("https://static.form.bar/fe-ressources/fonts/5769311/14690c94-4a90-4608-a728-b2777a54f684.woff2") format("woff2"),
+         url("https://static.form.bar/fe-ressources/fonts/5769311/342bbb58-e6f2-4aee-82a2-dedc61cc4b77.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Carnero W01 Semibold";
+    font-display: swap;
+    src: url("https://static.form.bar/fe-ressources/fonts/5769319/7217b91c-61e9-48fd-8c63-e791a88971a7.woff2") format("woff2"),
+         url("https://static.form.bar/fe-ressources/fonts/5769319/5920bb16-b902-446b-9253-d918ee15def5.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Carnero W01 Semibold Italic";
+    font-display: swap;
+    src: url("https://static.form.bar/fe-ressources/fonts/5769325/846d4265-946b-4725-87fa-6fff8b610129.woff2") format("woff2"),
+         url("https://static.form.bar/fe-ressources/fonts/5769325/30b88e12-fa3e-4976-ac06-9db4f9669f33.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Carnero W01 Bold";
+    font-display: swap;
+    src: url("https://static.form.bar/fe-ressources/fonts/5769335/c2b01d18-dfd4-481e-a5f5-50a1f6d19528.woff2") format("woff2"),
+         url("https://static.form.bar/fe-ressources/fonts/5769335/4846658e-32a6-4963-8c3b-ccb9a24c1d77.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Carnero W01 Bold Italic";
+    font-display: swap;
+    src: url("https://static.form.bar/fe-ressources/fonts/5769343/11418712-62a3-4947-b9e6-ca1e6714c07a.woff2") format("woff2"),
+         url("https://static.form.bar/fe-ressources/fonts/5769343/01437eec-3731-437a-95f0-fee030f4fa55.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Carnero W01 Black";
+    font-display: swap;
+    src: url("https://static.form.bar/fe-ressources/fonts/5769351/9eda3eaa-c10c-4b78-8146-16525faf2e79.woff2") format("woff2"),
+         url("https://static.form.bar/fe-ressources/fonts/5769351/7f719f16-e879-479a-8991-3430d2e60ebf.woff") format("woff");
+  }
+
+  /* ============ TOKENS ============ */
   :root {
-    --char-oak: #0E0D0B;
-    --raw-linen: #F6F1EB;
-    --honey-walnut: #C9A87C;
-    --dark-grain: #6B5B4A;
-    --sanded-birch: #E2D8CA;
-    --espresso: #3A352E;
+    --c-primary:#383B4A;
+    --c-primary-light:#5B5E6E;
+    --c-primary-transparent: rgba(91,94,110,.7);
+    --c-secondary:#91E3B7;
+    --c-secondary-dark:#63B48A;
+    --c-secondary-light:#C9ECD9;
+    --c-secondary-lighter:#EEFDF4;
+    --c-tertiary:#B4B6BE;
+    --c-tertiary-light:#ECEFF0;
+    --c-tertiary-lighter:#FAFAFA;
+    --c-white:#FFFFFF;
+    --c-lagoon:#C9FFF5;
+    --c-oxide:#FFDCD4;
+    --c-sand:#FFFFBD;
+    --c-lilac:#E8E7F3;
 
-    --bg: var(--raw-linen);
-    --bg-alt: var(--sanded-birch);
-    --bg-dark: var(--espresso);
-    --text: var(--char-oak);
-    --text-muted: var(--dark-grain);
-    --accent: var(--honey-walnut);
-    --accent-dark: #A8885E;
-    --border: #D5CCBF;
-    --card-bg: #FFFFFF;
-    --card-shadow: rgba(14, 13, 11, 0.06);
-    --placeholder-bg: #E8DED2;
-    --placeholder-text: #9E9182;
+    --sp-4xs:3px; --sp-3xs:8px; --sp-2xs:13px; --sp-xs:21px; --sp-s:34px;
+    --sp-m:55px; --sp-l:89px; --sp-xl:144px; --sp-2xl:233px;
+
+    --r-xs:3px; --r-s:8px; --r-m:21px; --r-l:34px; --r-xl:55px;
+
+    --shadow: 3px 3px 8px 0 var(--c-tertiary-light);
+    --t-short:.1s; --t-default:.3s; --t-long:1s;
+
+    --fs-heading-l:116px; --fs-heading-m:89px; --fs-heading-s:55px; --fs-heading-xs:34px;
+    --fs-subheading-l:55px; --fs-subheading-m:34px; --fs-subheading-s:28px; --fs-subheading-xs:21px;
+    --fs-text-l:28px; --fs-text-m:21px; --fs-text-s:16px; --fs-text-xs:13px;
+
+    --font-bold:"Carnero W01 Bold","Segoe UI",Roboto,Arial,sans-serif;
+    --font-regular:"Carnero W01 Regular","Segoe UI",Roboto,Arial,sans-serif;
+    --font-book:"Carnero W01 Book","Segoe UI",Roboto,Arial,sans-serif;
+    --font-light:"Carnero W01 Light","Segoe UI",Roboto,Arial,sans-serif;
+    --font-semibold:"Carnero W01 Semibold","Segoe UI",Roboto,Arial,sans-serif;
+    --font-semibold-italic:"Carnero W01 Semibold Italic","Segoe UI",Roboto,Arial,sans-serif;
+    --font-book-italic:"Carnero W01 Book Italic","Segoe UI",Roboto,Arial,sans-serif;
+
+    --margin-section: 5%;
+    --menu-h: 59px;
   }
+  @media (min-width:768px)  { :root{ --margin-section:10%; } }
+  @media (min-width:1024px) { :root{ --margin-section:15%; } }
+  @media (min-width:1400px) { :root{ --margin-section:20%; } }
+  @media (max-width:1023px) { :root{ --fs-heading-l:89px; --fs-heading-m:55px; } }
 
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #151413;
-      --bg-alt: #1E1D1A;
-      --bg-dark: #0A0A09;
-      --text: #E8E2D9;
-      --text-muted: #A09787;
-      --accent: #D4B48A;
-      --accent-dark: #BFA070;
-      --border: #2E2B26;
-      --card-bg: #1C1B18;
-      --card-shadow: rgba(0, 0, 0, 0.3);
-      --placeholder-bg: #252320;
-      --placeholder-text: #6B6258;
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #151413;
-    --bg-alt: #1E1D1A;
-    --bg-dark: #0A0A09;
-    --text: #E8E2D9;
-    --text-muted: #A09787;
-    --accent: #D4B48A;
-    --accent-dark: #BFA070;
-    --border: #2E2B26;
-    --card-bg: #1C1B18;
-    --card-shadow: rgba(0, 0, 0, 0.3);
-    --placeholder-bg: #252320;
-    --placeholder-text: #6B6258;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+  /* ============ RESET / BASE ============ */
+  *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
   body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif;
-    font-size: 1rem;
-    line-height: 1.65;
+    background: var(--c-white);
+    color: var(--c-primary);
+    font-family: var(--font-book);
+    font-size: var(--fs-text-m);
+    line-height: 140%;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
+  img { max-width:100%; display:block; }
+  a { color:inherit; text-decoration:none; }
+  ul { list-style:none; }
+  button { font:inherit; background:none; border:none; cursor:pointer; color:inherit; }
+  h1,h2,h3,h4 { font-family: var(--font-bold); line-height:120%; font-weight:normal; overflow-wrap:break-word; hyphens:auto; }
+  .wrap { width:100%; max-width:1920px; margin:0 auto; padding:0 var(--margin-section); }
 
-  h1, h2, h3, h4 {
-    font-family: 'Fraunces', 'Georgia', serif;
-    line-height: 1.15;
-    text-wrap: balance;
-    font-weight: 500;
-  }
-
-  a { color: var(--accent-dark); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-
-  img { max-width: 100%; display: block; }
-
-  .wrap {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 clamp(1.25rem, 4vw, 3rem);
-  }
-
-  /* ── NAV ── */
-  .nav {
-    padding: 1.25rem 0;
-    border-bottom: 1px solid var(--border);
-  }
-  .nav .wrap {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .nav-logo {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-weight: 700;
-    font-size: 1.35rem;
-    color: var(--text);
-    letter-spacing: -0.02em;
-  }
-  .nav-logo span { color: var(--accent); }
-  .nav-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.6rem 1.4rem;
-    background: var(--text);
-    color: var(--bg);
-    font-size: 0.875rem;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-    transition: opacity 0.2s;
-    text-decoration: none;
-  }
-  .nav-cta:hover { opacity: 0.85; text-decoration: none; }
-
-  /* ── HERO ── */
-  .hero {
-    padding: clamp(4rem, 10vw, 8rem) 0 clamp(3rem, 8vw, 6rem);
-    position: relative;
-    overflow: hidden;
-  }
-  .hero .wrap {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(2rem, 5vw, 4rem);
-    align-items: center;
-  }
-  .hero-text { position: relative; z-index: 2; }
-  .hero-eyebrow {
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent-dark);
-    margin-bottom: 1.25rem;
-  }
-  .hero h1 {
-    font-size: clamp(2.4rem, 5.5vw, 4.2rem);
-    font-weight: 300;
-    letter-spacing: -0.02em;
-    margin-bottom: 1.5rem;
-    color: var(--text);
-  }
-  .hero h1 em {
-    font-style: italic;
-    font-weight: 500;
-    color: var(--accent-dark);
-  }
-  .hero-sub {
-    font-size: 1.1rem;
-    color: var(--text-muted);
-    max-width: 480px;
-    margin-bottom: 2rem;
-    line-height: 1.7;
-  }
-  .hero-visual {
-    position: relative;
-    z-index: 1;
-  }
-  .hero-curve {
-    position: absolute;
-    right: -10%;
-    top: -20%;
-    width: 60%;
-    height: 140%;
-    z-index: 0;
-    opacity: 0.07;
-  }
-  .hero-curve path {
-    fill: none;
-    stroke: var(--accent);
-    stroke-width: 1.5;
-  }
-
-  /* ── BUTTONS ── */
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.85rem 2rem;
-    background: var(--text);
-    color: var(--bg);
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-    transition: opacity 0.2s;
-    text-decoration: none;
-  }
-  .btn-primary:hover { opacity: 0.85; text-decoration: none; }
-  .btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.85rem 2rem;
-    background: transparent;
-    color: var(--text);
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 600;
-    border: 1.5px solid var(--border);
-    cursor: pointer;
-    transition: border-color 0.2s;
-    text-decoration: none;
-  }
-  .btn-secondary:hover { border-color: var(--accent); text-decoration: none; }
-  .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-  /* ── IMAGE PLACEHOLDER ── */
-  .img-placeholder {
-    background: var(--placeholder-bg);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    padding: 2rem;
-    min-height: 300px;
-    border: 2px dashed var(--border);
-    position: relative;
-  }
-  .img-placeholder svg {
-    width: 40px;
-    height: 40px;
-    color: var(--placeholder-text);
-  }
-  .img-placeholder span {
-    font-size: 0.8rem;
-    color: var(--placeholder-text);
-    text-align: center;
-    max-width: 200px;
-    line-height: 1.4;
-  }
-
-  /* ── STATS ── */
-  .stats {
-    padding: clamp(2rem, 5vw, 4rem) 0;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-  .stats .wrap {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-  }
-  .stat {
-    text-align: left;
-  }
-  .stat-number {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 300;
-    color: var(--accent-dark);
-    font-variant-numeric: tabular-nums;
-  }
-  .stat-label {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    margin-top: 0.25rem;
-  }
-
-  /* ── SECTION ── */
-  .section {
-    padding: clamp(4rem, 8vw, 7rem) 0;
-  }
-  .section-header {
-    max-width: 640px;
-    margin-bottom: clamp(2.5rem, 5vw, 4rem);
-  }
-  .section-eyebrow {
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent-dark);
-    margin-bottom: 0.75rem;
-  }
-  .section h2 {
-    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-    font-weight: 300;
-    letter-spacing: -0.01em;
-    margin-bottom: 1rem;
-  }
-  .section h2 em {
-    font-style: italic;
-    font-weight: 500;
-  }
-  .section-desc {
-    font-size: 1.05rem;
-    color: var(--text-muted);
-    line-height: 1.7;
-  }
-
-  /* ── PRODUCTS GRID ── */
-  .products-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: clamp(1.25rem, 2.5vw, 2rem);
-  }
-  .product-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    overflow: hidden;
-    transition: box-shadow 0.25s;
-  }
-  .product-card:hover {
-    box-shadow: 0 8px 32px var(--card-shadow);
-  }
-  .product-card .img-placeholder {
-    min-height: 240px;
-    border: none;
-    border-bottom: 1px solid var(--border);
-  }
-  .product-card-body {
-    padding: clamp(1.25rem, 2.5vw, 1.75rem);
-  }
-  .product-card h3 {
-    font-size: 1.3rem;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-  }
-  .product-card p {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-  }
-
-  /* ── AUDIENCE ── */
-  .audience-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(1.5rem, 3vw, 2.5rem);
-  }
-  .audience-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    padding: clamp(1.5rem, 3vw, 2.5rem);
-    display: grid;
-    gap: 1.5rem;
-  }
-  .audience-card h3 {
-    font-size: 1.35rem;
-    font-weight: 500;
-  }
-  .audience-card p {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    line-height: 1.65;
-  }
-  .audience-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  .audience-tag {
-    font-size: 0.78rem;
-    font-weight: 500;
-    padding: 0.35rem 0.85rem;
-    border: 1px solid var(--border);
-    color: var(--text-muted);
-    white-space: nowrap;
-  }
-  .audience-card .img-placeholder {
-    min-height: 200px;
-    border: 2px dashed var(--border);
-  }
-
-  /* ── PROCESS ── */
-  .process-steps {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: clamp(1.25rem, 2.5vw, 2rem);
-  }
-  .process-step {
-    padding-top: 1.5rem;
-    border-top: 2px solid var(--border);
-  }
-  .process-step.is-active { border-top-color: var(--accent); }
-  .step-num {
-    font-family: 'Fraunces', serif;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--accent-dark);
-    margin-bottom: 0.75rem;
-  }
-  .process-step h4 {
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-  }
-  .process-step p {
-    font-size: 0.875rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-  }
-
-  /* ── REFERENCES ── */
-  .bg-alt { background: var(--bg-alt); }
-
-  .ref-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: clamp(2rem, 4vw, 3.5rem);
-    align-items: center;
-  }
-  .ref-quote {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(1.2rem, 2.2vw, 1.6rem);
-    font-weight: 300;
-    font-style: italic;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
-    color: var(--text);
-  }
-  .ref-attr {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-  }
-  .ref-attr strong {
-    color: var(--text);
-    font-weight: 600;
-  }
-
-  /* ── CTA SECTION ── */
-  .cta-section {
-    background: var(--bg-dark);
-    color: var(--raw-linen);
-    padding: clamp(4rem, 8vw, 6rem) 0;
-    position: relative;
-    overflow: hidden;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) .cta-section {
-      color: #E8E2D9;
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
     }
   }
-  :root[data-theme="dark"] .cta-section {
-    color: #E8E2D9;
+
+  /* ============ SCROLL REVEAL ============ */
+  .sr { opacity:0; transition: opacity var(--t-long) ease-out, transform var(--t-long) ease-out; will-change: opacity, transform; }
+  .sr-fade-up { transform: translateY(36px); }
+  .sr-fade-in { transform: none; }
+  .sr-visible { opacity:1; transform:none; }
+
+  /* ============ BUTTONS ============ */
+  .btn {
+    display:inline-flex; align-items:center; justify-content:center; gap:var(--sp-3xs);
+    padding: var(--sp-2xs) var(--sp-s);
+    border-radius: var(--r-s);
+    font-family: var(--font-semibold);
+    font-size: var(--fs-text-s);
+    line-height:140%;
+    transition: transform var(--t-default), box-shadow var(--t-default), background var(--t-default);
+    white-space: nowrap;
   }
-  .cta-section h2 {
-    color: inherit;
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 300;
-    margin-bottom: 1rem;
-  }
-  .cta-section h2 em { font-weight: 500; }
-  .cta-section p {
-    color: inherit;
-    opacity: 0.7;
-    font-size: 1.05rem;
-    max-width: 520px;
-    margin-bottom: 2rem;
-    line-height: 1.7;
-  }
-  .cta-section .btn-primary {
-    background: var(--honey-walnut);
-    color: var(--char-oak);
-  }
-  .cta-curve {
-    position: absolute;
-    right: -5%;
-    top: -30%;
-    width: 50%;
-    height: 160%;
-    opacity: 0.06;
-  }
-  .cta-curve path {
-    fill: none;
-    stroke: var(--honey-walnut);
-    stroke-width: 2;
+  .btn-primary { background: var(--c-secondary); color: var(--c-primary); }
+  .btn-primary:hover { transform: scale(1.03); box-shadow: var(--shadow); background: var(--c-secondary-dark); }
+  .btn-outline { background: transparent; color: var(--c-white); border:1px solid rgba(255,255,255,.4); }
+  .btn-outline.on-light { color: var(--c-primary); border-color: var(--c-tertiary); }
+  .btn-outline:hover { transform: scale(1.03); border-color: var(--c-secondary-dark); }
+  .btn-group { display:flex; gap: var(--sp-2xs); flex-wrap:wrap; }
+
+  /* ============ NAV ============ */
+  .nav { position: sticky; top:0; z-index:100; background: var(--c-white); border-bottom:1px solid var(--c-tertiary-light); height: var(--menu-h); display:flex; align-items:center; }
+  .nav .wrap { display:flex; align-items:center; justify-content:space-between; gap: var(--sp-s); padding: 0 var(--sp-m); max-width:1920px; margin:0 auto; width:100%; }
+  .nav-links { flex-wrap: nowrap; }
+  .nav-links a { white-space: nowrap; }
+  .nav-phone { white-space: nowrap; flex-shrink:0; }
+  .nav-right { flex-shrink:0; }
+  .nav-brand { display:flex; align-items:baseline; gap: var(--sp-3xs); }
+  .nav-logo { font-family: var(--font-semibold-italic); font-size: 1.4rem; color: var(--c-primary); }
+  .nav-logo .dot { color: var(--c-secondary-dark); }
+  .nav-links { display:flex; align-items:center; gap: var(--sp-s); font-family: var(--font-regular); font-size: var(--fs-text-s); }
+  .nav-links a { transition: color var(--t-default); }
+  .nav-links a:hover { color: var(--c-secondary-dark); }
+  .nav-pill { background: var(--c-secondary); color: var(--c-primary); padding: var(--sp-4xs) var(--sp-xs); border-radius: var(--r-xl); font-family: var(--font-semibold); }
+  .nav-right { display:flex; align-items:center; gap: var(--sp-xs); }
+  .nav-phone { display:flex; align-items:center; gap:var(--sp-4xs); font-size: var(--fs-text-s); color: var(--c-primary-light); }
+  .nav-burger { display:none; flex-direction:column; gap:5px; padding:8px; }
+  .nav-burger span { width:22px; height:2px; background: var(--c-primary); border-radius:2px; }
+  .nav-links-cta { display:none; }
+  @media (max-width: 1023px) {
+    .nav-links { position:fixed; inset: var(--menu-h) 0 0 0; background: var(--c-white); flex-direction:column; align-items:flex-start; justify-content:flex-start; padding: var(--sp-m) var(--margin-section); gap: var(--sp-xs); transform: translateX(100%); transition: transform var(--t-default) ease; }
+    .nav-links.is-open { transform: translateX(0); }
+    .nav-phone { display:none; }
+    .nav-cta-desktop { display:none; }
+    .nav-links-cta { display:inline-flex; margin-top: var(--sp-s); }
+    .nav-burger { display:flex; }
   }
 
-  /* ── FOOTER ── */
-  .footer {
-    padding: 2rem 0;
-    border-top: 1px solid var(--border);
-    font-size: 0.82rem;
-    color: var(--text-muted);
-  }
-  .footer .wrap {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
+  /* ============ HERO ============ */
+  .hero { position:relative; background: var(--c-primary); overflow:hidden; }
+  .hero-inner { position:relative; z-index:2; width:100%; max-width:1920px; margin:0 auto; padding: var(--sp-l) var(--sp-m); display:grid; grid-template-columns: minmax(0,620px) 1fr; align-items:center; gap: var(--sp-m); }
+  .hero-text { max-width: 620px; }
+  .hero-eyebrow { font-family: var(--font-regular); font-size: var(--fs-text-s); letter-spacing:.1em; text-transform:uppercase; color: var(--c-secondary); margin-bottom: var(--sp-2xs); }
+  .hero h1 { font-size: clamp(2.75rem, 4.2vw, var(--fs-heading-m)); letter-spacing:-.01em; color: var(--c-white); margin-bottom: var(--sp-s); }
+  .hero-sub { font-family: var(--font-book); font-size: var(--fs-text-m); color: rgba(255,255,255,.72); max-width: 520px; margin-bottom: var(--sp-s); }
+  .hero-tags { display:flex; flex-wrap:wrap; gap: var(--sp-3xs); margin-bottom: var(--sp-s); }
+  .tag { font-family: var(--font-regular); font-size: var(--fs-text-xs); padding: var(--sp-4xs) var(--sp-2xs); border-radius: var(--r-xl); background: rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.22); color: rgba(255,255,255,.85); }
+  .hero-visual { aspect-ratio: 1068 / 705; align-self:center; }
+  .hero-visual img { width:100%; height:100%; object-fit:cover; border-radius: var(--r-l); }
+  @media (max-width: 1023px) {
+    .hero-inner { display:flex; flex-direction:column; padding: var(--sp-m) var(--margin-section); }
+    .hero-visual { order:-1; margin-bottom: var(--sp-m); }
   }
 
-  /* ── RESPONSIVE ── */
-  @media (max-width: 900px) {
-    .hero .wrap { grid-template-columns: 1fr; }
-    .hero-visual { order: -1; }
+  /* ============ BENEFIT STRIP ============ */
+  .benefit-strip { background: var(--c-tertiary-lighter); border-bottom:1px solid var(--c-tertiary-light); padding: var(--sp-m) 0; }
+  .benefit-list { display:flex; flex-wrap:wrap; justify-content:space-between; gap: var(--sp-s); }
+  .benefit-item { display:flex; align-items:center; gap: var(--sp-xs); flex:1; min-width:200px; padding: var(--sp-2xs); border-radius: var(--r-m); transition: background var(--t-default); cursor:default; }
+  .benefit-item:hover { background: var(--c-white); box-shadow: var(--shadow); }
+  .benefit-icon { flex-shrink:0; width:48px; height:48px; border-radius:50%; background: var(--c-secondary); display:flex; align-items:center; justify-content:center; transition: transform var(--t-default) cubic-bezier(.34,1.56,.64,1), background var(--t-default); }
+  .benefit-item:hover .benefit-icon { transform: scale(1.12) rotate(-6deg); background: var(--c-secondary-dark); }
+  .benefit-icon svg { width:22px; height:22px; color: var(--c-primary); transition: color var(--t-default); }
+  .benefit-item:hover .benefit-icon svg { color: var(--c-white); }
+  .benefit-item span { font-family: var(--font-regular); font-size: var(--fs-text-s); color: var(--c-primary); line-height:130%; }
+  @media (max-width: 900px) { .benefit-list { justify-content:flex-start; } .benefit-item { min-width: 45%; } }
+  @media (max-width: 560px) { .benefit-item { min-width: 100%; } }
+
+  /* ============ SECTION SHELL ============ */
+  .section { padding: var(--sp-l) 0; }
+  .section.bg-alt { background: var(--c-tertiary-lighter); }
+  .section-header { max-width: 640px; margin-bottom: var(--sp-m); }
+  .eyebrow { font-family: var(--font-regular); font-size: var(--fs-text-s); letter-spacing:.1em; text-transform:uppercase; color: var(--c-secondary-dark); margin-bottom: var(--sp-2xs); }
+  .section h2 { font-size: var(--fs-heading-xs); color: var(--c-primary); margin-bottom: var(--sp-2xs); }
+  .section-desc { font-family: var(--font-book); font-size: var(--fs-text-m); color: var(--c-primary-light); }
+
+  /* ============ SHOWCASE TABS ============ */
+  .tabs-bar { display:flex; gap: var(--sp-xs); margin-bottom: var(--sp-m); flex-wrap:wrap; }
+  .tab-btn { font-family: var(--font-regular); font-size: var(--fs-text-s); padding: var(--sp-2xs) var(--sp-s); border-radius: var(--r-xl); border:1px solid var(--c-tertiary-light); color: var(--c-primary-light); transition: all var(--t-default); }
+  .tab-btn:hover { border-color: var(--c-secondary-dark); color: var(--c-primary); }
+  .tab-btn[aria-selected="true"] { background: var(--c-primary); border-color: var(--c-primary); color: var(--c-white); }
+  .tab-panel { display:none; }
+  .tab-panel.is-active { display:block; animation: fadeIn var(--t-default) ease; }
+  @keyframes fadeIn { from{ opacity:0; } to{ opacity:1; } }
+  .showcase-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-xs); }
+  .showcase-card { border-radius: var(--r-m); overflow:hidden; background: var(--c-tertiary-lighter); position:relative; transition: transform var(--t-default), box-shadow var(--t-default); }
+  .showcase-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(56,59,74,.14); }
+  .showcase-card img { width:100%; aspect-ratio: 4/3; object-fit:cover; }
+  .showcase-cap { padding: var(--sp-2xs) var(--sp-xs); font-family: var(--font-regular); font-size: var(--fs-text-xs); color: var(--c-primary-light); }
+  .showcase-cap strong { font-family: var(--font-semibold); color: var(--c-primary); display:block; font-size: var(--fs-text-s); margin-bottom:2px; }
+
+  /* ============ PRODUCTS ============ */
+  .products-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-s); }
+  .product-card { border-radius: var(--r-l); background: var(--c-white); border:1px solid var(--c-tertiary-light); transition: transform var(--t-default), box-shadow var(--t-default); display:flex; flex-direction:column; }
+  .product-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(56,59,74,.12); }
+  .product-media { position:relative; background: var(--c-secondary-lighter); }
+  .product-media img { width:100%; aspect-ratio: 5/4; object-fit:cover; border-radius: var(--r-l) var(--r-l) 0 0; }
+  .product-icon { position:absolute; left: var(--sp-xs); bottom: calc(-1 * var(--sp-s)); width: 55px; height: 55px; border-radius: 50%; background: var(--c-secondary); border: 4px solid var(--c-white); display:flex; align-items:center; justify-content:center; box-shadow: 0 4px 12px rgba(56,59,74,.16); }
+  .product-icon svg { width:24px; height:24px; color: var(--c-primary); }
+  .product-body { padding: var(--sp-m) var(--sp-s) var(--sp-s); flex:1; display:flex; flex-direction:column; border-radius: 0 0 var(--r-l) var(--r-l); }
+  .product-body h3 { font-size: var(--fs-subheading-s); margin-bottom: var(--sp-3xs); color: var(--c-primary); }
+  .product-body p { font-family: var(--font-book); font-size: var(--fs-text-s); color: var(--c-primary-light); flex:1; }
+
+  /* ============ AUDIENCE ============ */
+  .audience-grid { display:grid; grid-template-columns: 1fr 1fr; gap: var(--sp-s); }
+  .audience-card { border-radius: var(--r-l); overflow:hidden; background: var(--c-white); border:1px solid var(--c-tertiary-light); display:flex; flex-direction:column; transition: transform var(--t-default), box-shadow var(--t-default); }
+  .audience-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(56,59,74,.12); }
+  .audience-card img { width:100%; aspect-ratio: 16/9; object-fit:cover; }
+  .audience-body { padding: var(--sp-s); flex:1; display:flex; flex-direction:column; }
+  .audience-body h3 { font-size: var(--fs-subheading-s); margin-bottom: var(--sp-3xs); }
+  .audience-body p { font-family: var(--font-book); font-size: var(--fs-text-s); color: var(--c-primary-light); margin-bottom: var(--sp-s); }
+  .audience-tags { display:flex; flex-wrap:wrap; gap: var(--sp-3xs); margin-top:auto; }
+  .tag-mint { background: var(--c-secondary-lighter); border-color: var(--c-secondary-light); color: var(--c-secondary-dark); font-family: var(--font-semibold); }
+
+  /* ============ SOCIAL PROOF (ORBIT) ============ */
+  .brand-orbit-wrap { position:relative; width: 680px; height: 680px; max-width:100%; margin: 0 auto; }
+  .brand-orbit-wrap::before { content:""; position:absolute; inset: 40px; border-radius:50%; border:1px dashed var(--c-tertiary-light); }
+  .brand-orbit { position:absolute; inset:0; animation: orbit-spin 48s linear infinite; }
+  .brand-orbit-wrap:hover .brand-orbit,
+  .brand-orbit-wrap:hover .brand-orbit-item-inner { animation-play-state: paused; }
+  .brand-orbit-item { position:absolute; top:50%; left:50%; width:0; height:0; transform: rotate(var(--angle)) translateX(var(--radius, 300px)) rotate(calc(-1 * var(--angle))); }
+  .brand-orbit-item-inner { animation: orbit-counter-spin 48s linear infinite reverse; }
+  .brand-avatar { position:relative; display:flex; flex-direction:column; align-items:center; }
+  .brand-circle { width:92px; height:92px; border-radius:50%; overflow:hidden; display:flex; align-items:center; justify-content:center; border:1px solid var(--c-tertiary-light); background: var(--c-white); box-shadow: var(--shadow); transition: transform var(--t-default); }
+  .brand-avatar:hover .brand-circle { transform: scale(1.12); }
+  .brand-circle img { width:100%; height:100%; object-fit:cover; }
+  .brand-circle.is-mono { background: var(--c-secondary-lighter); }
+  .brand-circle.is-mono span { font-family: var(--font-bold); font-size: var(--fs-subheading-xs); color: var(--c-secondary-dark); }
+  .brand-badge { position:absolute; top:-8px; right:-10px; background: var(--c-primary); color:#fff; font-family: var(--font-semibold); font-size:9px; letter-spacing:.01em; padding: 3px 7px; border-radius: var(--r-xl); white-space:nowrap; box-shadow: 0 2px 6px rgba(56,59,74,.25); }
+  @keyframes orbit-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  @keyframes orbit-counter-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  @media (max-width: 640px) {
+    .brand-orbit-wrap { width: 320px; height: 320px; }
+    .brand-orbit-item { --radius: 128px; }
+    .brand-circle { width:52px; height:52px; }
+    .brand-badge { font-size:8px; padding:2px 5px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .brand-orbit, .brand-orbit-item-inner { animation: none; } }
+
+  /* ============ TESTIMONIALS ============ */
+  .testi-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-xs); }
+  .testi-card { background: var(--c-white); border:1px solid var(--c-tertiary-light); border-radius: var(--r-m); padding: var(--sp-s); display:flex; flex-direction:column; gap: var(--sp-xs); transition: transform var(--t-default), box-shadow var(--t-default); }
+  .testi-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .testi-quote { font-family: var(--font-book-italic); font-style:italic; font-size: var(--fs-text-m); line-height:140%; color: var(--c-primary); flex:1; }
+  .testi-attr { font-family: var(--font-regular); font-size: var(--fs-text-xs); color: var(--c-primary-light); }
+  .testi-attr strong { font-family: var(--font-semibold); color: var(--c-primary); }
+
+  /* ============ TRUSTED SHOPS MARQUEE ============ */
+  .marquee-section { padding-bottom: var(--sp-l); overflow:hidden; }
+  .marquee-section .section-header { margin-bottom: var(--sp-m); }
+  .marquee-header-row { display:flex; align-items:center; gap: var(--sp-s); }
+  .trustedshops-link { flex-shrink:0; display:block; transition: opacity var(--t-default); }
+  .trustedshops-link:hover { opacity:.75; }
+  .trustedshops-logo { width:77px; height:32px; fill: var(--c-primary); }
+  .marquee-sub { font-family: var(--font-book); font-size: var(--fs-text-m); color: var(--c-primary-light); }
+  .marquee-viewport { overflow:hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
+  .marquee-track { display:flex; gap: var(--sp-s); width:max-content; animation: marquee-scroll 46s linear infinite; }
+  .marquee-viewport:hover .marquee-track { animation-play-state: paused; }
+  .marquee-card { flex-shrink:0; width:340px; background: var(--c-white); border:1px solid var(--c-tertiary-light); border-radius: var(--r-m); padding: var(--sp-s); display:flex; flex-direction:column; gap: var(--sp-xs); }
+  .marquee-card p { font-family: var(--font-book-italic); font-style:italic; font-size: var(--fs-text-s); line-height:140%; color: var(--c-primary); }
+  .marquee-attr { font-family: var(--font-regular); font-size: var(--fs-text-xs); color: var(--c-secondary-dark); }
+  @keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
+
+  /* ============ PROCESS ============ */
+  .process-steps { display:grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-s); }
+  .process-step { position:relative; background: var(--c-white); border:1px solid var(--c-tertiary-light); border-radius: var(--r-m); padding: var(--sp-s); display:flex; gap: var(--sp-xs); align-items:flex-start; transition: transform var(--t-default), box-shadow var(--t-default), border-color var(--t-default); }
+  .process-step:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(56,59,74,.1); border-color: var(--c-secondary-light); }
+  .process-icon { flex-shrink:0; width:48px; height:48px; border-radius:50%; background: var(--c-secondary); display:flex; align-items:center; justify-content:center; box-shadow: 0 4px 12px rgba(99,180,138,.3); }
+  .process-icon svg { width:21px; height:21px; color: var(--c-primary); }
+  .process-num { font-family: var(--font-bold); font-size: var(--fs-text-xs); color: var(--c-secondary-dark); margin-bottom: var(--sp-4xs); letter-spacing:.05em; }
+  .process-step h4 { font-size: var(--fs-subheading-xs); margin-bottom: var(--sp-3xs); }
+  .process-step p { font-family: var(--font-book); font-size: var(--fs-text-s); color: var(--c-primary-light); }
+
+  /* ============ CONTACT ============ */
+  .contact-grid { display:grid; grid-template-columns: repeat(5, 1fr); gap: var(--sp-2xs); }
+  .contact-card { background: var(--c-white); border:1px solid var(--c-tertiary-light); border-radius: var(--r-m); padding: var(--sp-s) var(--sp-xs); text-align:center; display:flex; flex-direction:column; align-items:center; gap: var(--sp-2xs); transition: background var(--t-default), transform var(--t-default); }
+  .contact-card:hover { background: var(--c-secondary-lighter); transform: translateY(-3px); }
+  .contact-card svg { width:26px; height:26px; color: var(--c-secondary-dark); }
+  .contact-card span { font-family: var(--font-semibold); font-size: var(--fs-text-s); color: var(--c-primary); }
+  .contact-hours { margin-top: var(--sp-m); font-family: var(--font-regular); font-size: var(--fs-text-s); color: var(--c-primary-light); text-align:center; }
+
+  /* ============ CTA BAND ============ */
+  .cta-band { background: var(--c-primary); color: var(--c-white); padding: var(--sp-l) 0; position:relative; overflow:hidden; }
+  .cta-band .wrap { display:grid; grid-template-columns: 1.2fr 1fr; gap: var(--sp-l); align-items:center; }
+  .cta-band h2 { color: var(--c-white); font-size: var(--fs-heading-xs); margin-bottom: var(--sp-2xs); }
+  .cta-band p { font-family: var(--font-book); font-size: var(--fs-text-m); color: rgba(255,255,255,.72); max-width: 460px; margin-bottom: var(--sp-s); }
+  .cta-visual { border-radius: var(--r-l); overflow:hidden; }
+  .cta-visual img { width:100%; aspect-ratio: 4/3; object-fit:cover; }
+
+  /* ============ FOOTER ============ */
+  .footer { background: var(--c-tertiary-lighter); color: var(--c-primary); padding: var(--sp-m) 0 0; }
+  .footer-top { display:grid; grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr; gap: var(--sp-s); padding-bottom: var(--sp-m); }
+  .footer-brand .nav-logo { color: var(--c-primary); }
+  .footer-brand p { font-family: var(--font-book-italic); font-style:italic; font-size: var(--fs-text-s); color: var(--c-primary-light); margin-top: var(--sp-3xs); }
+  .footer-social { display:flex; gap: var(--sp-2xs); margin-top: var(--sp-s); }
+  .footer-social a { width:34px; height:34px; border-radius:50%; background: var(--c-primary); color:#fff; display:flex; align-items:center; justify-content:center; transition: background var(--t-default); }
+  .footer-social a:hover { background: var(--c-secondary-dark); }
+  .footer-social svg { width:16px; height:16px; }
+  .footer-col h5 { font-family: var(--font-regular); font-size: var(--fs-text-s); letter-spacing:.03em; color: var(--c-primary); margin-bottom: var(--sp-xs); }
+  .footer-col a { display:block; font-family: var(--font-regular); font-size: var(--fs-text-s); color: var(--c-primary-light); padding: var(--sp-4xs) 0; transition: color var(--t-default); }
+  .footer-col a:hover { color: var(--c-secondary-dark); }
+  .footer-newsletter-title { font-family: var(--font-semibold); font-size: var(--fs-text-s); color: var(--c-primary); margin-top: var(--sp-s); margin-bottom: var(--sp-2xs); }
+  .newsletter { display:flex; gap: var(--sp-3xs); margin-top: var(--sp-2xs); max-width: 320px; }
+  .newsletter input { flex:1; padding: var(--sp-2xs); border-radius: var(--r-s); border:1px solid var(--c-tertiary-light); background: var(--c-white); color: var(--c-primary); font-family: var(--font-regular); font-size: var(--fs-text-xs); }
+  .newsletter input::placeholder { color: var(--c-tertiary); }
+  .footer-addr { font-family: var(--font-regular); font-size: var(--fs-text-s); color: var(--c-primary-light); line-height:160%; }
+  .footer-contact-block { font-family: var(--font-regular); font-size: var(--fs-text-s); color: var(--c-primary-light); line-height:160%; }
+  .footer-contact-block strong { display:block; font-family: var(--font-semibold); color: var(--c-primary); margin-bottom: var(--sp-4xs); }
+
+  .footer-bar { border-top:1px solid var(--c-tertiary-light); background: var(--c-white); padding: var(--sp-s) 0; }
+  .footer-bar .wrap { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap: var(--sp-s); }
+  .footer-rating { display:flex; align-items:center; gap: var(--sp-2xs); }
+  .footer-rating .trustedshops-logo { width:34px; height:14px; }
+  .footer-rating-num { font-family: var(--font-bold); font-size: var(--fs-text-m); color: var(--c-primary); }
+  .footer-rating-stars { color: #F5B301; letter-spacing:1px; font-size: 14px; }
+  .footer-payments { display:flex; align-items:center; gap: var(--sp-2xs); flex-wrap:wrap; }
+  .payment-chip { display:flex; align-items:center; justify-content:center; height:42px; padding:0 var(--sp-s); border-radius: var(--r-s); border:1px solid var(--c-tertiary-light); background: var(--c-white); white-space:nowrap; }
+  .payment-chip.text-chip { font-family: var(--font-bold); font-size:13px; letter-spacing:.02em; color: var(--c-primary-light); }
+  .payment-chip svg { height:24px; width:auto; }
+  .payment-chip.klarna-chip { background: #FFB3C7; border-color: #FFB3C7; }
+  .payment-chip.klarna-chip span { font-family: var(--font-bold); font-size:16px; color: #17120F; }
+  .mastercard-mark { position:relative; width:36px; height:22px; }
+  .mastercard-mark span { position:absolute; top:0; width:22px; height:22px; border-radius:50%; }
+  .mastercard-mark .c-left { left:0; background:#EB001B; }
+  .mastercard-mark .c-right { left:14px; background:#F79E1B; mix-blend-mode:multiply; }
+  .footer-copy { padding: var(--sp-xs) 0; text-align:center; font-family: var(--font-regular); font-size: var(--fs-text-xs); color: var(--c-tertiary); }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 1023px) {
     .products-grid { grid-template-columns: 1fr 1fr; }
-    .process-steps { grid-template-columns: 1fr 1fr; }
-    .stats .wrap { grid-template-columns: 1fr 1fr; }
-    .ref-grid { grid-template-columns: 1fr; }
+    .showcase-grid { grid-template-columns: 1fr 1fr; }
+    .testi-grid { grid-template-columns: 1fr 1fr; }
     .audience-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: repeat(3, 1fr); }
+    .cta-band .wrap { grid-template-columns: 1fr; }
+    .cta-visual { order:-1; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
   }
-  @media (max-width: 560px) {
-    .products-grid { grid-template-columns: 1fr; }
+  @media (max-width: 640px) {
+    .products-grid, .showcase-grid, .testi-grid, .contact-grid { grid-template-columns: 1fr 1fr; }
     .process-steps { grid-template-columns: 1fr; }
-    .stats .wrap { grid-template-columns: 1fr 1fr; }
+    .process-step { padding: var(--sp-xs); gap: var(--sp-2xs); }
+    .process-icon { width:44px; height:44px; }
+    .process-icon svg { width:19px; height:19px; }
+    .process-num { font-size: 11px; }
+    .process-step h4 { font-size: var(--fs-subheading-xs); }
+    .process-step p { font-size: var(--fs-text-xs); }
+    .footer-top { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 420px) {
+    .contact-grid { grid-template-columns: 1fr 1fr; }
   }
 
-  /* ── DRAFT NOTICE ── */
-  .draft-notice {
-    background: var(--accent);
-    color: var(--char-oak);
-    text-align: center;
-    padding: 0.6rem 1rem;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-  }
-
-  /* ── USP BAR ── */
-  .usp-bar {
-    padding: clamp(3rem, 6vw, 5rem) 0;
-  }
-  .usp-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
-  .usp-item {
-    padding-left: 1.25rem;
-    border-left: 2px solid var(--accent);
-  }
-  .usp-item h4 {
-    font-size: 1rem;
-    font-weight: 500;
-    margin-bottom: 0.35rem;
-  }
-  .usp-item p {
-    font-size: 0.875rem;
-    color: var(--text-muted);
-    line-height: 1.55;
-  }
-  @media (max-width: 700px) {
-    .usp-list { grid-template-columns: 1fr; }
+  /* ============ CONTACT MODAL ============ */
+  .modal-backdrop { position:fixed; inset:0; background: rgba(56,59,74,.6); z-index:200; display:flex; align-items:flex-start; justify-content:center; padding: var(--sp-m) var(--sp-xs); overflow-y:auto; opacity:0; visibility:hidden; transition: opacity var(--t-default); }
+  .modal-backdrop.is-open { opacity:1; visibility:visible; }
+  .modal-panel { background: var(--c-white); border-radius: var(--r-l); max-width:680px; width:100%; margin-top: var(--sp-l); box-shadow: 0 24px 64px rgba(56,59,74,.3); transform: translateY(20px); transition: transform var(--t-default); }
+  .modal-backdrop.is-open .modal-panel { transform: translateY(0); }
+  .modal-header { display:flex; align-items:flex-start; justify-content:space-between; gap: var(--sp-s); padding: var(--sp-s) var(--sp-s) 0; }
+  .modal-header h3 { font-size: var(--fs-subheading-m); color: var(--c-primary); }
+  .modal-close { flex-shrink:0; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; color: var(--c-primary-light); transition: background var(--t-default); }
+  .modal-close:hover { background: var(--c-tertiary-lighter); }
+  .modal-close svg { width:18px; height:18px; }
+  .modal-body { padding: var(--sp-2xs) var(--sp-s) var(--sp-s); }
+  .modal-intro { font-family: var(--font-book); font-size: var(--fs-text-s); color: var(--c-primary-light); line-height:150%; margin-bottom: var(--sp-s); }
+  .form-row { display:grid; grid-template-columns: 1fr 1fr; gap: var(--sp-xs); margin-bottom: var(--sp-xs); }
+  .form-field { display:flex; flex-direction:column; gap: var(--sp-4xs); }
+  .form-field label { font-family: var(--font-semibold); font-size: var(--fs-text-s); color: var(--c-primary); }
+  .form-field label .req { color: var(--c-secondary-dark); }
+  .form-field input, .form-field textarea { font-family: var(--font-regular); font-size: var(--fs-text-s); color: var(--c-primary); padding: var(--sp-2xs); border-radius: var(--r-s); border:1px solid var(--c-tertiary-light); background: var(--c-white); transition: border-color var(--t-default); }
+  .form-field input:focus, .form-field textarea:focus { outline:none; border-color: var(--c-secondary-dark); }
+  .form-field textarea { resize:vertical; min-height:100px; }
+  .form-field.full { grid-column: 1 / -1; }
+  .form-accordion { border-radius: var(--r-s); background: var(--c-tertiary-lighter); margin-bottom: var(--sp-s); overflow:hidden; }
+  .form-accordion summary { list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; padding: var(--sp-2xs) var(--sp-xs); font-family: var(--font-semibold); font-size: var(--fs-text-s); color: var(--c-primary); }
+  .form-accordion summary::-webkit-details-marker { display:none; }
+  .form-accordion summary svg { width:18px; height:18px; transition: transform var(--t-default); flex-shrink:0; }
+  .form-accordion[open] summary svg { transform: rotate(180deg); }
+  .form-accordion-body { padding: 0 var(--sp-xs) var(--sp-xs); font-family: var(--font-book); font-size: var(--fs-text-xs); color: var(--c-primary-light); line-height:160%; }
+  .form-accordion-body ul { padding-left: var(--sp-xs); }
+  .form-dropzone { border: 2px dashed var(--c-tertiary-light); border-radius: var(--r-s); padding: var(--sp-s); text-align:center; cursor:pointer; transition: border-color var(--t-default), background var(--t-default); margin-bottom: var(--sp-xs); }
+  .form-dropzone:hover, .form-dropzone.is-drag { border-color: var(--c-secondary-dark); background: var(--c-secondary-lighter); }
+  .form-dropzone p { font-family: var(--font-regular); font-size: var(--fs-text-s); color: var(--c-primary); }
+  .form-dropzone span { font-family: var(--font-regular); font-size: var(--fs-text-xs); color: var(--c-tertiary); display:block; margin-top: var(--sp-4xs); }
+  .form-dropzone .file-name { font-family: var(--font-semibold); color: var(--c-secondary-dark); }
+  .form-required-note { font-family: var(--font-regular); font-size: var(--fs-text-xs); color: var(--c-tertiary); margin-bottom: var(--sp-s); }
+  .form-footer { display:flex; justify-content:flex-end; }
+  .modal-success { display:none; text-align:center; padding: var(--sp-l) var(--sp-s); }
+  .modal-success.is-visible { display:block; }
+  .modal-success svg { width:52px; height:52px; color: var(--c-secondary-dark); margin: 0 auto var(--sp-xs); }
+  .modal-success h4 { font-size: var(--fs-subheading-s); color: var(--c-primary); margin-bottom: var(--sp-2xs); }
+  .modal-success p { font-family: var(--font-book); font-size: var(--fs-text-s); color: var(--c-primary-light); }
+  .modal-form.is-hidden { display:none; }
+  @media (max-width: 640px) {
+    .form-row { grid-template-columns: 1fr; }
+    .modal-panel { margin-top: var(--sp-s); }
   }
 </style>
-
-<div class="draft-notice">ENTWURF v1 — Bilder und finale Inhalte ausstehend</div>
+</head>
+<body>
 
 <!-- NAV -->
 <nav class="nav">
   <div class="wrap">
-    <div class="nav-logo">form<span>.</span>bar</div>
-    <a href="#kontakt" class="nav-cta">Beratung anfragen</a>
+    <div class="nav-brand">
+      <span class="nav-logo">form<span class="dot">.</span>bar</span>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#produkte" class="nav-pill">Selbst formen</a>
+      <a href="#referenzen">Referenzen</a>
+      <a href="#zielgruppen">Für wen</a>
+      <a href="#kontakt">Kontakt</a>
+      <a href="#kontakt" class="btn btn-primary js-open-contact nav-links-cta">Beratung anfragen</a>
+    </div>
+    <div class="nav-right">
+      <a href="tel:+4968141097642" class="nav-phone">+49 681 410 976 42</a>
+      <a href="#kontakt" class="btn btn-primary js-open-contact nav-cta-desktop">Beratung anfragen</a>
+      <button class="nav-burger" id="navBurger" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <svg class="hero-curve" viewBox="0 0 400 800" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M 50,0 C 150,200 -50,350 200,500 C 350,600 100,700 250,800" />
-    <path d="M 100,0 C 200,180 0,320 250,480 C 380,580 130,680 280,800" />
-    <path d="M 0,50 C 180,220 -30,380 220,520 C 370,620 80,720 230,820" />
-  </svg>
-  <div class="wrap">
+<header class="hero">
+  <div class="hero-inner">
     <div class="hero-text">
-      <p class="hero-eyebrow">Möbel für Unternehmen</p>
-      <h1>Räume, die Ihre <em>Marke</em> sichtbar machen</h1>
-      <p class="hero-sub">Individuelle Möbel nach Maß für Empfangsbereiche, Showrooms und Geschäftsräume — entworfen in Ihrem Stil, gefertigt vom regionalen Schreiner.</p>
-      <div class="btn-group">
-        <a href="#kontakt" class="btn-primary">Projekt besprechen</a>
-        <a href="#produkte" class="btn-secondary">Leistungen ansehen</a>
+      <p class="hero-eyebrow sr sr-fade-up">Möbel-Service für Unternehmen</p>
+      <h1 class="sr sr-fade-up" style="transition-delay:.1s">Räume, die deine Marke formen.</h1>
+      <p class="hero-sub sr sr-fade-up" style="transition-delay:.2s">Individuelle Empfangstheken, Designregale und Sonderkonstruktionen, entworfen in deinem Stil und gefertigt von einer der 80+ Partner-Schreinereien in deiner Nähe.</p>
+      <div class="hero-tags sr sr-fade-up" style="transition-delay:.3s">
+        <span class="tag">Design &amp; Architektur</span>
+        <span class="tag">Einzelhandel &amp; Showrooms</span>
+        <span class="tag">Messebau</span>
+        <span class="tag">Praxen</span>
+        <span class="tag">Immobilien &amp; Ferienhäuser</span>
+        <span class="tag">Büroausstattung</span>
+        <span class="tag">Hotel &amp; Gastronomie</span>
+      </div>
+      <div class="btn-group sr sr-fade-up" style="transition-delay:.4s">
+        <a href="#kontakt" class="btn btn-primary js-open-contact">Beratung anfragen</a>
+        <a href="#referenzen" class="btn btn-outline">Projekte ansehen</a>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="img-placeholder" style="min-height: 380px;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m3 16 5-5 4 4 4-6 5 7"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
-        <span>Hero-Bild: Empfangstheke oder repräsentativer Geschäftsraum mit form.bar Möbel</span>
+    <div class="hero-visual sr sr-fade-in">
+      <img src="assets/img/hero-theke-freiform.jpg" alt="Kinder und Erwachsene an einer baumförmigen form.bar Regal-Installation" loading="eager">
+    </div>
+  </div>
+</header>
+
+<!-- BENEFIT STRIP -->
+<section class="benefit-strip">
+  <div class="wrap">
+    <div class="benefit-list">
+      <div class="benefit-item sr sr-fade-up">
+        <span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m15 9-6 6"/><path d="M9 9h.01"/><path d="M15 15h.01"/></svg></span>
+        <span>Sonderpreise</span>
+      </div>
+      <div class="benefit-item sr sr-fade-up" style="transition-delay:.08s">
+        <span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
+        <span>Nachhaltige Produktion<br>von deutschen Schreinern</span>
+      </div>
+      <div class="benefit-item sr sr-fade-up" style="transition-delay:.16s">
+        <span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 17a4 4 0 0 1-8 0V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2Z"/><path d="M16.7 13H19a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H7"/><path d="M 7 17h.01"/><path d="m11 8 2.3-2.3a2.4 2.4 0 0 1 3.404.004L18.6 7.6a2.4 2.4 0 0 1 .026 3.434L9.9 19.8"/></svg></span>
+        <span>Kostenlose Muster</span>
+      </div>
+      <div class="benefit-item sr sr-fade-up" style="transition-delay:.24s">
+        <span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></span>
+        <span>Schnelle Lieferzeiten<br>auf Anfrage</span>
+      </div>
+      <div class="benefit-item sr sr-fade-up" style="transition-delay:.32s">
+        <span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg></span>
+        <span>Persönlicher<br>Design-Service</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
-<section class="stats">
+<!-- PROJEKT SHOWCASE -->
+<section class="section" id="referenzen">
   <div class="wrap">
-    <div class="stat">
-      <div class="stat-number">64.000+</div>
-      <div class="stat-label">zufriedene Kunden</div>
+    <div class="section-header sr sr-fade-up">
+      <p class="eyebrow">Referenzen</p>
+      <h2>Projekte, die für sich sprechen.</h2>
+      <p class="section-desc">Echte Umsetzungen bei echten Geschäftskunden, vom Ladengeschäft bis zum Büro. </p>
     </div>
-    <div class="stat">
-      <div class="stat-number">500+</div>
-      <div class="stat-label">Partner-Schreinereien</div>
-    </div>
-    <div class="stat">
-      <div class="stat-number">100%</div>
-      <div class="stat-label">individuell gefertigt</div>
-    </div>
-    <div class="stat">
-      <div class="stat-number">Made in</div>
-      <div class="stat-label">Deutschland &amp; Österreich</div>
-    </div>
-  </div>
-</section>
 
-<!-- USP BAR -->
-<section class="usp-bar">
-  <div class="wrap">
-    <div class="usp-list">
-      <div class="usp-item">
-        <h4>Einzigartiges Design</h4>
-        <p>Organische Formen, die kein anderer Anbieter so realisiert. Ihr Möbelstück wird zum Gesprächsstarter.</p>
+    <div class="tabs-bar sr sr-fade-up" role="tablist">
+      <button class="tab-btn" role="tab" aria-selected="true" data-tab="laden">Ladengeschäfte</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="messen">Messen</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="gastro">Gastronomie</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="buero">Büros</button>
+    </div>
+
+    <div class="tab-panel is-active" data-panel="laden">
+      <div class="showcase-grid">
+        <div class="showcase-card sr sr-fade-up"><img src="assets/img/showcase-laden-1.jpg" alt="Villeroy & Boch Einzelhandelspräsentation mit form.bar Möbeln" loading="lazy"><div class="showcase-cap"><strong>Villeroy &amp; Boch</strong>Einzelhandelspräsentation</div></div>
+        <div class="showcase-card sr sr-fade-up" style="transition-delay:.1s"><img src="assets/img/showcase-laden-2.jpg" alt="Verkaufsregal in einer Boutique auf Sylt" loading="lazy"><div class="showcase-cap"><strong>Boutique, Sylt</strong>Freistehendes Verkaufsregal</div></div>
+        <div class="showcase-card sr sr-fade-up" style="transition-delay:.2s"><img src="assets/img/showcase-laden-3.jpg" alt="Verkaufstheke in einem Smoothie-Store" loading="lazy"><div class="showcase-cap"><strong>Smoothie-Store</strong>Verkaufstheke &amp; Regal</div></div>
+        <div class="showcase-card sr sr-fade-up"><img src="assets/img/showcase-laden-4.jpg" alt="Weiteres Verkaufsregal in einer Boutique auf Sylt" loading="lazy"><div class="showcase-cap"><strong>Boutique, Sylt</strong>Verkaufsregal, Detailansicht</div></div>
+        <div class="showcase-card sr sr-fade-up" style="transition-delay:.1s"><img src="assets/img/showcase-laden-5.jpg" alt="Regal in einer Buchhandlung" loading="lazy"><div class="showcase-cap"><strong>Buchhandlung</strong>Verkaufsregal</div></div>
+        <div class="showcase-card sr sr-fade-up" style="transition-delay:.2s"><img src="assets/img/showcase-laden-6.jpg" alt="Einzelhandelsregal für Warenpräsentation" loading="lazy"><div class="showcase-cap"><strong>Einzelhandel</strong>Verkaufsregal</div></div>
       </div>
-      <div class="usp-item">
-        <h4>Regionale Fertigung</h4>
-        <p>Ihr lokaler Schreiner produziert in Handarbeit — kurze Wege, persönlicher Ansprechpartner, nachhaltig.</p>
+    </div>
+
+    <div class="tab-panel" data-panel="messen">
+      <div class="showcase-grid">
+        <div class="showcase-card sr sr-fade-up"><img src="assets/img/showcase-messe-1.jpg" alt="CISPA Messestand mit individuellem form.bar Möbel" loading="lazy"><div class="showcase-cap"><strong>CISPA</strong>Messestand</div></div>
+        <div class="showcase-card sr sr-fade-up" style="transition-delay:.1s"><img src="assets/img/showcase-messe-2.jpg" alt="Individuelle form.bar Messetheke" loading="lazy"><div class="showcase-cap"><strong>Messeauftritt</strong>Individuelle Messetheke</div></div>
+        <div class="showcase-card sr sr-fade-up" style="transition-delay:.2s"><img src="assets/img/showcase-messe-3.jpg" alt="form.bar Messestand" loading="lazy"><div class="showcase-cap"><strong>Messeauftritt</strong>Individueller Messestand</div></div>
+        <div class="showcase-card sr sr-fade-up"><img src="assets/img/showcase-messe-4.jpg" alt="Eventtheke für eine Sparkasse" loading="lazy"><div class="showcase-cap"><strong>Sparkasse</strong>Eventtheke</div></div>
+        <div class="showcase-card sr sr-fade-up" style="transition-delay:.1s"><img src="assets/img/showcase-messe-5.jpg" alt="Showroom der Europäischen Akademie" loading="lazy"><div class="showcase-cap"><strong>Europäische Akademie</strong>Showroom</div></div>
+        <div class="showcase-card sr sr-fade-up" style="transition-delay:.2s"><img src="assets/img/showcase-messe-6.jpg" alt="Design-Raumtrenner in einer Galerie" loading="lazy"><div class="showcase-cap"><strong>Galerie</strong>Design-Raumtrenner</div></div>
       </div>
-      <div class="usp-item">
-        <h4>Frei konfigurierbar</h4>
-        <p>Maße, Form und Material bestimmen Sie. Von der ersten Skizze bis zum fertigen Möbelstück begleitet.</p>
+    </div>
+
+    <div class="tab-panel" data-panel="gastro">
+      <div class="showcase-grid">
+        <div class="showcase-card sr sr-fade-up"><img src="assets/img/showcase-gastro-1.jpg" alt="Akustiklösung an der Decke eines Restaurants" loading="lazy"><div class="showcase-cap"><strong>Gastronomie</strong>Akustiklösung für die Decke</div></div>
+        <div class="showcase-card sr sr-fade-up" style="transition-delay:.1s"><img src="assets/img/showcase-gastro-2.jpg" alt="Regalsystem in einer offenen Restaurantküche" loading="lazy"><div class="showcase-cap"><strong>Offene Küche</strong>Regalsystem für die Gastronomie</div></div>
+        <div class="showcase-card sr sr-fade-up" style="transition-delay:.2s"><img src="assets/img/showcase-gastro-3.jpg" alt="Küchentheke im Gastronomiebereich" loading="lazy"><div class="showcase-cap"><strong>Gastronomie</strong>Küchentheke</div></div>
+        <div class="showcase-card sr sr-fade-up"><img src="assets/img/showcase-gastro-4.jpg" alt="Regal als Raumtrenner in einer Gastronomieküche" loading="lazy"><div class="showcase-cap"><strong>Gastronomie</strong>Raumtrenner-Regal</div></div>
+        <div class="showcase-card sr sr-fade-up" style="transition-delay:.1s"><img src="assets/img/showcase-gastro-5.jpg" alt="Raumtrenner im Foyer eines Aufenthaltsraums" loading="lazy"><div class="showcase-cap"><strong>Foyer</strong>Raumtrenner</div></div>
+        <div class="showcase-card sr sr-fade-up" style="transition-delay:.2s"><img src="assets/img/showcase-gastro-6.jpg" alt="Dynamisch geformtes Sideboard als Raumtrenner" loading="lazy"><div class="showcase-cap"><strong>Sideboard</strong>Dynamischer Raumtrenner</div></div>
+      </div>
+    </div>
+
+    <div class="tab-panel" data-panel="buero">
+      <div class="showcase-grid">
+        <div class="showcase-card sr sr-fade-up"><img src="assets/img/showcase-buero-1.jpg" alt="Besprechungsraum mit form.bar Designmöbel" loading="lazy"><div class="showcase-cap"><strong>Büro</strong>Besprechungsraum mit Designmöbel</div></div>
+        <div class="showcase-card sr sr-fade-up" style="transition-delay:.1s"><img src="assets/img/showcase-buero-2.jpg" alt="Wandboard im Besprechungsraum einer Kanzlei" loading="lazy"><div class="showcase-cap"><strong>Kanzlei</strong>Wandboard im Besprechungsraum</div></div>
+        <div class="showcase-card sr sr-fade-up" style="transition-delay:.2s"><img src="assets/img/showcase-buero-3.jpg" alt="Kanzleiregal für einen Anwalt" loading="lazy"><div class="showcase-cap"><strong>Kanzlei</strong>Regal für Akten &amp; Bücher</div></div>
+        <div class="showcase-card sr sr-fade-up"><img src="assets/img/showcase-buero-4.jpg" alt="Raumhohes Regal in einem Architekturbüro" loading="lazy"><div class="showcase-cap"><strong>Architekturbüro</strong>Raumhohes Regal</div></div>
+        <div class="showcase-card sr sr-fade-up" style="transition-delay:.1s"><img src="assets/img/showcase-buero-5.jpg" alt="Tresen als Raumtrenner in einer Praxis" loading="lazy"><div class="showcase-cap"><strong>Praxis</strong>Tresen als Raumtrenner</div></div>
+        <div class="showcase-card sr sr-fade-up" style="transition-delay:.2s"><img src="assets/img/showcase-buero-6.jpg" alt="Organisch geformte Empfangstheke in einem Empfangsbereich" loading="lazy"><div class="showcase-cap"><strong>Empfang</strong>Freiform-Theke</div></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- PRODUKTE -->
-<section class="section" id="produkte">
+<section class="section bg-alt" id="produkte">
   <div class="wrap">
-    <div class="section-header">
-      <p class="section-eyebrow">Leistungen</p>
-      <h2>Möbel, die <em>arbeiten</em></h2>
-      <p class="section-desc">Ob repräsentative Empfangstheke, Designregal für Ihren Showroom oder eine komplett individuelle Sonderkonstruktion — wir realisieren, was Standardmöbel nicht können.</p>
+    <div class="section-header sr sr-fade-up">
+      <p class="eyebrow">Leistungen</p>
+      <h2>Drei Wege, deinen Raum zu formen.</h2>
+      <p class="section-desc">Ob Empfang, Verkaufsfläche oder komplett individuelle Idee: Wir realisieren, was Standardmöbel nicht können.</p>
     </div>
     <div class="products-grid">
-      <div class="product-card">
-        <div class="img-placeholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m3 16 5-5 4 4 4-6 5 7"/></svg>
-          <span>Bild: Empfangstheke in Arztpraxis / Kanzlei</span>
+      <div class="product-card sr sr-fade-up">
+        <div class="product-media">
+          <img src="assets/img/product-empfangstheke.jpg" alt="Organisch geformte Empfangstheke in einer Kanzlei" loading="lazy">
+          <span class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M5 20V9c0-1 .5-2 3-2h8c2.5 0 3 1 3 2v11"/><path d="M9 20v-4h6v4"/></svg></span>
         </div>
-        <div class="product-card-body">
+        <div class="product-body">
           <h3>Empfangstheken</h3>
-          <p>Der erste Eindruck zählt. Unsere organisch geformten Theken machen Ihren Empfangsbereich unverwechselbar — passgenau für Ihren Raum.</p>
+          <p>Der erste Eindruck zählt. Organisch geformte Theken für Praxen, Kanzleien und Agenturen, passgenau für deinen Raum.</p>
         </div>
       </div>
-      <div class="product-card">
-        <div class="img-placeholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m3 16 5-5 4 4 4-6 5 7"/></svg>
-          <span>Bild: Designregal im Einzelhandel / Showroom</span>
+      <div class="product-card sr sr-fade-up" style="transition-delay:.1s">
+        <div class="product-media">
+          <img src="assets/img/product-designregal.jpg" alt="Freistehendes Designregal für den Einzelhandel" loading="lazy">
+          <span class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M4 9h16M4 15h16M10 3v18"/></svg></span>
         </div>
-        <div class="product-card-body">
+        <div class="product-body">
           <h3>Designregale</h3>
-          <p>Produkte inszenieren statt nur lagern. Unsere Regalsysteme werden zur Bühne für Mode, Keramik, Kaffee oder was auch immer Sie zeigen möchten.</p>
+          <p>Produkte inszenieren statt nur lagern. Regale, die zur Bühne für Mode, Keramik oder Kaffee werden.</p>
         </div>
       </div>
-      <div class="product-card">
-        <div class="img-placeholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m3 16 5-5 4 4 4-6 5 7"/></svg>
-          <span>Bild: Individuelle Konstruktion (z.B. Restaurant-Einrichtung)</span>
+      <div class="product-card sr sr-fade-up" style="transition-delay:.2s">
+        <div class="product-media">
+          <img src="assets/img/product-sonderkonstruktion.jpg" alt="Individueller Raumtrenner als Sonderkonstruktion" loading="lazy">
+          <span class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 1.4 1.4l3.6-3.6a5 5 0 0 1-6.7 6.7L4 20l-2-2 9.2-9a5 5 0 0 1 6.7-6.7l-3.6 3.6z"/></svg></span>
         </div>
-        <div class="product-card-body">
+        <div class="product-body">
           <h3>Sonderkonstruktionen</h3>
-          <p>Bar-Theken, Wandverkleidungen, Raumteiler, Konferenztische — was Sie sich vorstellen, setzen wir um. Auch bei komplexen Raumsituationen.</p>
+          <p>Raumteiler, Bartresen, Wandverkleidungen, Konferenztische: Was du dir vorstellst, setzen wir um.</p>
         </div>
       </div>
     </div>
@@ -672,113 +647,230 @@
 </section>
 
 <!-- ZIELGRUPPEN -->
-<section class="section bg-alt">
+<section class="section" id="zielgruppen">
   <div class="wrap">
-    <div class="section-header">
-      <p class="section-eyebrow">Für wen</p>
-      <h2>Zwei Welten, <em>ein Anspruch</em></h2>
-      <p class="section-desc">Ob Sie Kunden empfangen oder Produkte präsentieren — Möbel von form.bar geben Ihrem Raum den Charakter, den Ihre Marke verdient.</p>
+    <div class="section-header sr sr-fade-up">
+      <p class="eyebrow">Für wen</p>
+      <h2>Zwei Welten, ein Anspruch.</h2>
+      <p class="section-desc">Ob du Kunden empfängst oder Produkte präsentierst: form.bar gibt deinem Raum den Charakter, den deine Marke verdient.</p>
     </div>
     <div class="audience-grid">
-      <div class="audience-card">
-        <div class="img-placeholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m3 16 5-5 4 4 4-6 5 7"/></svg>
-          <span>Bild: Hochwertiger Empfangsbereich</span>
-        </div>
-        <h3>Repräsentative Geschäftsräume</h3>
-        <p>Praxen, Kanzleien, Agenturen, Architekturbüros, Friseursalons — überall dort, wo der Raum Teil der Marke ist. Eine form.bar Empfangstheke oder ein Designregal signalisiert Ihren Kunden: Hier wird Wert auf Qualität gelegt.</p>
-        <div class="audience-tags">
-          <span class="audience-tag">Arztpraxen</span>
-          <span class="audience-tag">Steuerberater</span>
-          <span class="audience-tag">Rechtsanwälte</span>
-          <span class="audience-tag">Agenturen</span>
-          <span class="audience-tag">Architekten</span>
-          <span class="audience-tag">Friseursalons</span>
-        </div>
-      </div>
-      <div class="audience-card">
-        <div class="img-placeholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m3 16 5-5 4 4 4-6 5 7"/></svg>
-          <span>Bild: Gehobener Einzelhandel / Warenpräsentation</span>
-        </div>
-        <h3>Gehobener Einzelhandel</h3>
-        <p>Wenn Ihre Produkte Premium sind, sollte die Präsentation es auch sein. Unsere Regale und Theken bringen Mode, feines Geschirr, Spezialitätenkaffee oder Kosmetik zur Geltung — und werden selbst zum Blickfang.</p>
-        <div class="audience-tags">
-          <span class="audience-tag">Mode &amp; Fashion</span>
-          <span class="audience-tag">Feinkost</span>
-          <span class="audience-tag">Kaffeeröstereien</span>
-          <span class="audience-tag">Concept Stores</span>
-          <span class="audience-tag">Kosmetik</span>
+      <div class="audience-card sr sr-fade-up">
+        <img src="assets/img/audience-praxis.jpg" alt="Repräsentativer Empfangsbereich einer Praxis" loading="lazy">
+        <div class="audience-body">
+          <h3>Repräsentative Geschäftsräume</h3>
+          <p>Praxen, Kanzleien, Agenturen, Architekturbüros, Friseursalons: überall dort, wo der Raum Teil der Marke ist.</p>
+          <div class="audience-tags">
+            <span class="tag tag-mint">Arztpraxen</span>
+            <span class="tag tag-mint">Steuerberater</span>
+            <span class="tag tag-mint">Rechtsanwälte</span>
+            <span class="tag tag-mint">Friseursalons</span>
+            <span class="tag tag-mint">Marketing-Agenturen</span>
+            <span class="tag tag-mint">Architekten</span>
+          </div>
         </div>
       </div>
+      <div class="audience-card sr sr-fade-up" style="transition-delay:.1s">
+        <img src="assets/img/audience-einzelhandel.jpg" alt="Warenpräsentation im gehobenen Einzelhandel" loading="lazy">
+        <div class="audience-body">
+          <h3>Gehobener Einzelhandel</h3>
+          <p>Wenn deine Produkte Premium sind, sollte die Präsentation es auch sein, egal ob Mode, Geschirr oder Kaffee.</p>
+          <div class="audience-tags">
+            <span class="tag tag-mint">Mode</span>
+            <span class="tag tag-mint">Geschirr &amp; Keramik</span>
+            <span class="tag tag-mint">Kaffee</span>
+            <span class="tag tag-mint">Concept Stores</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="section bg-alt">
+  <div class="wrap">
+    <div class="section-header sr sr-fade-up">
+      <p class="eyebrow">Vertrauen uns</p>
+      <h2>Unternehmen, die schon auf form.bar setzen.</h2>
+    </div>
+  </div>
+  <div class="brand-orbit-wrap">
+    <div class="brand-orbit">
+      <div class="brand-orbit-item" style="--angle:0deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle"><img src="assets/img/social-proof-villeroyboch.jpg" alt="Villeroy & Boch"></span><span class="brand-badge">Villeroy &amp; Boch</span></div></div></div>
+      <div class="brand-orbit-item" style="--angle:27.7deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle"><img src="assets/img/social-proof-unisaarland.jpg" alt="Universität des Saarlandes"></span><span class="brand-badge">Uni Saarland</span></div></div></div>
+      <div class="brand-orbit-item" style="--angle:55.4deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle is-mono"><span>B</span></span><span class="brand-badge">Bosch</span></div></div></div>
+      <div class="brand-orbit-item" style="--angle:83.1deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle is-mono"><span>A</span></span><span class="brand-badge">Audi</span></div></div></div>
+      <div class="brand-orbit-item" style="--angle:110.8deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle is-mono"><span>A</span></span><span class="brand-badge">Adidas</span></div></div></div>
+      <div class="brand-orbit-item" style="--angle:138.5deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle is-mono"><span>G</span></span><span class="brand-badge">Google</span></div></div></div>
+      <div class="brand-orbit-item" style="--angle:166.2deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle is-mono"><span>S</span></span><span class="brand-badge">Sky</span></div></div></div>
+      <div class="brand-orbit-item" style="--angle:193.8deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle is-mono"><span>B</span></span><span class="brand-badge">Bose</span></div></div></div>
+      <div class="brand-orbit-item" style="--angle:221.5deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle is-mono"><span>S</span></span><span class="brand-badge">Spiegel</span></div></div></div>
+      <div class="brand-orbit-item" style="--angle:249.2deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle is-mono"><span>AS</span></span><span class="brand-badge">Augenklinik Sulzbach</span></div></div></div>
+      <div class="brand-orbit-item" style="--angle:276.9deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle is-mono"><span>G</span></span><span class="brand-badge">Globus</span></div></div></div>
+      <div class="brand-orbit-item" style="--angle:304.6deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle is-mono"><span>C</span></span><span class="brand-badge">Caritas</span></div></div></div>
+      <div class="brand-orbit-item" style="--angle:332.3deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle is-mono"><span>MM</span></span><span class="brand-badge">MunichMed</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-header sr sr-fade-up">
+      <p class="eyebrow">Das sagen unsere Kunden</p>
+      <h2>Stimmen aus echten Projekten.</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card sr sr-fade-up">
+        <p class="testi-quote">„Du sollst dich fühlen, als wärst du in einem Bienenstock. Deswegen die Optik mit vielen Sechsecken, mit viel Holz und dann auch der große form.bar-Theke.“</p>
+        <p class="testi-attr"><strong>Julius Schießer</strong> · Honighalle (Unverpackt-Laden)</p>
+      </div>
+      <div class="testi-card sr sr-fade-up" style="transition-delay:.1s">
+        <p class="testi-quote">„Wellen haben etwas wahnsinnig Beruhigendes. Möbel von form.bar sind für mich Inspirations-Luxus.“</p>
+        <p class="testi-attr"><strong>Dennis Lück</strong> · BrinkertLück Creatives</p>
+      </div>
+      <div class="testi-card sr sr-fade-up" style="transition-delay:.2s">
+        <p class="testi-quote">„Mich fasziniert das Organische, das Lebhafte. Die Idee ist mega und die Möbel sind wahr.“</p>
+        <p class="testi-attr"><strong>Klaus Erfort</strong> · GästeHaus (2-Sterne-Küche, Saarbrücken)</p>
+      </div>
+      <div class="testi-card sr sr-fade-up">
+        <p class="testi-quote">„Weil uns die Visualisierung für eine Empfangstheke in unseren neuen Agenturräumen schlicht begeistert hat.“</p>
+        <p class="testi-attr"><strong>Benjamin Knur</strong> · portvier</p>
+      </div>
+      <div class="testi-card sr sr-fade-up" style="transition-delay:.1s">
+        <p class="testi-quote">„Die Qualität des Regals spiegelt die Qualität unserer Produkte wider. Das Regal macht unsere Unangepasstheit sichtbar.“</p>
+        <p class="testi-attr"><strong>Kolja Conrad &amp; Kai Adam</strong> · Black Hen Rösthandwerk</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUSTED SHOPS MARQUEE -->
+<section class="section bg-alt marquee-section sr sr-fade-up">
+  <div class="wrap">
+    <div class="section-header marquee-header-row">
+      <a href="https://www.trustedshops.de/bewertung/info_XD406B59FD645A9A9A3205F0F9B08D2A8.html" target="_blank" rel="noopener" aria-label="form.bar Bewertungen bei Trusted Shops ansehen" class="trustedshops-link">
+      <svg class="trustedshops-logo" viewBox="0 0 77 32" aria-label="Trusted Shops"><path d="M13.201 26.533c-7.291 0-13.201-5.91-13.201-13.201s5.91-13.201 13.201-13.201c7.291 0 13.201 5.91 13.201 13.201s-5.91 13.201-13.201 13.201zM13.201 21.663c4.601 0 8.331-3.73 8.331-8.331s-3.73-8.331-8.331-8.331c-4.601 0-8.331 3.73-8.331 8.331s3.73 8.331 8.331 8.331zM16.698 15.883c-1.21 1.788-2.893 3.418-5.154 3.418-2.393 0-3.787-1.499-3.787-3.918 0-3.918 2.893-7.757 6.968-7.757 1.367 0 3.208 0.552 3.208 2.209 0 2.971-4.654 3.971-6.942 4.549-0.079 0.5-0.158 0.999-0.158 1.499 0 1.026 0.552 1.972 1.683 1.972 1.473 0 2.656-1.42 3.524-2.472l0.657 0.5zM15.436 9.519c0-0.605-0.342-1.078-0.973-1.078-1.893 0-2.866 3.681-3.234 5.128 1.762-0.526 4.207-1.972 4.207-4.050zM30.951 15.015h-2.183v-1.551h6.232v1.551h-2.209v6.574h-1.841zM35.71 13.569c0.578-0.105 1.473-0.158 2.446-0.158 1.21 0 2.051 0.184 2.63 0.631 0.473 0.394 0.736 0.947 0.736 1.709 0 1.026-0.736 1.736-1.42 1.998v0.026c0.578 0.237 0.868 0.763 1.078 1.525 0.263 0.92 0.5 1.972 0.657 2.288h-1.867c-0.131-0.237-0.316-0.894-0.578-1.893-0.21-0.999-0.578-1.288-1.315-1.288h-0.552v3.182h-1.814v-8.020zM37.525 17.066h0.71c0.92 0 1.446-0.447 1.446-1.157 0-0.736-0.5-1.131-1.341-1.131-0.447 0-0.71 0.026-0.841 0.053v2.235h0.026zM44.414 13.464v4.681c0 1.394 0.526 2.104 1.473 2.104 0.973 0 1.499-0.684 1.499-2.104v-4.681h1.841v4.549c0 2.498-1.262 3.708-3.392 3.708-2.051 0-3.261-1.131-3.261-3.734v-4.523h1.841zM50.515 19.696c0.5 0.263 1.262 0.5 2.025 0.5 0.841 0 1.288-0.342 1.288-0.868 0-0.5-0.394-0.789-1.367-1.157-1.341-0.473-2.235-1.21-2.235-2.393 0-1.394 1.157-2.446 3.077-2.446 0.92 0 1.578 0.184 2.077 0.421l-0.421 1.473c-0.316-0.158-0.894-0.394-1.709-0.394-0.789 0-1.183 0.368-1.183 0.789 0 0.526 0.447 0.736 1.499 1.157 1.42 0.526 2.104 1.288 2.104 2.419 0 1.367-1.052 2.524-3.287 2.524-0.92 0-1.841-0.237-2.288-0.5l0.421-1.525zM58.272 15.015h-2.183v-1.551h6.232v1.551h-2.209v6.574h-1.841zM67.844 18.144h-2.998v1.92h3.34v1.499h-5.18v-8.099h4.996v1.525h-3.156v1.683h2.998zM69.343 13.569c0.684-0.105 1.551-0.158 2.472-0.158 1.551 0 2.551 0.289 3.313 0.868 0.841 0.631 1.367 1.63 1.367 3.050 0 1.551-0.579 2.63-1.341 3.287-0.868 0.71-2.156 1.052-3.734 1.052-0.947 0-1.63-0.053-2.077-0.131v-7.968zM71.184 20.195c0.158 0.026 0.421 0.026 0.631 0.026 1.657 0.026 2.735-0.894 2.735-2.84 0.026-1.683-0.973-2.577-2.551-2.577-0.421 0-0.684 0.026-0.841 0.079v5.312h0.026zM29.478 29.662c0.5 0.263 1.236 0.5 2.025 0.5 0.841 0 1.288-0.342 1.288-0.868 0-0.5-0.394-0.789-1.341-1.131-1.341-0.473-2.209-1.21-2.209-2.393 0-1.367 1.157-2.419 3.050-2.419 0.92 0 1.578 0.184 2.051 0.394l-0.394 1.473c-0.316-0.158-0.894-0.394-1.683-0.394s-1.183 0.368-1.183 0.789c0 0.526 0.447 0.736 1.499 1.131 1.42 0.526 2.104 1.262 2.104 2.419 0 1.341-1.052 2.498-3.261 2.498-0.92 0-1.841-0.237-2.288-0.5l0.342-1.499zM37.472 23.482v3.103h3.024v-3.103h1.814v8.073h-1.814v-3.366h-2.998v3.366h-1.841v-8.073zM51.12 27.427c0 2.656-1.604 4.26-3.971 4.26-2.393 0-3.787-1.814-3.787-4.102 0-2.419 1.551-4.234 3.918-4.234 2.472 0 3.839 1.841 3.839 4.076zM45.282 27.532c0 1.578 0.736 2.709 1.972 2.709s1.946-1.183 1.946-2.735c0-1.446-0.684-2.709-1.946-2.709s-1.972 1.157-1.972 2.735zM52.145 23.588c0.552-0.105 1.341-0.158 2.472-0.158s1.92 0.21 2.472 0.657c0.526 0.394 0.868 1.078 0.868 1.867s-0.263 1.473-0.736 1.92c-0.631 0.579-1.551 0.841-2.63 0.841-0.237 0-0.447-0.026-0.631-0.026v2.893h-1.814v-7.994zM53.96 27.243c0.158 0.026 0.342 0.053 0.605 0.053 0.973 0 1.578-0.5 1.578-1.315 0-0.736-0.526-1.183-1.42-1.183-0.368 0-0.631 0.026-0.763 0.079v2.367zM58.903 29.662c0.5 0.263 1.236 0.5 2.025 0.5 0.841 0 1.288-0.342 1.288-0.868 0-0.5-0.394-0.789-1.341-1.131-1.341-0.473-2.209-1.21-2.209-2.393 0-1.367 1.157-2.419 3.050-2.419 0.92 0 1.578 0.184 2.051 0.394l-0.394 1.473c-0.316-0.158-0.894-0.394-1.683-0.394s-1.183 0.368-1.183 0.789c0 0.526 0.447 0.736 1.499 1.131 1.42 0.526 2.104 1.262 2.104 2.419 0 1.341-1.052 2.498-3.261 2.498-0.92 0-1.841-0.237-2.288-0.5l0.342-1.499z"/></svg>
+      </a>
+      <div>
+        <p class="eyebrow">Trusted Shops</p>
+        <h2>4,70 von 5 <span class="marquee-sub">· 1.305 verifizierte Bewertungen</span></h2>
+      </div>
+    </div>
+  </div>
+  <div class="marquee-viewport">
+    <div class="marquee-track">
+      <div class="marquee-card"><p>„Der Raumteiler sieht Klasse aus und wird uns in den nächsten Jahren viel Freude bereiten. Bestell- und Lieferservice waren hervorragend.“</p><span class="marquee-attr">Verifizierte Bewertung · 30.07.2026</span></div>
+      <div class="marquee-card"><p>„Fantastische Qualität. Es sind wirklich einzigartige, sehr differenzierte Designs möglich, und die Qualität in der Verarbeitung sowie der Preis sind top!“</p><span class="marquee-attr">Verifizierte Bewertung · 25.11.2025</span></div>
+      <div class="marquee-card"><p>„Wir haben ein TV Lowboard aus Walnussfurnier bestellt und sind absolut begeistert. Die Verarbeitung ist sehr hochwertig, der Kundenkontakt war immer freundlich.“</p><span class="marquee-attr">Verifizierte Bewertung · 02.02.2026</span></div>
+      <div class="marquee-card"><p>„Hat alles toll geklappt. Planung wurde 1 zu 1 umgesetzt, innerhalb weniger Wochen geliefert, Service beim Aufbau war professionell.“</p><span class="marquee-attr">Verifizierte Bewertung · 03.06.2026</span></div>
+      <div class="marquee-card"><p>„Passt perfekt. Schnelle, unkomplizierte Lieferung.“</p><span class="marquee-attr">Birgit N. · 24.07.2026</span></div>
+      <div class="marquee-card"><p>„Definitiv empfehlenswert. Alles tipptopp gelaufen. Ein schönes, wertiges Möbel, wie erhofft und beschrieben. Kulanter und freundlicher Kundenservice.“</p><span class="marquee-attr">Verifizierte Bewertung · 17.05.2026</span></div>
+      <div class="marquee-card"><p>„Sehr guter Service! Guter Konfigurator, rasche und kompetente Ausführung.“</p><span class="marquee-attr">Verifizierte Bewertung · 05.07.2026</span></div>
+      <div class="marquee-card"><p>„Aufsatzregal — Ausführung bestens, schnelle Lieferung. Bestellt wurde ein Aufsatz für ein bereits vorhandenes Regal, Ausführung perfekt.“</p><span class="marquee-attr">Verifizierte Bewertung · 19.08.2026</span></div>
+      <div class="marquee-card" aria-hidden="true"><p>„Der Raumteiler sieht Klasse aus und wird uns in den nächsten Jahren viel Freude bereiten. Bestell- und Lieferservice waren hervorragend.“</p><span class="marquee-attr">Verifizierte Bewertung · 30.07.2026</span></div>
+      <div class="marquee-card" aria-hidden="true"><p>„Fantastische Qualität. Es sind wirklich einzigartige, sehr differenzierte Designs möglich, und die Qualität in der Verarbeitung sowie der Preis sind top!“</p><span class="marquee-attr">Verifizierte Bewertung · 25.11.2025</span></div>
+      <div class="marquee-card" aria-hidden="true"><p>„Wir haben ein TV Lowboard aus Walnussfurnier bestellt und sind absolut begeistert. Die Verarbeitung ist sehr hochwertig, der Kundenkontakt war immer freundlich.“</p><span class="marquee-attr">Verifizierte Bewertung · 02.02.2026</span></div>
+      <div class="marquee-card" aria-hidden="true"><p>„Hat alles toll geklappt. Planung wurde 1 zu 1 umgesetzt, innerhalb weniger Wochen geliefert, Service beim Aufbau war professionell.“</p><span class="marquee-attr">Verifizierte Bewertung · 03.06.2026</span></div>
+      <div class="marquee-card" aria-hidden="true"><p>„Passt perfekt. Schnelle, unkomplizierte Lieferung.“</p><span class="marquee-attr">Birgit N. · 24.07.2026</span></div>
+      <div class="marquee-card" aria-hidden="true"><p>„Definitiv empfehlenswert. Alles tipptopp gelaufen. Ein schönes, wertiges Möbel, wie erhofft und beschrieben. Kulanter und freundlicher Kundenservice.“</p><span class="marquee-attr">Verifizierte Bewertung · 17.05.2026</span></div>
+      <div class="marquee-card" aria-hidden="true"><p>„Sehr guter Service! Guter Konfigurator, rasche und kompetente Ausführung.“</p><span class="marquee-attr">Verifizierte Bewertung · 05.07.2026</span></div>
+      <div class="marquee-card" aria-hidden="true"><p>„Aufsatzregal — Ausführung bestens, schnelle Lieferung. Bestellt wurde ein Aufsatz für ein bereits vorhandenes Regal, Ausführung perfekt.“</p><span class="marquee-attr">Verifizierte Bewertung · 19.08.2026</span></div>
     </div>
   </div>
 </section>
 
 <!-- PROZESS -->
-<section class="section">
-  <div class="wrap">
-    <div class="section-header">
-      <p class="section-eyebrow">So funktioniert's</p>
-      <h2>Vom Gespräch zum <em>fertigen Möbelstück</em></h2>
-    </div>
-    <div class="process-steps">
-      <div class="process-step is-active">
-        <div class="step-num">Beratung</div>
-        <h4>Anforderungen klären</h4>
-        <p>Sie schildern uns Ihren Raum und Ihre Vorstellungen. Wir beraten zu Machbarkeit, Material und Design.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num">Entwurf</div>
-        <h4>Design entwickeln</h4>
-        <p>Mit unserem Konfigurator oder als f+ Planungsservice entsteht Ihr individueller Entwurf — inklusive 3D-Vorschau.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num">Fertigung</div>
-        <h4>Regional produziert</h4>
-        <p>Ihr Schreiner vor Ort fertigt das Möbelstück in Handarbeit. Kurze Wege, persönlicher Kontakt.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num">Lieferung</div>
-        <h4>Montage &amp; Einbau</h4>
-        <p>Auf Wunsch liefern und montieren wir direkt bei Ihnen. Ihr neues Möbelstück ist sofort einsatzbereit.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- REFERENZ -->
 <section class="section bg-alt">
   <div class="wrap">
-    <div class="section-header">
-      <p class="section-eyebrow">Referenzen</p>
-      <h2>Was unsere Geschäftskunden <em>sagen</em></h2>
+    <div class="section-header sr sr-fade-up">
+      <p class="eyebrow">So funktioniert's</p>
+      <h2>Vom Gespräch zum fertigen Möbelstück.</h2>
     </div>
-    <div class="ref-grid">
-      <div>
-        <p class="ref-quote">&bdquo;Die Empfangstheke ist das Erste, was unsere Mandanten sehen. Seit wir das form.bar Möbelstück haben, bekommen wir regelmäßig Komplimente — und das von Leuten, die normalerweise über Steuern reden.&ldquo;</p>
-        <p class="ref-attr"><strong>[Kundenname]</strong> &middot; [Branche/Unternehmen]</p>
+    <div class="process-steps">
+      <div class="process-step sr sr-fade-up">
+        <span class="process-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+        <div>
+          <p class="process-num">SCHRITT 01</p>
+          <h4>Beratung</h4>
+          <p>Du schilderst uns deinen Raum und deine Vorstellungen. Wir beraten zu Machbarkeit, Material und Design.</p>
+        </div>
       </div>
-      <div class="img-placeholder" style="min-height: 280px;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m3 16 5-5 4 4 4-6 5 7"/></svg>
-        <span>Bild: Referenzprojekt mit Kundenfoto</span>
+      <div class="process-step sr sr-fade-up" style="transition-delay:.1s">
+        <span class="process-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span>
+        <div>
+          <p class="process-num">SCHRITT 02</p>
+          <h4>Entwurf</h4>
+          <p>Im 3D-Konfigurator gestaltest du selbst, oder unser Design-Team plant für dich – ganz ohne Aufpreis.</p>
+        </div>
+      </div>
+      <div class="process-step sr sr-fade-up" style="transition-delay:.2s">
+        <span class="process-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>
+        <div>
+          <p class="process-num">SCHRITT 03</p>
+          <h4>Fertigung</h4>
+          <p>Eine Partner-Schreinerei in deiner Nähe fertigt das Möbelstück in Handarbeit: kurze Wege, persönlicher Kontakt.</p>
+        </div>
+      </div>
+      <div class="process-step sr sr-fade-up" style="transition-delay:.3s">
+        <span class="process-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="7" width="15" height="10" rx="1"/><path d="M16 10h4l3 3v4h-7z"/><circle cx="6" cy="19" r="1.6"/><circle cx="18" cy="19" r="1.6"/></svg></span>
+        <div>
+          <p class="process-num">SCHRITT 04</p>
+          <h4>Lieferung</h4>
+          <p>Auf Wunsch liefern und montieren wir direkt bei dir. Schnelle Lieferzeiten auf Anfrage.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-section" id="kontakt">
-  <svg class="cta-curve" viewBox="0 0 400 800" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M 50,0 C 150,200 -50,350 200,500 C 350,600 100,700 250,800" />
-    <path d="M 100,0 C 200,180 0,320 250,480 C 380,580 130,680 280,800" />
-  </svg>
-  <div class="wrap" style="position: relative; z-index: 1;">
-    <h2>Lassen Sie uns über <em>Ihr Projekt</em> sprechen</h2>
-    <p>Erzählen Sie uns von Ihrem Raum und Ihren Vorstellungen. Wir melden uns innerhalb von 48 Stunden mit einem ersten Konzeptvorschlag.</p>
-    <div class="btn-group">
-      <a href="mailto:business@form.bar" class="btn-primary">Beratung anfragen</a>
-      <a href="tel:+4968193688670" class="btn-secondary">+49 681 936 886 70</a>
+<!-- KONTAKT -->
+<section class="section" id="kontakt">
+  <div class="wrap">
+    <div class="section-header sr sr-fade-up">
+      <p class="eyebrow">Deine Kontaktmöglichkeiten</p>
+      <h2>Lass uns über dein Projekt sprechen.</h2>
+    </div>
+    <div class="contact-grid">
+      <a href="#" class="contact-card sr sr-fade-up">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <span>Live-Chat starten</span>
+      </a>
+      <a href="mailto:info@form.bar" class="contact-card sr sr-fade-up" style="transition-delay:.05s">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        <span>E-Mail schreiben</span>
+      </a>
+      <a href="#" class="contact-card sr sr-fade-up" style="transition-delay:.1s">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/></svg>
+        <span>Rückruf buchen</span>
+      </a>
+      <a href="tel:+4968141097642" class="contact-card sr sr-fade-up" style="transition-delay:.15s">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/></svg>
+        <span>Direkt anrufen</span>
+      </a>
+      <a href="#" class="contact-card sr sr-fade-up" style="transition-delay:.2s">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.5 8.5 0 0 1-11.8 7.8L3 21l1.7-6.2A8.5 8.5 0 1 1 21 11.5z"/></svg>
+        <span>WhatsApp</span>
+      </a>
+    </div>
+    <p class="contact-hours sr sr-fade-up">Mo–Do 08:00–21:00 Uhr · Fr 08:00–17:30 Uhr · info@form.bar · +49 681 410 976 42</p>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="wrap">
+    <div class="sr sr-fade-up">
+      <h2>Let's work together!</h2>
+      <p>Erzähl uns von deinem Raum und deinen Vorstellungen. Wir melden uns mit einem ersten Konzeptvorschlag.</p>
+      <div class="btn-group">
+        <a href="#kontakt" class="btn btn-primary js-open-contact">Jetzt Beratung anfragen</a>
+        <a href="tel:+4968141097642" class="btn btn-outline">+49 681 410 976 42</a>
+      </div>
+    </div>
+    <div class="cta-visual sr sr-fade-in" style="transition-delay:.15s">
+      <img src="assets/img/showcase-buero-1.jpg" alt="Team bei der Planung eines form.bar Projekts" loading="lazy">
     </div>
   </div>
 </section>
@@ -786,7 +878,247 @@
 <!-- FOOTER -->
 <footer class="footer">
   <div class="wrap">
-    <span>&copy; form.bar by okinlab GmbH</span>
-    <span>Saarbrücken, Deutschland</span>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="nav-logo">form<span class="dot">.</span>bar</span>
+        <p>forme deine Welt</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/form.bar" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="https://www.facebook.com/formbar.by.okinlab" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://www.pinterest.com/formbar/" target="_blank" rel="noopener" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M9.5 20 12 8m0 0c3 0 4 2 4 4 0 2.5-1.5 5-4.5 5-1 0-1.5-.5-1.5-.5"/></svg></a>
+          <a href="https://www.youtube.com/@FormBar" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9.5v5l5-2.5z" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+        <p class="footer-newsletter-title">Newsletter</p>
+        <form class="newsletter" onsubmit="return false;">
+          <input type="email" name="newsletter-email" placeholder="Gib deine E-Mail-Adresse ein" aria-label="E-Mail für Newsletter">
+          <button class="btn btn-primary" type="submit" style="padding: var(--sp-2xs) var(--sp-xs);" aria-label="Anmelden">→</button>
+        </form>
+      </div>
+      <div class="footer-col">
+        <h5>Service</h5>
+        <a href="#kontakt">Kontakt</a>
+        <a href="#">FAQ</a>
+        <a href="#">f+ Design-Service</a>
+      </div>
+      <div class="footer-col">
+        <h5>form.bar</h5>
+        <a href="#">Über uns</a>
+        <a href="#">Team</a>
+        <a href="#">Presse</a>
+      </div>
+      <div class="footer-col">
+        <h5>Business</h5>
+        <a href="#">Fertigungspartner</a>
+        <a href="#">Business-Service</a>
+      </div>
+      <div class="footer-col">
+        <h5>Rechtliches</h5>
+        <a href="#">AGB</a>
+        <a href="#">Datenschutz</a>
+        <a href="#">Widerruf</a>
+        <a href="#">Impressum</a>
+      </div>
+    </div>
+    <div class="footer-col" style="padding-bottom: var(--sp-m);">
+      <p class="footer-contact-block"><strong>Die Design-Plattform der Okinlab GmbH</strong>Ursulinenstraße 35<br>66111 Saarbrücken</p>
+    </div>
   </div>
+  <div class="footer-bar">
+    <div class="wrap">
+      <a href="https://www.trustedshops.de/bewertung/info_XD406B59FD645A9A9A3205F0F9B08D2A8.html" target="_blank" rel="noopener" class="footer-rating" aria-label="form.bar Bewertungen bei Trusted Shops">
+        <svg class="trustedshops-logo" viewBox="0 0 77 32" aria-hidden="true"><path d="M13.201 26.533c-7.291 0-13.201-5.91-13.201-13.201s5.91-13.201 13.201-13.201c7.291 0 13.201 5.91 13.201 13.201s-5.91 13.201-13.201 13.201zM13.201 21.663c4.601 0 8.331-3.73 8.331-8.331s-3.73-8.331-8.331-8.331c-4.601 0-8.331 3.73-8.331 8.331s3.73 8.331 8.331 8.331zM16.698 15.883c-1.21 1.788-2.893 3.418-5.154 3.418-2.393 0-3.787-1.499-3.787-3.918 0-3.918 2.893-7.757 6.968-7.757 1.367 0 3.208 0.552 3.208 2.209 0 2.971-4.654 3.971-6.942 4.549-0.079 0.5-0.158 0.999-0.158 1.499 0 1.026 0.552 1.972 1.683 1.972 1.473 0 2.656-1.42 3.524-2.472l0.657 0.5zM15.436 9.519c0-0.605-0.342-1.078-0.973-1.078-1.893 0-2.866 3.681-3.234 5.128 1.762-0.526 4.207-1.972 4.207-4.050z"/></svg>
+        <span class="footer-rating-num">4,76</span>
+        <span class="footer-rating-stars">★★★★★</span>
+      </a>
+      <div class="footer-payments">
+        <span class="payment-chip text-chip">Rechnung</span>
+        <span class="payment-chip" aria-label="Mastercard"><span class="mastercard-mark"><span class="c-left"></span><span class="c-right"></span></span></span>
+        <span class="payment-chip" aria-label="Visa"><svg viewBox="0 0 24 24" fill="#1A1F71"><path d="M9.112 8.262L5.97 15.758H3.92L2.374 9.775c-.094-.368-.175-.503-.461-.658C1.447 8.864.677 8.627 0 8.479l.046-.217h3.3a.904.904 0 01.894.764l.817 4.338 2.018-5.102zm8.033 5.049c.008-1.979-2.736-2.088-2.717-2.972.006-.269.262-.555.822-.628a3.66 3.66 0 011.913.336l.34-1.59a5.207 5.207 0 00-1.814-.333c-1.917 0-3.266 1.02-3.278 2.479-.012 1.079.963 1.68 1.698 2.04.756.367 1.01.603 1.006.931-.005.504-.602.725-1.16.734-.975.015-1.54-.263-1.992-.473l-.351 1.642c.453.208 1.289.39 2.156.398 2.037 0 3.37-1.006 3.377-2.564m5.061 2.447H24l-1.565-7.496h-1.656a.883.883 0 00-.826.55l-2.909 6.946h2.036l.405-1.12h2.488zm-2.163-2.656l1.02-2.815.588 2.815zm-8.16-4.84l-1.603 7.496H8.34l1.605-7.496z"/></svg></span>
+        <span class="payment-chip" aria-label="American Express"><svg viewBox="0 0 24 24" fill="#016FD0"><path d="M16.015 14.378c0-.32-.135-.496-.344-.622-.21-.12-.464-.135-.81-.135h-1.543v2.82h.675v-1.027h.72c.24 0 .39.024.478.125.12.13.104.38.104.55v.35h.66v-.555c-.002-.25-.017-.376-.108-.516-.06-.08-.18-.18-.33-.234l.02-.008c.18-.072.48-.297.48-.747zm-.87.407l-.028-.002c-.09.053-.195.058-.33.058h-.81v-.63h.824c.12 0 .24 0 .33.05.098.048.156.147.15.255 0 .12-.045.215-.134.27zM20.297 15.837H19v.6h1.304c.676 0 1.05-.278 1.05-.884 0-.28-.066-.448-.187-.582-.153-.133-.392-.193-.73-.207l-.376-.015c-.104 0-.18 0-.255-.03-.09-.03-.15-.105-.15-.21 0-.09.017-.166.09-.21.083-.046.177-.066.272-.06h1.23v-.602h-1.35c-.704 0-.958.437-.958.84 0 .9.776.855 1.407.87.104 0 .18.015.225.06.046.03.082.106.082.18 0 .077-.035.15-.08.18-.06.053-.15.07-.277.07zM0 0v10.096L.81 8.22h1.75l.225.464V8.22h2.043l.45 1.02.437-1.013h6.502c.295 0 .56.057.756.236v-.23h1.787v.23c.307-.17.686-.23 1.12-.23h2.606l.24.466v-.466h1.918l.254.465v-.466h1.858v3.948H20.87l-.36-.6v.585h-2.353l-.256-.63h-.583l-.27.614h-1.213c-.48 0-.84-.104-1.08-.24v.24h-2.89v-.884c0-.12-.03-.12-.105-.135h-.105v1.036H6.067v-.48l-.21.48H4.69l-.202-.48v.465H2.235l-.256-.624H1.4l-.256.624H0V24h23.786v-7.108c-.27.135-.613.18-.973.18H21.09v-.255c-.21.165-.57.255-.914.255H14.71v-.9c0-.12-.018-.12-.12-.12h-.075v1.022h-1.8v-1.066c-.298.136-.643.15-.928.136h-.214v.915h-2.18l-.54-.617-.57.6H4.742v-3.93h3.61l.518.602.554-.6h2.412c.28 0 .74.03.942.225v-.24h2.177c.202 0 .644.045.903.225v-.24h3.265v.24c.163-.164.508-.24.803-.24h1.89v.24c.194-.15.464-.24.84-.24h1.176V0H0zM21.156 14.955c.004.005.006.012.01.016.01.01.024.01.032.02l-.042-.035zM23.828 13.082h.065v.555h-.065zM23.865 15.03v-.005c-.03-.025-.046-.048-.075-.07-.15-.153-.39-.215-.764-.225l-.36-.012c-.12 0-.194-.007-.27-.03-.09-.03-.15-.105-.15-.21 0-.09.03-.16.09-.204.076-.045.15-.05.27-.05h1.223v-.588h-1.283c-.69 0-.96.437-.96.84 0 .9.78.855 1.41.87.104 0 .18.015.224.06.046.03.076.106.076.18 0 .07-.034.138-.09.18-.045.056-.136.07-.27.07h-1.288v.605h1.287c.42 0 .734-.118.9-.36h.03c.09-.134.135-.3.135-.523 0-.24-.045-.39-.135-.526zM18.597 14.208v-.583h-2.235V16.458h2.235v-.585h-1.57v-.57h1.533v-.584h-1.532v-.51M13.51 8.787h.685V11.6h-.684zM13.126 9.543l-.007.006c0-.314-.13-.5-.34-.624-.217-.125-.47-.135-.81-.135H10.43v2.82h.674v-1.034h.72c.24 0 .39.03.487.12.122.136.107.378.107.548v.354h.677v-.553c0-.25-.016-.375-.11-.516-.09-.107-.202-.19-.33-.237.172-.07.472-.3.472-.75zm-.855.396h-.015c-.09.054-.195.056-.33.056H11.1v-.623h.825c.12 0 .24.004.33.05.09.04.15.128.15.25s-.047.22-.134.266zM15.92 9.373h.632v-.6h-.644c-.464 0-.804.105-1.02.33-.286.3-.362.69-.362 1.11 0 .512.123.833.36 1.074.232.238.645.31.97.31h.78l.255-.627h1.39l.262.627h1.36v-2.11l1.272 2.11h.95l.002.002V8.786h-.684v1.963l-1.18-1.96h-1.02V11.4L18.11 8.744h-1.004l-.943 2.22h-.3c-.177 0-.362-.03-.468-.134-.125-.15-.186-.36-.186-.662 0-.285.08-.51.194-.63.133-.135.272-.165.516-.165zm1.668-.108l.464 1.118v.002h-.93l.466-1.12zM2.38 10.97l.254.628H4V9.393l.972 2.205h.584l.973-2.202.015 2.202h.69v-2.81H6.118l-.807 1.904-.876-1.905H3.343v2.663L2.205 8.787h-.997L.01 11.597h.72l.26-.626h1.39zm-.688-1.705l.46 1.118-.003.002h-.915l.457-1.12zM11.856 13.62H9.714l-.85.923-.825-.922H5.346v2.82H8l.855-.932.824.93h1.302v-.94h.838c.6 0 1.17-.164 1.17-.945l-.006-.003c0-.78-.598-.93-1.128-.93zM7.67 15.853l-.014-.002H6.02v-.557h1.47v-.574H6.02v-.51H7.7l.733.82-.764.824zm2.642.33l-1.03-1.147 1.03-1.108v2.253zm1.553-1.258h-.885v-.717h.885c.24 0 .42.098.42.344 0 .243-.15.372-.42.372zM9.967 9.373v-.586H7.73V11.6h2.237v-.58H8.4v-.564h1.527V9.88H8.4v-.507"/></svg></span>
+        <span class="payment-chip text-chip">EC</span>
+        <span class="payment-chip klarna-chip" aria-label="Klarna"><span>Klarna</span></span>
+        <span class="payment-chip" aria-label="PayPal"><svg viewBox="0 0 24 24" fill="#003087"><path d="M15.607 4.653H8.941L6.645 19.251H1.82L4.862 0h7.995c3.754 0 6.375 2.294 6.473 5.513-.648-.478-2.105-.86-3.722-.86m6.57 5.546c0 3.41-3.01 6.853-6.958 6.853h-2.493L11.595 24H6.74l1.845-11.538h3.592c4.208 0 7.346-3.634 7.153-6.949a5.24 5.24 0 0 1 2.848 4.686M9.653 5.546h6.408c.907 0 1.942.222 2.363.541-.195 2.741-2.655 5.483-6.441 5.483H8.714Z"/></svg></span>
+      </div>
+    </div>
+  </div>
+  <p class="footer-copy">&copy; form.bar by Okinlab GmbH</p>
 </footer>
+
+<!-- CONTACT MODAL -->
+<div class="modal-backdrop" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
+  <div class="modal-panel">
+    <div class="modal-header">
+      <h3 id="contactModalTitle">Design-Team kontaktieren</h3>
+      <button type="button" class="modal-close" id="modalCloseBtn" aria-label="Schließen">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form class="modal-form" id="contactForm">
+        <p class="modal-intro">Hast du Fragen oder möchtest den f+ Design-Service kostenfrei nutzen? Sende uns eine kurze Nachricht, gerne auch mit Skizze oder Foto. Wir unterstützen dich auf dem Weg zu deinem individuellen Wunschmöbel.</p>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="fieldName">Name <span class="req">*</span></label>
+            <input type="text" id="fieldName" name="name" placeholder="Name" autocomplete="name" required>
+          </div>
+          <div class="form-field">
+            <label for="fieldEmail">E-Mail-Adresse <span class="req">*</span></label>
+            <input type="email" id="fieldEmail" name="email" placeholder="E-Mail-Adresse" autocomplete="email" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field full">
+            <label for="fieldPhone">Telefonnummer</label>
+            <input type="tel" id="fieldPhone" name="phone" placeholder="Telefonnummer" autocomplete="tel">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field full">
+            <label for="fieldMessage">Nachricht <span class="req">*</span></label>
+            <textarea id="fieldMessage" name="message" placeholder="Tippe hier deine Nachricht ein..." required></textarea>
+          </div>
+        </div>
+        <details class="form-accordion">
+          <summary>Hilfreiche Informationen für den Design-Service
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="form-accordion-body">
+            Damit wir dir schneller helfen können, freuen wir uns über:
+            <ul>
+              <li>Maße deines Raums bzw. der gewünschten Möbelstücke</li>
+              <li>Gewünschte Farben, Materialien und Formen</li>
+              <li>Inspirationsbilder oder Skizzen</li>
+              <li>Angaben zu Fronten, Schubladen oder Sonderwünschen</li>
+            </ul>
+          </div>
+        </details>
+        <div class="form-dropzone" id="dropzone">
+          <p>Dateien hier ablegen oder <span class="file-name" id="dropzoneFileLabel">klicken, um hochzuladen</span></p>
+          <span>Gültige Formate: .jpg, .png</span>
+          <input type="file" id="fieldFile" name="file" accept=".jpg,.jpeg,.png" hidden>
+        </div>
+        <p class="form-required-note">* Pflichtfeld</p>
+        <div class="form-footer">
+          <button type="submit" class="btn btn-primary">Nachricht senden</button>
+        </div>
+      </form>
+      <div class="modal-success" id="modalSuccess">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>
+        <h4>Danke für deine Nachricht!</h4>
+        <p>Wir melden uns innerhalb von 48 Stunden bei dir.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ---- Scroll reveal ----
+  var srEls = document.querySelectorAll('.sr');
+  if ('IntersectionObserver' in window) {
+    var srObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('sr-visible');
+          srObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    srEls.forEach(function (el) { srObserver.observe(el); });
+  } else {
+    srEls.forEach(function (el) { el.classList.add('sr-visible'); });
+  }
+
+  // ---- Showcase tabs ----
+  var tabBtns = document.querySelectorAll('.tab-btn');
+  var tabPanels = document.querySelectorAll('.tab-panel');
+  tabBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      tabBtns.forEach(function (b) { b.setAttribute('aria-selected', 'false'); });
+      btn.setAttribute('aria-selected', 'true');
+      var target = btn.getAttribute('data-tab');
+      tabPanels.forEach(function (p) {
+        p.classList.toggle('is-active', p.getAttribute('data-panel') === target);
+      });
+    });
+  });
+
+  // ---- Mobile nav ----
+  var burger = document.getElementById('navBurger');
+  var navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', function () {
+    var isOpen = navLinks.classList.toggle('is-open');
+    burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  navLinks.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { navLinks.classList.remove('is-open'); });
+  });
+
+  // ---- Contact modal ----
+  var contactModal = document.getElementById('contactModal');
+  var contactForm = document.getElementById('contactForm');
+  var modalSuccess = document.getElementById('modalSuccess');
+  var modalCloseBtn = document.getElementById('modalCloseBtn');
+  var lastFocusedEl = null;
+
+  function openModal(e) {
+    if (e) e.preventDefault();
+    lastFocusedEl = document.activeElement;
+    contactModal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    modalSuccess.classList.remove('is-visible');
+    contactForm.classList.remove('is-hidden');
+    contactForm.reset();
+    dropzoneLabel.textContent = 'klicken, um hochzuladen';
+    var firstField = document.getElementById('fieldName');
+    if (firstField) firstField.focus();
+  }
+
+  function closeModal() {
+    contactModal.classList.remove('is-open');
+    document.body.style.overflow = '';
+    if (lastFocusedEl) lastFocusedEl.focus();
+  }
+
+  document.querySelectorAll('.js-open-contact').forEach(function (btn) {
+    btn.addEventListener('click', openModal);
+  });
+  modalCloseBtn.addEventListener('click', closeModal);
+  contactModal.addEventListener('click', function (e) {
+    if (e.target === contactModal) closeModal();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && contactModal.classList.contains('is-open')) closeModal();
+  });
+
+  // ---- File dropzone ----
+  var dropzone = document.getElementById('dropzone');
+  var fileInput = document.getElementById('fieldFile');
+  var dropzoneLabel = document.getElementById('dropzoneFileLabel');
+  dropzone.addEventListener('click', function () { fileInput.click(); });
+  fileInput.addEventListener('change', function () {
+    if (fileInput.files.length) dropzoneLabel.textContent = fileInput.files[0].name;
+  });
+  ['dragenter', 'dragover'].forEach(function (evt) {
+    dropzone.addEventListener(evt, function (e) { e.preventDefault(); dropzone.classList.add('is-drag'); });
+  });
+  ['dragleave', 'drop'].forEach(function (evt) {
+    dropzone.addEventListener(evt, function (e) { e.preventDefault(); dropzone.classList.remove('is-drag'); });
+  });
+  dropzone.addEventListener('drop', function (e) {
+    var files = e.dataTransfer.files;
+    if (files.length) {
+      fileInput.files = files;
+      dropzoneLabel.textContent = files[0].name;
+    }
+  });
+
+  // ---- Form submit ----
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    contactForm.classList.add('is-hidden');
+    modalSuccess.classList.add('is-visible');
+  });
+</script>
+
+</body>
+</html>
