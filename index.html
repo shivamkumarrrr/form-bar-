@@ -276,14 +276,14 @@
   .audience-tags { display:flex; flex-wrap:wrap; gap: var(--sp-3xs); margin-top:auto; }
   .tag-mint { background: var(--c-secondary-lighter); border-color: var(--c-secondary-light); color: var(--c-secondary-dark); font-family: var(--font-semibold); }
 
-  /* ============ SOCIAL PROOF (ORBIT) ============ */
-  .brand-orbit-wrap { position:relative; width: 680px; height: 680px; max-width:100%; margin: 0 auto; }
-  .brand-orbit-wrap::before { content:""; position:absolute; inset: 40px; border-radius:50%; border:1px dashed var(--c-tertiary-light); }
-  .brand-orbit { position:absolute; inset:0; animation: orbit-spin 48s linear infinite; }
+  /* ============ SOCIAL PROOF (3D CYLINDER ORBIT) ============ */
+  .brand-orbit-wrap { position:relative; width: 100%; max-width: 1200px; height: 340px; margin: 0 auto; perspective: 1800px; perspective-origin: 50% 45%; }
+  .brand-orbit-wrap::before { content:""; position:absolute; left:50%; bottom:18px; width:70%; height:60px; transform:translateX(-50%); border-radius:50%; background: radial-gradient(closest-side, rgba(56,59,74,.10), transparent 70%); }
+  .brand-orbit { position:absolute; inset:0; transform-style: preserve-3d; animation: orbit-spin-y 48s linear infinite; }
   .brand-orbit-wrap:hover .brand-orbit,
   .brand-orbit-wrap:hover .brand-orbit-item-inner { animation-play-state: paused; }
-  .brand-orbit-item { position:absolute; top:50%; left:50%; width:0; height:0; transform: rotate(var(--angle)) translateX(var(--radius, 300px)) rotate(calc(-1 * var(--angle))); }
-  .brand-orbit-item-inner { animation: orbit-counter-spin 48s linear infinite reverse; }
+  .brand-orbit-item { position:absolute; top:50%; left:50%; width:0; height:0; transform-style: preserve-3d; transform: rotateY(var(--angle)) translateZ(var(--radius, 480px)) rotateY(calc(-1 * var(--angle))); }
+  .brand-orbit-item-inner { animation: orbit-counter-spin-y 48s linear infinite reverse; }
   .brand-avatar { position:relative; display:flex; flex-direction:column; align-items:center; }
   .brand-circle { width:92px; height:92px; border-radius:50%; overflow:hidden; display:flex; align-items:center; justify-content:center; border:1px solid var(--c-tertiary-light); background: var(--c-white); box-shadow: var(--shadow); transition: transform var(--t-default); }
   .brand-avatar:hover .brand-circle { transform: scale(1.12); }
@@ -291,11 +291,11 @@
   .brand-circle.is-mono { background: var(--c-secondary-lighter); }
   .brand-circle.is-mono span { font-family: var(--font-bold); font-size: var(--fs-subheading-xs); color: var(--c-secondary-dark); }
   .brand-badge { position:absolute; top:-8px; right:-10px; background: var(--c-primary); color:#fff; font-family: var(--font-semibold); font-size:9px; letter-spacing:.01em; padding: 3px 7px; border-radius: var(--r-xl); white-space:nowrap; box-shadow: 0 2px 6px rgba(56,59,74,.25); }
-  @keyframes orbit-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-  @keyframes orbit-counter-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  @keyframes orbit-spin-y { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
+  @keyframes orbit-counter-spin-y { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
   @media (max-width: 640px) {
-    .brand-orbit-wrap { width: 320px; height: 320px; }
-    .brand-orbit-item { --radius: 128px; }
+    .brand-orbit-wrap { height: 200px; perspective: 700px; }
+    .brand-orbit-item { --radius: 120px; }
     .brand-circle { width:52px; height:52px; }
     .brand-badge { font-size:8px; padding:2px 5px; }
   }
