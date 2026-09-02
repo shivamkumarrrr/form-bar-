@@ -464,6 +464,7 @@
     .modal-panel { margin-top: var(--sp-s); }
   }
 </style>
+<noscript><style>.sr{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
 
@@ -1028,6 +1029,9 @@
       });
     }, { threshold: 0.2 });
     srEls.forEach(function (el) { srObserver.observe(el); });
+    setTimeout(function () {
+      srEls.forEach(function (el) { el.classList.add('sr-visible'); });
+    }, 2500);
   } else {
     srEls.forEach(function (el) { el.classList.add('sr-visible'); });
   }
