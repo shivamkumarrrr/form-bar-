@@ -80,6 +80,13 @@
   }
 
   /* ============ TOKENS ============ */
+
+  /* Metric-matched fallbacks: same line box as Carnero, so the webfont swap
+     does not reflow text. Ratios measured against Arial at 100px em. */
+  @font-face { font-family: "Carnero Fallback Bold"; src: local("Arial"), local("Helvetica"); size-adjust: 108.7%; ascent-override: 116%; descent-override: 26%; line-gap-override: 0%; }
+  @font-face { font-family: "Carnero Fallback Regular"; src: local("Arial"), local("Helvetica"); size-adjust: 106.6%; ascent-override: 116%; descent-override: 26%; line-gap-override: 0%; }
+  @font-face { font-family: "Carnero Fallback Book"; src: local("Arial"), local("Helvetica"); size-adjust: 105.7%; ascent-override: 116%; descent-override: 26%; line-gap-override: 0%; }
+
   :root {
     --c-primary:#383B4A;
     --c-primary-light:#5B5E6E;
@@ -110,9 +117,9 @@
     --fs-subheading-l:55px; --fs-subheading-m:34px; --fs-subheading-s:28px; --fs-subheading-xs:21px;
     --fs-text-l:28px; --fs-text-m:21px; --fs-text-s:16px; --fs-text-xs:13px;
 
-    --font-bold:"Carnero W01 Bold","Segoe UI",Roboto,Arial,sans-serif;
-    --font-regular:"Carnero W01 Regular","Segoe UI",Roboto,Arial,sans-serif;
-    --font-book:"Carnero W01 Book","Segoe UI",Roboto,Arial,sans-serif;
+    --font-bold:"Carnero W01 Bold","Carnero Fallback Bold","Segoe UI",Roboto,Arial,sans-serif;
+    --font-regular:"Carnero W01 Regular","Carnero Fallback Regular","Segoe UI",Roboto,Arial,sans-serif;
+    --font-book:"Carnero W01 Book","Carnero Fallback Book","Segoe UI",Roboto,Arial,sans-serif;
     --font-light:"Carnero W01 Light","Segoe UI",Roboto,Arial,sans-serif;
     --font-semibold:"Carnero W01 Semibold","Segoe UI",Roboto,Arial,sans-serif;
     --font-semibold-italic:"Carnero W01 Semibold Italic","Segoe UI",Roboto,Arial,sans-serif;
