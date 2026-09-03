@@ -6,6 +6,9 @@
 <title>form.bar Business: Möbel nach Maß für dein Unternehmen</title>
 <meta name="description" content="Empfangstheken, Designregale und individuelle Konstruktionen nach Maß, entworfen in deinem Stil und gefertigt von regionalen Partner-Schreinereien.">
 <link rel="preconnect" href="https://static.form.bar" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="https://static.form.bar/fe-ressources/fonts/5769335/c2b01d18-dfd4-481e-a5f5-50a1f6d19528.woff2" crossorigin><!-- Bold - headings -->
+<link rel="preload" as="font" type="font/woff2" href="https://static.form.bar/fe-ressources/fonts/5769304/6e2aa19a-7c07-464f-a7f5-d77c3e88a25c.woff2" crossorigin><!-- Regular - nav, tags, buttons -->
+<link rel="preload" as="font" type="font/woff2" href="https://static.form.bar/fe-ressources/fonts/5769291/eda3d5a2-6c59-44b9-95b6-15448937cbe6.woff2" crossorigin><!-- Book - body copy -->
 
 <style>
   /* ============ FONTS (Carnero W01, hosted by form.bar) ============ */
@@ -151,7 +154,7 @@
   }
 
   /* ============ SCROLL REVEAL ============ */
-  .sr { opacity:0; transition: opacity .6s ease-out, transform .6s ease-out; will-change: opacity, transform; }
+  .sr { opacity:0; transition: opacity .45s ease-out, transform .45s ease-out; will-change: opacity, transform; }
   .sr-fade-up { transform: translateY(36px); }
   .sr-fade-in { transform: none; }
   .sr-visible { opacity:1; transform:none; }
@@ -1035,7 +1038,7 @@
           srObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0, rootMargin: '0px 0px 15% 0px' });
+    }, { threshold: 0, rootMargin: '0px 0px 40% 0px' });
     srEls.forEach(function (el) { srObserver.observe(el); });
     setTimeout(function () {
       srEls.forEach(function (el) { el.classList.add('sr-visible'); });
