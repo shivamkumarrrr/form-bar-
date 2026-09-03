@@ -83,6 +83,7 @@
     --c-primary-transparent: rgba(91,94,110,.7);
     --c-secondary:#91E3B7;
     --c-secondary-dark:#63B48A;
+    --c-secondary-text:#2F7A52;
     --c-secondary-light:#C9ECD9;
     --c-secondary-lighter:#EEFDF4;
     --c-tertiary:#B4B6BE;
@@ -185,7 +186,7 @@
   .nav-logo .dot { color: var(--c-secondary-dark); }
   .nav-links { display:flex; align-items:center; gap: var(--sp-s); font-family: var(--font-regular); font-size: var(--fs-text-s); }
   .nav-links a { transition: color var(--t-default); }
-  .nav-links a:hover { color: var(--c-secondary-dark); }
+  .nav-links a:hover { color: var(--c-secondary-text); }
   .nav-pill { background: var(--c-secondary); color: var(--c-primary); padding: var(--sp-4xs) var(--sp-xs); border-radius: var(--r-xl); font-family: var(--font-semibold); }
   .nav-right { display:flex; align-items:center; gap: var(--sp-xs); }
   .nav-phone { display:flex; align-items:center; gap:var(--sp-4xs); font-size: var(--fs-text-s); color: var(--c-primary-light); }
@@ -238,7 +239,7 @@
   .section { padding: var(--sp-l) 0; }
   .section.bg-alt { background: var(--c-tertiary-lighter); }
   .section-header { max-width: 640px; margin-bottom: var(--sp-m); }
-  .eyebrow { font-family: var(--font-regular); font-size: var(--fs-text-s); letter-spacing:.1em; text-transform:uppercase; color: var(--c-secondary-dark); margin-bottom: var(--sp-2xs); }
+  .eyebrow { font-family: var(--font-regular); font-size: var(--fs-text-s); letter-spacing:.1em; text-transform:uppercase; color: var(--c-secondary-text); margin-bottom: var(--sp-2xs); }
   .section h2 { font-size: var(--fs-heading-xs); color: var(--c-primary); margin-bottom: var(--sp-2xs); }
   .section-desc { font-family: var(--font-book); font-size: var(--fs-text-m); color: var(--c-primary-light); }
 
@@ -278,7 +279,7 @@
   .audience-body h3 { font-size: var(--fs-subheading-s); margin-bottom: var(--sp-3xs); }
   .audience-body p { font-family: var(--font-book); font-size: var(--fs-text-s); color: var(--c-primary-light); margin-bottom: var(--sp-s); }
   .audience-tags { display:flex; flex-wrap:wrap; gap: var(--sp-3xs); margin-top:auto; }
-  .tag-mint { background: var(--c-secondary-lighter); border-color: var(--c-secondary-light); color: var(--c-secondary-dark); font-family: var(--font-semibold); }
+  .tag-mint { background: var(--c-secondary-lighter); border-color: var(--c-secondary-light); color: var(--c-secondary-text); font-family: var(--font-semibold); }
 
   /* ============ SOCIAL PROOF (3D CYLINDER ORBIT) ============ */
   .brand-orbit-wrap { position:relative; width: 100%; max-width: 1440px; height: 420px; margin: 0 auto; perspective: 2200px; perspective-origin: 50% 45%; }
@@ -293,7 +294,7 @@
   .brand-avatar:hover .brand-circle { transform: scale(1.12); }
   .brand-circle img { width:100%; height:100%; object-fit:cover; }
   .brand-circle.is-mono { background: var(--c-secondary-lighter); }
-  .brand-circle.is-mono span { font-family: var(--font-bold); font-size: var(--fs-subheading-xs); color: var(--c-secondary-dark); }
+  .brand-circle.is-mono span { font-family: var(--font-bold); font-size: var(--fs-subheading-xs); color: var(--c-secondary-text); }
   .brand-badge { position:absolute; top:-10px; right:-14px; background: var(--c-primary); color:#fff; font-family: var(--font-semibold); font-size:11px; letter-spacing:.01em; padding: 4px 9px; border-radius: var(--r-xl); white-space:nowrap; box-shadow: 0 2px 6px rgba(56,59,74,.25); }
   @keyframes orbit-spin-y { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
   @keyframes orbit-counter-spin-y { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
@@ -326,7 +327,7 @@
   .marquee-viewport:hover .marquee-track { animation-play-state: paused; }
   .marquee-card { flex-shrink:0; width:340px; background: var(--c-white); border:1px solid var(--c-tertiary-light); border-radius: var(--r-m); padding: var(--sp-s); display:flex; flex-direction:column; gap: var(--sp-xs); }
   .marquee-card p { font-family: var(--font-book-italic); font-style:italic; font-size: var(--fs-text-s); line-height:140%; color: var(--c-primary); }
-  .marquee-attr { font-family: var(--font-regular); font-size: var(--fs-text-xs); color: var(--c-secondary-dark); }
+  .marquee-attr { font-family: var(--font-regular); font-size: var(--fs-text-xs); color: var(--c-secondary-text); }
   @keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
 
@@ -336,7 +337,7 @@
   .process-step:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(56,59,74,.1); border-color: var(--c-secondary-light); }
   .process-icon { flex-shrink:0; width:48px; height:48px; border-radius:50%; background: var(--c-secondary); display:flex; align-items:center; justify-content:center; box-shadow: 0 4px 12px rgba(99,180,138,.3); }
   .process-icon svg { width:21px; height:21px; color: var(--c-primary); }
-  .process-num { font-family: var(--font-bold); font-size: var(--fs-text-xs); color: var(--c-secondary-dark); margin-bottom: var(--sp-4xs); letter-spacing:.05em; }
+  .process-num { font-family: var(--font-bold); font-size: var(--fs-text-xs); color: var(--c-secondary-text); margin-bottom: var(--sp-4xs); letter-spacing:.05em; }
   .process-step h4 { font-size: var(--fs-subheading-xs); margin-bottom: var(--sp-3xs); }
   .process-step p { font-family: var(--font-book); font-size: var(--fs-text-s); color: var(--c-primary-light); }
 
@@ -367,7 +368,7 @@
   .footer-social svg { width:16px; height:16px; }
   .footer-col h5 { font-family: var(--font-regular); font-size: var(--fs-text-s); letter-spacing:.03em; color: var(--c-primary); margin-bottom: var(--sp-xs); }
   .footer-col a { display:block; font-family: var(--font-regular); font-size: var(--fs-text-s); color: var(--c-primary-light); padding: var(--sp-4xs) 0; transition: color var(--t-default); }
-  .footer-col a:hover { color: var(--c-secondary-dark); }
+  .footer-col a:hover { color: var(--c-secondary-text); }
   .footer-newsletter-title { font-family: var(--font-semibold); font-size: var(--fs-text-s); color: var(--c-primary); margin-top: var(--sp-s); margin-bottom: var(--sp-2xs); }
   .newsletter { display:flex; gap: var(--sp-3xs); margin-top: var(--sp-2xs); max-width: 320px; }
   .newsletter input { flex:1; padding: var(--sp-2xs); border-radius: var(--r-s); border:1px solid var(--c-tertiary-light); background: var(--c-white); color: var(--c-primary); font-family: var(--font-regular); font-size: var(--fs-text-xs); }
@@ -392,7 +393,7 @@
   .mastercard-mark span { position:absolute; top:0; width:22px; height:22px; border-radius:50%; }
   .mastercard-mark .c-left { left:0; background:#EB001B; }
   .mastercard-mark .c-right { left:14px; background:#F79E1B; mix-blend-mode:multiply; }
-  .footer-copy { padding: var(--sp-xs) 0; text-align:center; font-family: var(--font-regular); font-size: var(--fs-text-xs); color: var(--c-tertiary); }
+  .footer-copy { padding: var(--sp-xs) 0; text-align:center; font-family: var(--font-regular); font-size: var(--fs-text-xs); color: var(--c-primary-light); }
 
   /* ============ RESPONSIVE ============ */
   @media (max-width: 1023px) {
@@ -438,7 +439,7 @@
   .form-row { display:grid; grid-template-columns: 1fr 1fr; gap: var(--sp-xs); margin-bottom: var(--sp-xs); }
   .form-field { display:flex; flex-direction:column; gap: var(--sp-4xs); }
   .form-field label { font-family: var(--font-semibold); font-size: var(--fs-text-s); color: var(--c-primary); }
-  .form-field label .req { color: var(--c-secondary-dark); }
+  .form-field label .req { color: var(--c-secondary-text); }
   .form-field input, .form-field textarea { font-family: var(--font-regular); font-size: var(--fs-text-s); color: var(--c-primary); padding: var(--sp-2xs); border-radius: var(--r-s); border:1px solid var(--c-tertiary-light); background: var(--c-white); transition: border-color var(--t-default); }
   .form-field input:focus, .form-field textarea:focus { outline:none; border-color: var(--c-secondary-dark); }
   .form-field textarea { resize:vertical; min-height:100px; }
@@ -454,7 +455,7 @@
   .form-dropzone:hover, .form-dropzone.is-drag { border-color: var(--c-secondary-dark); background: var(--c-secondary-lighter); }
   .form-dropzone p { font-family: var(--font-regular); font-size: var(--fs-text-s); color: var(--c-primary); }
   .form-dropzone span { font-family: var(--font-regular); font-size: var(--fs-text-xs); color: var(--c-tertiary); display:block; margin-top: var(--sp-4xs); }
-  .form-dropzone .file-name { font-family: var(--font-semibold); color: var(--c-secondary-dark); }
+  .form-dropzone .file-name { font-family: var(--font-semibold); color: var(--c-secondary-text); }
   .form-required-note { font-family: var(--font-regular); font-size: var(--fs-text-xs); color: var(--c-tertiary); margin-bottom: var(--sp-s); }
   .form-footer { display:flex; justify-content:flex-end; }
   .modal-success { display:none; text-align:center; padding: var(--sp-l) var(--sp-s); }
@@ -496,6 +497,7 @@
 </nav>
 
 <!-- HERO -->
+<main>
 <header class="hero">
   <div class="hero-inner">
     <div class="hero-text">
@@ -517,7 +519,7 @@
       </div>
     </div>
     <div class="hero-visual sr sr-fade-in">
-      <img src="assets/img/hero-theke-freiform.jpg" alt="Kinder und Erwachsene an einer baumförmigen form.bar Regal-Installation" loading="eager" fetchpriority="high" width="1068" height="705">
+      <img src="assets/img/hero-theke-freiform.webp" srcset="assets/img/hero-theke-freiform-780.webp 780w, assets/img/hero-theke-freiform.webp 1068w" sizes="(max-width: 1023px) 92vw, 45vw" alt="Kinder und Erwachsene an einer baumförmigen form.bar Regal-Installation" loading="eager" fetchpriority="high" width="1068" height="705">
     </div>
   </div>
 </header>
@@ -568,45 +570,45 @@
 
     <div class="tab-panel is-active" data-panel="laden">
       <div class="showcase-grid">
-        <div class="showcase-card sr sr-fade-up"><img src="assets/img/showcase-laden-1.jpg" alt="Villeroy & Boch Einzelhandelspräsentation mit form.bar Möbeln" loading="lazy"><div class="showcase-cap"><strong>Villeroy &amp; Boch</strong>Einzelhandelspräsentation</div></div>
-        <div class="showcase-card sr sr-fade-up" style="transition-delay:.1s"><img src="assets/img/showcase-laden-2.jpg" alt="Verkaufsregal in einer Boutique auf Sylt" loading="lazy"><div class="showcase-cap"><strong>Boutique, Sylt</strong>Freistehendes Verkaufsregal</div></div>
-        <div class="showcase-card sr sr-fade-up" style="transition-delay:.2s"><img src="assets/img/showcase-laden-3.jpg" alt="Verkaufstheke in einem Smoothie-Store" loading="lazy"><div class="showcase-cap"><strong>Smoothie-Store</strong>Verkaufstheke &amp; Regal</div></div>
-        <div class="showcase-card sr sr-fade-up"><img src="assets/img/showcase-laden-4.jpg" alt="Weiteres Verkaufsregal in einer Boutique auf Sylt" loading="lazy"><div class="showcase-cap"><strong>Boutique, Sylt</strong>Verkaufsregal, Detailansicht</div></div>
-        <div class="showcase-card sr sr-fade-up" style="transition-delay:.1s"><img src="assets/img/showcase-laden-5.jpg" alt="Regal in einer Buchhandlung" loading="lazy"><div class="showcase-cap"><strong>Buchhandlung</strong>Verkaufsregal</div></div>
-        <div class="showcase-card sr sr-fade-up" style="transition-delay:.2s"><img src="assets/img/showcase-laden-6.jpg" alt="Einzelhandelsregal für Warenpräsentation" loading="lazy"><div class="showcase-cap"><strong>Einzelhandel</strong>Verkaufsregal</div></div>
+        <div class="showcase-card sr sr-fade-up"><img src="assets/img/showcase-laden-1.webp" alt="Villeroy & Boch Einzelhandelspräsentation mit form.bar Möbeln" loading="lazy"><div class="showcase-cap"><strong>Villeroy &amp; Boch</strong>Einzelhandelspräsentation</div></div>
+        <div class="showcase-card sr sr-fade-up" style="transition-delay:.1s"><img src="assets/img/showcase-laden-2.webp" alt="Verkaufsregal in einer Boutique auf Sylt" loading="lazy"><div class="showcase-cap"><strong>Boutique, Sylt</strong>Freistehendes Verkaufsregal</div></div>
+        <div class="showcase-card sr sr-fade-up" style="transition-delay:.2s"><img src="assets/img/showcase-laden-3.webp" alt="Verkaufstheke in einem Smoothie-Store" loading="lazy"><div class="showcase-cap"><strong>Smoothie-Store</strong>Verkaufstheke &amp; Regal</div></div>
+        <div class="showcase-card sr sr-fade-up"><img src="assets/img/showcase-laden-4.webp" alt="Weiteres Verkaufsregal in einer Boutique auf Sylt" loading="lazy"><div class="showcase-cap"><strong>Boutique, Sylt</strong>Verkaufsregal, Detailansicht</div></div>
+        <div class="showcase-card sr sr-fade-up" style="transition-delay:.1s"><img src="assets/img/showcase-laden-5.webp" alt="Regal in einer Buchhandlung" loading="lazy"><div class="showcase-cap"><strong>Buchhandlung</strong>Verkaufsregal</div></div>
+        <div class="showcase-card sr sr-fade-up" style="transition-delay:.2s"><img src="assets/img/showcase-laden-6.webp" alt="Einzelhandelsregal für Warenpräsentation" loading="lazy"><div class="showcase-cap"><strong>Einzelhandel</strong>Verkaufsregal</div></div>
       </div>
     </div>
 
     <div class="tab-panel" data-panel="messen">
       <div class="showcase-grid">
-        <div class="showcase-card sr sr-fade-up"><img src="assets/img/showcase-messe-1.jpg" alt="CISPA Messestand mit individuellem form.bar Möbel" loading="lazy"><div class="showcase-cap"><strong>CISPA</strong>Messestand</div></div>
-        <div class="showcase-card sr sr-fade-up" style="transition-delay:.1s"><img src="assets/img/showcase-messe-2.jpg" alt="Individuelle form.bar Messetheke" loading="lazy"><div class="showcase-cap"><strong>Messeauftritt</strong>Individuelle Messetheke</div></div>
-        <div class="showcase-card sr sr-fade-up" style="transition-delay:.2s"><img src="assets/img/showcase-messe-3.jpg" alt="form.bar Messestand" loading="lazy"><div class="showcase-cap"><strong>Messeauftritt</strong>Individueller Messestand</div></div>
-        <div class="showcase-card sr sr-fade-up"><img src="assets/img/showcase-messe-4.jpg" alt="Eventtheke für eine Sparkasse" loading="lazy"><div class="showcase-cap"><strong>Sparkasse</strong>Eventtheke</div></div>
-        <div class="showcase-card sr sr-fade-up" style="transition-delay:.1s"><img src="assets/img/showcase-messe-5.jpg" alt="Showroom der Europäischen Akademie" loading="lazy"><div class="showcase-cap"><strong>Europäische Akademie</strong>Showroom</div></div>
-        <div class="showcase-card sr sr-fade-up" style="transition-delay:.2s"><img src="assets/img/showcase-messe-6.jpg" alt="Design-Raumtrenner in einer Galerie" loading="lazy"><div class="showcase-cap"><strong>Galerie</strong>Design-Raumtrenner</div></div>
+        <div class="showcase-card sr sr-fade-up"><img src="assets/img/showcase-messe-1.webp" alt="CISPA Messestand mit individuellem form.bar Möbel" loading="lazy"><div class="showcase-cap"><strong>CISPA</strong>Messestand</div></div>
+        <div class="showcase-card sr sr-fade-up" style="transition-delay:.1s"><img src="assets/img/showcase-messe-2.webp" alt="Individuelle form.bar Messetheke" loading="lazy"><div class="showcase-cap"><strong>Messeauftritt</strong>Individuelle Messetheke</div></div>
+        <div class="showcase-card sr sr-fade-up" style="transition-delay:.2s"><img src="assets/img/showcase-messe-3.webp" alt="form.bar Messestand" loading="lazy"><div class="showcase-cap"><strong>Messeauftritt</strong>Individueller Messestand</div></div>
+        <div class="showcase-card sr sr-fade-up"><img src="assets/img/showcase-messe-4.webp" alt="Eventtheke für eine Sparkasse" loading="lazy"><div class="showcase-cap"><strong>Sparkasse</strong>Eventtheke</div></div>
+        <div class="showcase-card sr sr-fade-up" style="transition-delay:.1s"><img src="assets/img/showcase-messe-5.webp" alt="Showroom der Europäischen Akademie" loading="lazy"><div class="showcase-cap"><strong>Europäische Akademie</strong>Showroom</div></div>
+        <div class="showcase-card sr sr-fade-up" style="transition-delay:.2s"><img src="assets/img/showcase-messe-6.webp" alt="Design-Raumtrenner in einer Galerie" loading="lazy"><div class="showcase-cap"><strong>Galerie</strong>Design-Raumtrenner</div></div>
       </div>
     </div>
 
     <div class="tab-panel" data-panel="gastro">
       <div class="showcase-grid">
-        <div class="showcase-card sr sr-fade-up"><img src="assets/img/showcase-gastro-1.jpg" alt="Akustiklösung an der Decke eines Restaurants" loading="lazy"><div class="showcase-cap"><strong>Gastronomie</strong>Akustiklösung für die Decke</div></div>
-        <div class="showcase-card sr sr-fade-up" style="transition-delay:.1s"><img src="assets/img/showcase-gastro-2.jpg" alt="Regalsystem in einer offenen Restaurantküche" loading="lazy"><div class="showcase-cap"><strong>Offene Küche</strong>Regalsystem für die Gastronomie</div></div>
-        <div class="showcase-card sr sr-fade-up" style="transition-delay:.2s"><img src="assets/img/showcase-gastro-3.jpg" alt="Küchentheke im Gastronomiebereich" loading="lazy"><div class="showcase-cap"><strong>Gastronomie</strong>Küchentheke</div></div>
-        <div class="showcase-card sr sr-fade-up"><img src="assets/img/showcase-gastro-4.jpg" alt="Regal als Raumtrenner in einer Gastronomieküche" loading="lazy"><div class="showcase-cap"><strong>Gastronomie</strong>Raumtrenner-Regal</div></div>
-        <div class="showcase-card sr sr-fade-up" style="transition-delay:.1s"><img src="assets/img/showcase-gastro-5.jpg" alt="Raumtrenner im Foyer eines Aufenthaltsraums" loading="lazy"><div class="showcase-cap"><strong>Foyer</strong>Raumtrenner</div></div>
-        <div class="showcase-card sr sr-fade-up" style="transition-delay:.2s"><img src="assets/img/showcase-gastro-6.jpg" alt="Dynamisch geformtes Sideboard als Raumtrenner" loading="lazy"><div class="showcase-cap"><strong>Sideboard</strong>Dynamischer Raumtrenner</div></div>
+        <div class="showcase-card sr sr-fade-up"><img src="assets/img/showcase-gastro-1.webp" alt="Akustiklösung an der Decke eines Restaurants" loading="lazy"><div class="showcase-cap"><strong>Gastronomie</strong>Akustiklösung für die Decke</div></div>
+        <div class="showcase-card sr sr-fade-up" style="transition-delay:.1s"><img src="assets/img/showcase-gastro-2.webp" alt="Regalsystem in einer offenen Restaurantküche" loading="lazy"><div class="showcase-cap"><strong>Offene Küche</strong>Regalsystem für die Gastronomie</div></div>
+        <div class="showcase-card sr sr-fade-up" style="transition-delay:.2s"><img src="assets/img/showcase-gastro-3.webp" alt="Küchentheke im Gastronomiebereich" loading="lazy"><div class="showcase-cap"><strong>Gastronomie</strong>Küchentheke</div></div>
+        <div class="showcase-card sr sr-fade-up"><img src="assets/img/showcase-gastro-4.webp" alt="Regal als Raumtrenner in einer Gastronomieküche" loading="lazy"><div class="showcase-cap"><strong>Gastronomie</strong>Raumtrenner-Regal</div></div>
+        <div class="showcase-card sr sr-fade-up" style="transition-delay:.1s"><img src="assets/img/showcase-gastro-5.webp" alt="Raumtrenner im Foyer eines Aufenthaltsraums" loading="lazy"><div class="showcase-cap"><strong>Foyer</strong>Raumtrenner</div></div>
+        <div class="showcase-card sr sr-fade-up" style="transition-delay:.2s"><img src="assets/img/showcase-gastro-6.webp" alt="Dynamisch geformtes Sideboard als Raumtrenner" loading="lazy"><div class="showcase-cap"><strong>Sideboard</strong>Dynamischer Raumtrenner</div></div>
       </div>
     </div>
 
     <div class="tab-panel" data-panel="buero">
       <div class="showcase-grid">
-        <div class="showcase-card sr sr-fade-up"><img src="assets/img/showcase-buero-1.jpg" alt="Besprechungsraum mit form.bar Designmöbel" loading="lazy"><div class="showcase-cap"><strong>Büro</strong>Besprechungsraum mit Designmöbel</div></div>
-        <div class="showcase-card sr sr-fade-up" style="transition-delay:.1s"><img src="assets/img/showcase-buero-2.jpg" alt="Wandboard im Besprechungsraum einer Kanzlei" loading="lazy"><div class="showcase-cap"><strong>Kanzlei</strong>Wandboard im Besprechungsraum</div></div>
-        <div class="showcase-card sr sr-fade-up" style="transition-delay:.2s"><img src="assets/img/showcase-buero-3.jpg" alt="Kanzleiregal für einen Anwalt" loading="lazy"><div class="showcase-cap"><strong>Kanzlei</strong>Regal für Akten &amp; Bücher</div></div>
-        <div class="showcase-card sr sr-fade-up"><img src="assets/img/showcase-buero-4.jpg" alt="Raumhohes Regal in einem Architekturbüro" loading="lazy"><div class="showcase-cap"><strong>Architekturbüro</strong>Raumhohes Regal</div></div>
-        <div class="showcase-card sr sr-fade-up" style="transition-delay:.1s"><img src="assets/img/showcase-buero-5.jpg" alt="Tresen als Raumtrenner in einer Praxis" loading="lazy"><div class="showcase-cap"><strong>Praxis</strong>Tresen als Raumtrenner</div></div>
-        <div class="showcase-card sr sr-fade-up" style="transition-delay:.2s"><img src="assets/img/showcase-buero-6.jpg" alt="Organisch geformte Empfangstheke in einem Empfangsbereich" loading="lazy"><div class="showcase-cap"><strong>Empfang</strong>Freiform-Theke</div></div>
+        <div class="showcase-card sr sr-fade-up"><img src="assets/img/showcase-buero-1.webp" alt="Besprechungsraum mit form.bar Designmöbel" loading="lazy"><div class="showcase-cap"><strong>Büro</strong>Besprechungsraum mit Designmöbel</div></div>
+        <div class="showcase-card sr sr-fade-up" style="transition-delay:.1s"><img src="assets/img/showcase-buero-2.webp" alt="Wandboard im Besprechungsraum einer Kanzlei" loading="lazy"><div class="showcase-cap"><strong>Kanzlei</strong>Wandboard im Besprechungsraum</div></div>
+        <div class="showcase-card sr sr-fade-up" style="transition-delay:.2s"><img src="assets/img/showcase-buero-3.webp" alt="Kanzleiregal für einen Anwalt" loading="lazy"><div class="showcase-cap"><strong>Kanzlei</strong>Regal für Akten &amp; Bücher</div></div>
+        <div class="showcase-card sr sr-fade-up"><img src="assets/img/showcase-buero-4.webp" alt="Raumhohes Regal in einem Architekturbüro" loading="lazy"><div class="showcase-cap"><strong>Architekturbüro</strong>Raumhohes Regal</div></div>
+        <div class="showcase-card sr sr-fade-up" style="transition-delay:.1s"><img src="assets/img/showcase-buero-5.webp" alt="Tresen als Raumtrenner in einer Praxis" loading="lazy"><div class="showcase-cap"><strong>Praxis</strong>Tresen als Raumtrenner</div></div>
+        <div class="showcase-card sr sr-fade-up" style="transition-delay:.2s"><img src="assets/img/showcase-buero-6.webp" alt="Organisch geformte Empfangstheke in einem Empfangsbereich" loading="lazy"><div class="showcase-cap"><strong>Empfang</strong>Freiform-Theke</div></div>
       </div>
     </div>
   </div>
@@ -623,7 +625,7 @@
     <div class="products-grid">
       <div class="product-card sr sr-fade-up">
         <div class="product-media">
-          <img src="assets/img/product-empfangstheke.jpg" alt="Organisch geformte Empfangstheke in einer Kanzlei" loading="lazy">
+          <img src="assets/img/product-empfangstheke.webp" alt="Organisch geformte Empfangstheke in einer Kanzlei" loading="lazy">
           <span class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M5 20V9c0-1 .5-2 3-2h8c2.5 0 3 1 3 2v11"/><path d="M9 20v-4h6v4"/></svg></span>
         </div>
         <div class="product-body">
@@ -633,7 +635,7 @@
       </div>
       <div class="product-card sr sr-fade-up" style="transition-delay:.1s">
         <div class="product-media">
-          <img src="assets/img/product-designregal.jpg" alt="Freistehendes Designregal für den Einzelhandel" loading="lazy">
+          <img src="assets/img/product-designregal.webp" alt="Freistehendes Designregal für den Einzelhandel" loading="lazy">
           <span class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M4 9h16M4 15h16M10 3v18"/></svg></span>
         </div>
         <div class="product-body">
@@ -643,7 +645,7 @@
       </div>
       <div class="product-card sr sr-fade-up" style="transition-delay:.2s">
         <div class="product-media">
-          <img src="assets/img/product-sonderkonstruktion.jpg" alt="Individueller Raumtrenner als Sonderkonstruktion" loading="lazy">
+          <img src="assets/img/product-sonderkonstruktion.webp" alt="Individueller Raumtrenner als Sonderkonstruktion" loading="lazy">
           <span class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 1.4 1.4l3.6-3.6a5 5 0 0 1-6.7 6.7L4 20l-2-2 9.2-9a5 5 0 0 1 6.7-6.7l-3.6 3.6z"/></svg></span>
         </div>
         <div class="product-body">
@@ -665,7 +667,7 @@
     </div>
     <div class="audience-grid">
       <div class="audience-card sr sr-fade-up">
-        <img src="assets/img/audience-praxis.jpg" alt="Repräsentativer Empfangsbereich einer Praxis" loading="lazy">
+        <img src="assets/img/audience-praxis.webp" alt="Repräsentativer Empfangsbereich einer Praxis" loading="lazy">
         <div class="audience-body">
           <h3>Repräsentative Geschäftsräume</h3>
           <p>Praxen, Kanzleien, Agenturen, Architekturbüros, Friseursalons: überall dort, wo der Raum Teil der Marke ist.</p>
@@ -680,7 +682,7 @@
         </div>
       </div>
       <div class="audience-card sr sr-fade-up" style="transition-delay:.1s">
-        <img src="assets/img/audience-einzelhandel.jpg" alt="Warenpräsentation im gehobenen Einzelhandel" loading="lazy">
+        <img src="assets/img/audience-einzelhandel.webp" alt="Warenpräsentation im gehobenen Einzelhandel" loading="lazy">
         <div class="audience-body">
           <h3>Gehobener Einzelhandel</h3>
           <p>Wenn deine Produkte Premium sind, sollte die Präsentation es auch sein, egal ob Mode, Geschirr oder Kaffee.</p>
@@ -706,8 +708,8 @@
   </div>
   <div class="brand-orbit-wrap">
     <div class="brand-orbit">
-      <div class="brand-orbit-item" style="--angle:0deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle"><img src="assets/img/social-proof-villeroyboch.jpg" alt="Villeroy & Boch"></span><span class="brand-badge">Villeroy &amp; Boch</span></div></div></div>
-      <div class="brand-orbit-item" style="--angle:27.7deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle"><img src="assets/img/social-proof-unisaarland.jpg" alt="Universität des Saarlandes"></span><span class="brand-badge">Uni Saarland</span></div></div></div>
+      <div class="brand-orbit-item" style="--angle:0deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle"><img src="assets/img/social-proof-villeroyboch.webp" alt="Villeroy & Boch"></span><span class="brand-badge">Villeroy &amp; Boch</span></div></div></div>
+      <div class="brand-orbit-item" style="--angle:27.7deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle"><img src="assets/img/social-proof-unisaarland.webp" alt="Universität des Saarlandes"></span><span class="brand-badge">Uni Saarland</span></div></div></div>
       <div class="brand-orbit-item" style="--angle:55.4deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle is-mono"><span>B</span></span><span class="brand-badge">Bosch</span></div></div></div>
       <div class="brand-orbit-item" style="--angle:83.1deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle is-mono"><span>A</span></span><span class="brand-badge">Audi</span></div></div></div>
       <div class="brand-orbit-item" style="--angle:110.8deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle is-mono"><span>A</span></span><span class="brand-badge">Adidas</span></div></div></div>
@@ -802,7 +804,7 @@
         <span class="process-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
         <div>
           <p class="process-num">SCHRITT 01</p>
-          <h4>Beratung</h4>
+          <h3>Beratung</h3>
           <p>Du schilderst uns deinen Raum und deine Vorstellungen. Wir beraten zu Machbarkeit, Material und Design.</p>
         </div>
       </div>
@@ -810,7 +812,7 @@
         <span class="process-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span>
         <div>
           <p class="process-num">SCHRITT 02</p>
-          <h4>Entwurf</h4>
+          <h3>Entwurf</h3>
           <p>Im 3D-Konfigurator gestaltest du selbst, oder unser Design-Team plant für dich – ganz ohne Aufpreis.</p>
         </div>
       </div>
@@ -818,7 +820,7 @@
         <span class="process-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>
         <div>
           <p class="process-num">SCHRITT 03</p>
-          <h4>Fertigung</h4>
+          <h3>Fertigung</h3>
           <p>Eine Partner-Schreinerei in deiner Nähe fertigt das Möbelstück in Handarbeit: kurze Wege, persönlicher Kontakt.</p>
         </div>
       </div>
@@ -826,7 +828,7 @@
         <span class="process-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="7" width="15" height="10" rx="1"/><path d="M16 10h4l3 3v4h-7z"/><circle cx="6" cy="19" r="1.6"/><circle cx="18" cy="19" r="1.6"/></svg></span>
         <div>
           <p class="process-num">SCHRITT 04</p>
-          <h4>Lieferung</h4>
+          <h3>Lieferung</h3>
           <p>Auf Wunsch liefern und montieren wir direkt bei dir. Schnelle Lieferzeiten auf Anfrage.</p>
         </div>
       </div>
@@ -879,12 +881,14 @@
       </div>
     </div>
     <div class="cta-visual sr sr-fade-in" style="transition-delay:.15s">
-      <img src="assets/img/showcase-buero-1.jpg" alt="Team bei der Planung eines form.bar Projekts" loading="lazy">
+      <img src="assets/img/showcase-buero-1.webp" alt="Team bei der Planung eines form.bar Projekts" loading="lazy">
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
+</main>
+
 <footer class="footer">
   <div class="wrap">
     <div class="footer-top">
@@ -904,24 +908,24 @@
         </form>
       </div>
       <div class="footer-col">
-        <h5>Service</h5>
+        <h3>Service</h3>
         <a href="#kontakt">Kontakt</a>
         <a href="#">FAQ</a>
         <a href="#">f+ Design-Service</a>
       </div>
       <div class="footer-col">
-        <h5>form.bar</h5>
+        <h3>form.bar</h3>
         <a href="#">Über uns</a>
         <a href="#">Team</a>
         <a href="#">Presse</a>
       </div>
       <div class="footer-col">
-        <h5>Business</h5>
+        <h3>Business</h3>
         <a href="https://www.form.bar/de-DE/business/partner" target="_blank" rel="noopener">Fertigungspartner</a>
         <a href="#">Business-Service</a>
       </div>
       <div class="footer-col">
-        <h5>Rechtliches</h5>
+        <h3>Rechtliches</h3>
         <a href="#">AGB</a>
         <a href="#">Datenschutz</a>
         <a href="#">Widerruf</a>
@@ -934,19 +938,19 @@
   </div>
   <div class="footer-bar">
     <div class="wrap">
-      <a href="https://www.trustedshops.de/bewertung/info_XD406B59FD645A9A9A3205F0F9B08D2A8.html" target="_blank" rel="noopener" class="footer-rating" aria-label="form.bar Bewertungen bei Trusted Shops">
+      <a href="https://www.trustedshops.de/bewertung/info_XD406B59FD645A9A9A3205F0F9B08D2A8.html" target="_blank" rel="noopener" class="footer-rating" aria-label="4,76 von 5 Sternen - Bewertungen bei Trusted Shops">
         <svg class="trustedshops-logo" viewBox="0 0 77 32" aria-hidden="true"><path d="M13.201 26.533c-7.291 0-13.201-5.91-13.201-13.201s5.91-13.201 13.201-13.201c7.291 0 13.201 5.91 13.201 13.201s-5.91 13.201-13.201 13.201zM13.201 21.663c4.601 0 8.331-3.73 8.331-8.331s-3.73-8.331-8.331-8.331c-4.601 0-8.331 3.73-8.331 8.331s3.73 8.331 8.331 8.331zM16.698 15.883c-1.21 1.788-2.893 3.418-5.154 3.418-2.393 0-3.787-1.499-3.787-3.918 0-3.918 2.893-7.757 6.968-7.757 1.367 0 3.208 0.552 3.208 2.209 0 2.971-4.654 3.971-6.942 4.549-0.079 0.5-0.158 0.999-0.158 1.499 0 1.026 0.552 1.972 1.683 1.972 1.473 0 2.656-1.42 3.524-2.472l0.657 0.5zM15.436 9.519c0-0.605-0.342-1.078-0.973-1.078-1.893 0-2.866 3.681-3.234 5.128 1.762-0.526 4.207-1.972 4.207-4.050zM30.951 15.015h-2.183v-1.551h6.232v1.551h-2.209v6.574h-1.841zM35.71 13.569c0.578-0.105 1.473-0.158 2.446-0.158 1.21 0 2.051 0.184 2.63 0.631 0.473 0.394 0.736 0.947 0.736 1.709 0 1.026-0.736 1.736-1.42 1.998v0.026c0.578 0.237 0.868 0.763 1.078 1.525 0.263 0.92 0.5 1.972 0.657 2.288h-1.867c-0.131-0.237-0.316-0.894-0.578-1.893-0.21-0.999-0.578-1.288-1.315-1.288h-0.552v3.182h-1.814v-8.020zM37.525 17.066h0.71c0.92 0 1.446-0.447 1.446-1.157 0-0.736-0.5-1.131-1.341-1.131-0.447 0-0.71 0.026-0.841 0.053v2.235h0.026zM44.414 13.464v4.681c0 1.394 0.526 2.104 1.473 2.104 0.973 0 1.499-0.684 1.499-2.104v-4.681h1.841v4.549c0 2.498-1.262 3.708-3.392 3.708-2.051 0-3.261-1.131-3.261-3.734v-4.523h1.841zM50.515 19.696c0.5 0.263 1.262 0.5 2.025 0.5 0.841 0 1.288-0.342 1.288-0.868 0-0.5-0.394-0.789-1.367-1.157-1.341-0.473-2.235-1.21-2.235-2.393 0-1.394 1.157-2.446 3.077-2.446 0.92 0 1.578 0.184 2.077 0.421l-0.421 1.473c-0.316-0.158-0.894-0.394-1.709-0.394-0.789 0-1.183 0.368-1.183 0.789 0 0.526 0.447 0.736 1.499 1.157 1.42 0.526 2.104 1.288 2.104 2.419 0 1.367-1.052 2.524-3.287 2.524-0.92 0-1.841-0.237-2.288-0.5l0.421-1.525zM58.272 15.015h-2.183v-1.551h6.232v1.551h-2.209v6.574h-1.841zM67.844 18.144h-2.998v1.92h3.34v1.499h-5.18v-8.099h4.996v1.525h-3.156v1.683h2.998zM69.343 13.569c0.684-0.105 1.551-0.158 2.472-0.158 1.551 0 2.551 0.289 3.313 0.868 0.841 0.631 1.367 1.63 1.367 3.050 0 1.551-0.579 2.63-1.341 3.287-0.868 0.71-2.156 1.052-3.734 1.052-0.947 0-1.63-0.053-2.077-0.131v-7.968zM71.184 20.195c0.158 0.026 0.421 0.026 0.631 0.026 1.657 0.026 2.735-0.894 2.735-2.84 0.026-1.683-0.973-2.577-2.551-2.577-0.421 0-0.684 0.026-0.841 0.079v5.312h0.026zM29.478 29.662c0.5 0.263 1.236 0.5 2.025 0.5 0.841 0 1.288-0.342 1.288-0.868 0-0.5-0.394-0.789-1.341-1.131-1.341-0.473-2.209-1.21-2.209-2.393 0-1.367 1.157-2.419 3.050-2.419 0.92 0 1.578 0.184 2.051 0.394l-0.394 1.473c-0.316-0.158-0.894-0.394-1.683-0.394s-1.183 0.368-1.183 0.789c0 0.526 0.447 0.736 1.499 1.131 1.42 0.526 2.104 1.262 2.104 2.419 0 1.341-1.052 2.498-3.261 2.498-0.92 0-1.841-0.237-2.288-0.5l0.342-1.499zM37.472 23.482v3.103h3.024v-3.103h1.814v8.073h-1.814v-3.366h-2.998v3.366h-1.841v-8.073zM51.12 27.427c0 2.656-1.604 4.26-3.971 4.26-2.393 0-3.787-1.814-3.787-4.102 0-2.419 1.551-4.234 3.918-4.234 2.472 0 3.839 1.841 3.839 4.076zM45.282 27.532c0 1.578 0.736 2.709 1.972 2.709s1.946-1.183 1.946-2.735c0-1.446-0.684-2.709-1.946-2.709s-1.972 1.157-1.972 2.735zM52.145 23.588c0.552-0.105 1.341-0.158 2.472-0.158s1.92 0.21 2.472 0.657c0.526 0.394 0.868 1.078 0.868 1.867s-0.263 1.473-0.736 1.92c-0.631 0.579-1.551 0.841-2.63 0.841-0.237 0-0.447-0.026-0.631-0.026v2.893h-1.814v-7.994zM53.96 27.243c0.158 0.026 0.342 0.053 0.605 0.053 0.973 0 1.578-0.5 1.578-1.315 0-0.736-0.526-1.183-1.42-1.183-0.368 0-0.631 0.026-0.763 0.079v2.367zM58.903 29.662c0.5 0.263 1.236 0.5 2.025 0.5 0.841 0 1.288-0.342 1.288-0.868 0-0.5-0.394-0.789-1.341-1.131-1.341-0.473-2.209-1.21-2.209-2.393 0-1.367 1.157-2.419 3.050-2.419 0.92 0 1.578 0.184 2.051 0.394l-0.394 1.473c-0.316-0.158-0.894-0.394-1.683-0.394s-1.183 0.368-1.183 0.789c0 0.526 0.447 0.736 1.499 1.131 1.42 0.526 2.104 1.262 2.104 2.419 0 1.341-1.052 2.498-3.261 2.498-0.92 0-1.841-0.237-2.288-0.5l0.342-1.499z"/></svg>
         <span class="footer-rating-num">4,76</span>
         <span class="footer-rating-stars">★★★★★</span>
       </a>
       <div class="footer-payments">
         <span class="payment-chip text-chip">Rechnung</span>
-        <span class="payment-chip" aria-label="Mastercard"><span class="mastercard-mark"><span class="c-left"></span><span class="c-right"></span></span></span>
-        <span class="payment-chip" aria-label="Visa"><svg viewBox="0 0 24 24" fill="#1A1F71"><path d="M9.112 8.262L5.97 15.758H3.92L2.374 9.775c-.094-.368-.175-.503-.461-.658C1.447 8.864.677 8.627 0 8.479l.046-.217h3.3a.904.904 0 01.894.764l.817 4.338 2.018-5.102zm8.033 5.049c.008-1.979-2.736-2.088-2.717-2.972.006-.269.262-.555.822-.628a3.66 3.66 0 011.913.336l.34-1.59a5.207 5.207 0 00-1.814-.333c-1.917 0-3.266 1.02-3.278 2.479-.012 1.079.963 1.68 1.698 2.04.756.367 1.01.603 1.006.931-.005.504-.602.725-1.16.734-.975.015-1.54-.263-1.992-.473l-.351 1.642c.453.208 1.289.39 2.156.398 2.037 0 3.37-1.006 3.377-2.564m5.061 2.447H24l-1.565-7.496h-1.656a.883.883 0 00-.826.55l-2.909 6.946h2.036l.405-1.12h2.488zm-2.163-2.656l1.02-2.815.588 2.815zm-8.16-4.84l-1.603 7.496H8.34l1.605-7.496z"/></svg></span>
-        <span class="payment-chip" aria-label="American Express"><svg viewBox="0 0 24 24" fill="#016FD0"><path d="M16.015 14.378c0-.32-.135-.496-.344-.622-.21-.12-.464-.135-.81-.135h-1.543v2.82h.675v-1.027h.72c.24 0 .39.024.478.125.12.13.104.38.104.55v.35h.66v-.555c-.002-.25-.017-.376-.108-.516-.06-.08-.18-.18-.33-.234l.02-.008c.18-.072.48-.297.48-.747zm-.87.407l-.028-.002c-.09.053-.195.058-.33.058h-.81v-.63h.824c.12 0 .24 0 .33.05.098.048.156.147.15.255 0 .12-.045.215-.134.27zM20.297 15.837H19v.6h1.304c.676 0 1.05-.278 1.05-.884 0-.28-.066-.448-.187-.582-.153-.133-.392-.193-.73-.207l-.376-.015c-.104 0-.18 0-.255-.03-.09-.03-.15-.105-.15-.21 0-.09.017-.166.09-.21.083-.046.177-.066.272-.06h1.23v-.602h-1.35c-.704 0-.958.437-.958.84 0 .9.776.855 1.407.87.104 0 .18.015.225.06.046.03.082.106.082.18 0 .077-.035.15-.08.18-.06.053-.15.07-.277.07zM0 0v10.096L.81 8.22h1.75l.225.464V8.22h2.043l.45 1.02.437-1.013h6.502c.295 0 .56.057.756.236v-.23h1.787v.23c.307-.17.686-.23 1.12-.23h2.606l.24.466v-.466h1.918l.254.465v-.466h1.858v3.948H20.87l-.36-.6v.585h-2.353l-.256-.63h-.583l-.27.614h-1.213c-.48 0-.84-.104-1.08-.24v.24h-2.89v-.884c0-.12-.03-.12-.105-.135h-.105v1.036H6.067v-.48l-.21.48H4.69l-.202-.48v.465H2.235l-.256-.624H1.4l-.256.624H0V24h23.786v-7.108c-.27.135-.613.18-.973.18H21.09v-.255c-.21.165-.57.255-.914.255H14.71v-.9c0-.12-.018-.12-.12-.12h-.075v1.022h-1.8v-1.066c-.298.136-.643.15-.928.136h-.214v.915h-2.18l-.54-.617-.57.6H4.742v-3.93h3.61l.518.602.554-.6h2.412c.28 0 .74.03.942.225v-.24h2.177c.202 0 .644.045.903.225v-.24h3.265v.24c.163-.164.508-.24.803-.24h1.89v.24c.194-.15.464-.24.84-.24h1.176V0H0zM21.156 14.955c.004.005.006.012.01.016.01.01.024.01.032.02l-.042-.035zM23.828 13.082h.065v.555h-.065zM23.865 15.03v-.005c-.03-.025-.046-.048-.075-.07-.15-.153-.39-.215-.764-.225l-.36-.012c-.12 0-.194-.007-.27-.03-.09-.03-.15-.105-.15-.21 0-.09.03-.16.09-.204.076-.045.15-.05.27-.05h1.223v-.588h-1.283c-.69 0-.96.437-.96.84 0 .9.78.855 1.41.87.104 0 .18.015.224.06.046.03.076.106.076.18 0 .07-.034.138-.09.18-.045.056-.136.07-.27.07h-1.288v.605h1.287c.42 0 .734-.118.9-.36h.03c.09-.134.135-.3.135-.523 0-.24-.045-.39-.135-.526zM18.597 14.208v-.583h-2.235V16.458h2.235v-.585h-1.57v-.57h1.533v-.584h-1.532v-.51M13.51 8.787h.685V11.6h-.684zM13.126 9.543l-.007.006c0-.314-.13-.5-.34-.624-.217-.125-.47-.135-.81-.135H10.43v2.82h.674v-1.034h.72c.24 0 .39.03.487.12.122.136.107.378.107.548v.354h.677v-.553c0-.25-.016-.375-.11-.516-.09-.107-.202-.19-.33-.237.172-.07.472-.3.472-.75zm-.855.396h-.015c-.09.054-.195.056-.33.056H11.1v-.623h.825c.12 0 .24.004.33.05.09.04.15.128.15.25s-.047.22-.134.266zM15.92 9.373h.632v-.6h-.644c-.464 0-.804.105-1.02.33-.286.3-.362.69-.362 1.11 0 .512.123.833.36 1.074.232.238.645.31.97.31h.78l.255-.627h1.39l.262.627h1.36v-2.11l1.272 2.11h.95l.002.002V8.786h-.684v1.963l-1.18-1.96h-1.02V11.4L18.11 8.744h-1.004l-.943 2.22h-.3c-.177 0-.362-.03-.468-.134-.125-.15-.186-.36-.186-.662 0-.285.08-.51.194-.63.133-.135.272-.165.516-.165zm1.668-.108l.464 1.118v.002h-.93l.466-1.12zM2.38 10.97l.254.628H4V9.393l.972 2.205h.584l.973-2.202.015 2.202h.69v-2.81H6.118l-.807 1.904-.876-1.905H3.343v2.663L2.205 8.787h-.997L.01 11.597h.72l.26-.626h1.39zm-.688-1.705l.46 1.118-.003.002h-.915l.457-1.12zM11.856 13.62H9.714l-.85.923-.825-.922H5.346v2.82H8l.855-.932.824.93h1.302v-.94h.838c.6 0 1.17-.164 1.17-.945l-.006-.003c0-.78-.598-.93-1.128-.93zM7.67 15.853l-.014-.002H6.02v-.557h1.47v-.574H6.02v-.51H7.7l.733.82-.764.824zm2.642.33l-1.03-1.147 1.03-1.108v2.253zm1.553-1.258h-.885v-.717h.885c.24 0 .42.098.42.344 0 .243-.15.372-.42.372zM9.967 9.373v-.586H7.73V11.6h2.237v-.58H8.4v-.564h1.527V9.88H8.4v-.507"/></svg></span>
+        <span class="payment-chip" role="img" aria-label="Mastercard"><span class="mastercard-mark"><span class="c-left"></span><span class="c-right"></span></span></span>
+        <span class="payment-chip" role="img" aria-label="Visa"><svg viewBox="0 0 24 24" fill="#1A1F71"><path d="M9.112 8.262L5.97 15.758H3.92L2.374 9.775c-.094-.368-.175-.503-.461-.658C1.447 8.864.677 8.627 0 8.479l.046-.217h3.3a.904.904 0 01.894.764l.817 4.338 2.018-5.102zm8.033 5.049c.008-1.979-2.736-2.088-2.717-2.972.006-.269.262-.555.822-.628a3.66 3.66 0 011.913.336l.34-1.59a5.207 5.207 0 00-1.814-.333c-1.917 0-3.266 1.02-3.278 2.479-.012 1.079.963 1.68 1.698 2.04.756.367 1.01.603 1.006.931-.005.504-.602.725-1.16.734-.975.015-1.54-.263-1.992-.473l-.351 1.642c.453.208 1.289.39 2.156.398 2.037 0 3.37-1.006 3.377-2.564m5.061 2.447H24l-1.565-7.496h-1.656a.883.883 0 00-.826.55l-2.909 6.946h2.036l.405-1.12h2.488zm-2.163-2.656l1.02-2.815.588 2.815zm-8.16-4.84l-1.603 7.496H8.34l1.605-7.496z"/></svg></span>
+        <span class="payment-chip" role="img" aria-label="American Express"><svg viewBox="0 0 24 24" fill="#016FD0"><path d="M16.015 14.378c0-.32-.135-.496-.344-.622-.21-.12-.464-.135-.81-.135h-1.543v2.82h.675v-1.027h.72c.24 0 .39.024.478.125.12.13.104.38.104.55v.35h.66v-.555c-.002-.25-.017-.376-.108-.516-.06-.08-.18-.18-.33-.234l.02-.008c.18-.072.48-.297.48-.747zm-.87.407l-.028-.002c-.09.053-.195.058-.33.058h-.81v-.63h.824c.12 0 .24 0 .33.05.098.048.156.147.15.255 0 .12-.045.215-.134.27zM20.297 15.837H19v.6h1.304c.676 0 1.05-.278 1.05-.884 0-.28-.066-.448-.187-.582-.153-.133-.392-.193-.73-.207l-.376-.015c-.104 0-.18 0-.255-.03-.09-.03-.15-.105-.15-.21 0-.09.017-.166.09-.21.083-.046.177-.066.272-.06h1.23v-.602h-1.35c-.704 0-.958.437-.958.84 0 .9.776.855 1.407.87.104 0 .18.015.225.06.046.03.082.106.082.18 0 .077-.035.15-.08.18-.06.053-.15.07-.277.07zM0 0v10.096L.81 8.22h1.75l.225.464V8.22h2.043l.45 1.02.437-1.013h6.502c.295 0 .56.057.756.236v-.23h1.787v.23c.307-.17.686-.23 1.12-.23h2.606l.24.466v-.466h1.918l.254.465v-.466h1.858v3.948H20.87l-.36-.6v.585h-2.353l-.256-.63h-.583l-.27.614h-1.213c-.48 0-.84-.104-1.08-.24v.24h-2.89v-.884c0-.12-.03-.12-.105-.135h-.105v1.036H6.067v-.48l-.21.48H4.69l-.202-.48v.465H2.235l-.256-.624H1.4l-.256.624H0V24h23.786v-7.108c-.27.135-.613.18-.973.18H21.09v-.255c-.21.165-.57.255-.914.255H14.71v-.9c0-.12-.018-.12-.12-.12h-.075v1.022h-1.8v-1.066c-.298.136-.643.15-.928.136h-.214v.915h-2.18l-.54-.617-.57.6H4.742v-3.93h3.61l.518.602.554-.6h2.412c.28 0 .74.03.942.225v-.24h2.177c.202 0 .644.045.903.225v-.24h3.265v.24c.163-.164.508-.24.803-.24h1.89v.24c.194-.15.464-.24.84-.24h1.176V0H0zM21.156 14.955c.004.005.006.012.01.016.01.01.024.01.032.02l-.042-.035zM23.828 13.082h.065v.555h-.065zM23.865 15.03v-.005c-.03-.025-.046-.048-.075-.07-.15-.153-.39-.215-.764-.225l-.36-.012c-.12 0-.194-.007-.27-.03-.09-.03-.15-.105-.15-.21 0-.09.03-.16.09-.204.076-.045.15-.05.27-.05h1.223v-.588h-1.283c-.69 0-.96.437-.96.84 0 .9.78.855 1.41.87.104 0 .18.015.224.06.046.03.076.106.076.18 0 .07-.034.138-.09.18-.045.056-.136.07-.27.07h-1.288v.605h1.287c.42 0 .734-.118.9-.36h.03c.09-.134.135-.3.135-.523 0-.24-.045-.39-.135-.526zM18.597 14.208v-.583h-2.235V16.458h2.235v-.585h-1.57v-.57h1.533v-.584h-1.532v-.51M13.51 8.787h.685V11.6h-.684zM13.126 9.543l-.007.006c0-.314-.13-.5-.34-.624-.217-.125-.47-.135-.81-.135H10.43v2.82h.674v-1.034h.72c.24 0 .39.03.487.12.122.136.107.378.107.548v.354h.677v-.553c0-.25-.016-.375-.11-.516-.09-.107-.202-.19-.33-.237.172-.07.472-.3.472-.75zm-.855.396h-.015c-.09.054-.195.056-.33.056H11.1v-.623h.825c.12 0 .24.004.33.05.09.04.15.128.15.25s-.047.22-.134.266zM15.92 9.373h.632v-.6h-.644c-.464 0-.804.105-1.02.33-.286.3-.362.69-.362 1.11 0 .512.123.833.36 1.074.232.238.645.31.97.31h.78l.255-.627h1.39l.262.627h1.36v-2.11l1.272 2.11h.95l.002.002V8.786h-.684v1.963l-1.18-1.96h-1.02V11.4L18.11 8.744h-1.004l-.943 2.22h-.3c-.177 0-.362-.03-.468-.134-.125-.15-.186-.36-.186-.662 0-.285.08-.51.194-.63.133-.135.272-.165.516-.165zm1.668-.108l.464 1.118v.002h-.93l.466-1.12zM2.38 10.97l.254.628H4V9.393l.972 2.205h.584l.973-2.202.015 2.202h.69v-2.81H6.118l-.807 1.904-.876-1.905H3.343v2.663L2.205 8.787h-.997L.01 11.597h.72l.26-.626h1.39zm-.688-1.705l.46 1.118-.003.002h-.915l.457-1.12zM11.856 13.62H9.714l-.85.923-.825-.922H5.346v2.82H8l.855-.932.824.93h1.302v-.94h.838c.6 0 1.17-.164 1.17-.945l-.006-.003c0-.78-.598-.93-1.128-.93zM7.67 15.853l-.014-.002H6.02v-.557h1.47v-.574H6.02v-.51H7.7l.733.82-.764.824zm2.642.33l-1.03-1.147 1.03-1.108v2.253zm1.553-1.258h-.885v-.717h.885c.24 0 .42.098.42.344 0 .243-.15.372-.42.372zM9.967 9.373v-.586H7.73V11.6h2.237v-.58H8.4v-.564h1.527V9.88H8.4v-.507"/></svg></span>
         <span class="payment-chip text-chip">EC</span>
         <span class="payment-chip klarna-chip" aria-label="Klarna"><span>Klarna</span></span>
-        <span class="payment-chip" aria-label="PayPal"><svg viewBox="0 0 24 24" fill="#003087"><path d="M15.607 4.653H8.941L6.645 19.251H1.82L4.862 0h7.995c3.754 0 6.375 2.294 6.473 5.513-.648-.478-2.105-.86-3.722-.86m6.57 5.546c0 3.41-3.01 6.853-6.958 6.853h-2.493L11.595 24H6.74l1.845-11.538h3.592c4.208 0 7.346-3.634 7.153-6.949a5.24 5.24 0 0 1 2.848 4.686M9.653 5.546h6.408c.907 0 1.942.222 2.363.541-.195 2.741-2.655 5.483-6.441 5.483H8.714Z"/></svg></span>
+        <span class="payment-chip" role="img" aria-label="PayPal"><svg viewBox="0 0 24 24" fill="#003087"><path d="M15.607 4.653H8.941L6.645 19.251H1.82L4.862 0h7.995c3.754 0 6.375 2.294 6.473 5.513-.648-.478-2.105-.86-3.722-.86m6.57 5.546c0 3.41-3.01 6.853-6.958 6.853h-2.493L11.595 24H6.74l1.845-11.538h3.592c4.208 0 7.346-3.634 7.153-6.949a5.24 5.24 0 0 1 2.848 4.686M9.653 5.546h6.408c.907 0 1.942.222 2.363.541-.195 2.741-2.655 5.483-6.441 5.483H8.714Z"/></svg></span>
       </div>
     </div>
   </div>
