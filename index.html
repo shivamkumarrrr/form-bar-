@@ -151,7 +151,7 @@
   }
 
   /* ============ SCROLL REVEAL ============ */
-  .sr { opacity:0; transition: opacity var(--t-long) ease-out, transform var(--t-long) ease-out; will-change: opacity, transform; }
+  .sr { opacity:0; transition: opacity .6s ease-out, transform .6s ease-out; will-change: opacity, transform; }
   .sr-fade-up { transform: translateY(36px); }
   .sr-fade-in { transform: none; }
   .sr-visible { opacity:1; transform:none; }
@@ -1035,7 +1035,7 @@
           srObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0, rootMargin: '0px 0px 15% 0px' });
     srEls.forEach(function (el) { srObserver.observe(el); });
     setTimeout(function () {
       srEls.forEach(function (el) { el.classList.add('sr-visible'); });
