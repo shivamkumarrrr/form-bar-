@@ -159,7 +159,7 @@
   }
 
   /* ============ SCROLL REVEAL ============ */
-  .sr { opacity:0; transition: opacity .45s ease-out, transform .45s ease-out; will-change: opacity, transform; }
+  .sr { opacity:0; transition: opacity .75s cubic-bezier(.22,.61,.36,1), transform .75s cubic-bezier(.22,.61,.36,1); will-change: opacity, transform; }
   .sr-fade-up { transform: translateY(36px); }
   .sr-fade-in { transform: none; }
   .sr-visible { opacity:1; transform:none; }
@@ -1046,10 +1046,15 @@
           srObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0, rootMargin: '0px 0px 40% 0px' });
+    }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
     srEls.forEach(function (el) { srObserver.observe(el); });
+    // Safety net: if the observer never fired for content already on screen,
+    // reveal just that, so a stuck page can't leave the fold blank.
     setTimeout(function () {
-      srEls.forEach(function (el) { el.classList.add('sr-visible'); });
+      srEls.forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('sr-visible');
+      });
     }, 2500);
   } else {
     srEls.forEach(function (el) { el.classList.add('sr-visible'); });
