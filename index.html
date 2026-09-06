@@ -6,7 +6,7 @@
 <title>form.bar Business: Möbel nach Maß für dein Unternehmen</title>
 <meta name="description" content="Empfangstheken, Designregale und individuelle Konstruktionen nach Maß, entworfen in deinem Stil und gefertigt von regionalen Partner-Schreinereien.">
 <link rel="preconnect" href="https://static.form.bar" crossorigin>
-<link rel="preload" as="image" fetchpriority="high" href="assets/img/hero-theke-freiform.webp" imagesrcset="assets/img/hero-theke-freiform-780.webp 780w, assets/img/hero-theke-freiform.webp 1068w" imagesizes="(max-width: 1023px) 92vw, 45vw">
+<link rel="preload" as="image" fetchpriority="high" href="assets/img/hero-regal-sylt.webp" imagesrcset="assets/img/hero-regal-sylt-800.webp 800w, assets/img/hero-regal-sylt.webp 1100w" imagesizes="(max-width: 1023px) 92vw, 45vw">
 
 <style>
   /* ============ FONTS (Carnero W01, hosted by form.bar) ============ */
@@ -222,7 +222,7 @@
   @media (prefers-reduced-motion: reduce) { .unfold-word > span { transform:none; animation-delay:0s !important; } }
   .hero-sub { font-family: var(--font-book); font-size: var(--fs-text-m); color: rgba(255,255,255,.72); max-width: 520px; margin-bottom: var(--sp-s); }
   .tag { font-family: var(--font-regular); font-size: var(--fs-text-xs); padding: var(--sp-4xs) var(--sp-2xs); border-radius: var(--r-xl); background: rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.22); color: rgba(255,255,255,.85); }
-  .hero-visual { aspect-ratio: 1068 / 705; align-self:start; }
+  .hero-visual { aspect-ratio: 1 / 1; align-self:start; width:100%; max-width:520px; justify-self:end; }
   .hero-visual img { width:100%; height:100%; object-fit:cover; border-radius: var(--r-l); }
   @media (max-width: 1023px) {
     .hero-inner { display:flex; flex-direction:column; padding: var(--sp-m) var(--margin-section); }
@@ -288,28 +288,29 @@
   .audience-tags { display:flex; flex-wrap:wrap; gap: var(--sp-3xs); margin-top:auto; }
   .tag-mint { background: var(--c-secondary-lighter); border-color: var(--c-secondary-light); color: var(--c-secondary-text); font-family: var(--font-semibold); }
 
-  /* ============ SOCIAL PROOF (3D CYLINDER ORBIT) ============ */
-  .brand-orbit-wrap { position:relative; width: 100%; max-width: 1440px; height: 420px; margin: 0 auto; perspective: 2200px; perspective-origin: 50% 45%; }
-  .brand-orbit-wrap::before { content:""; position:absolute; left:50%; bottom:18px; width:70%; height:60px; transform:translateX(-50%); border-radius:50%; background: radial-gradient(closest-side, rgba(56,59,74,.10), transparent 70%); }
-  .brand-orbit { position:absolute; inset:0; transform-style: preserve-3d; animation: orbit-spin-y 48s linear infinite; }
+  /* ============ SOCIAL PROOF (3D NAME RING) ============ */
+  .brand-orbit-wrap { position:relative; width:100%; max-width:1440px; height:340px; margin:0 auto; perspective:2000px; perspective-origin:50% 50%; }
+  .brand-orbit { position:absolute; inset:0; transform-style:preserve-3d; animation: orbit-spin-y 54.0s linear infinite; }
   .brand-orbit-wrap:hover .brand-orbit,
   .brand-orbit-wrap:hover .brand-orbit-item-inner { animation-play-state: paused; }
-  .brand-orbit-item { position:absolute; top:50%; left:50%; width:0; height:0; transform-style: preserve-3d; transform: rotateY(var(--angle)) translateZ(var(--radius, 640px)) rotateY(calc(-1 * var(--angle))); }
-  .brand-orbit-item-inner { animation: orbit-counter-spin-y 48s linear infinite reverse; }
-  .brand-avatar { position:relative; display:flex; flex-direction:column; align-items:center; }
-  .brand-circle { width:124px; height:124px; border-radius:50%; overflow:hidden; display:flex; align-items:center; justify-content:center; border:1px solid var(--c-tertiary-light); background: var(--c-white); box-shadow: var(--shadow); transition: transform var(--t-default); }
-  .brand-avatar:hover .brand-circle { transform: scale(1.12); }
-  .brand-circle img { width:100%; height:100%; object-fit:cover; }
-  .brand-circle.is-mono { background: var(--c-secondary-lighter); }
-  .brand-circle.is-mono span { font-family: var(--font-bold); font-size: var(--fs-subheading-xs); color: var(--c-secondary-text); }
-  .brand-badge { position:absolute; top:-10px; right:-14px; background: var(--c-primary); color:#fff; font-family: var(--font-semibold); font-size:11px; letter-spacing:.01em; padding: 4px 9px; border-radius: var(--r-xl); white-space:nowrap; box-shadow: 0 2px 6px rgba(56,59,74,.25); }
-  @keyframes orbit-spin-y { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
-  @keyframes orbit-counter-spin-y { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
-  @media (max-width: 640px) {
-    .brand-orbit-wrap { height: 260px; perspective: 900px; }
-    .brand-orbit-item { --radius: 165px; }
-    .brand-circle { width:68px; height:68px; }
-    .brand-badge { font-size:9px; padding:3px 6px; }
+  .brand-orbit-item { position:absolute; top:50%; left:50%; width:0; height:0; display:flex; align-items:center; justify-content:center; transform-style:preserve-3d; transform: rotateY(var(--angle)) translateZ(var(--radius, 470px)) rotateY(calc(-1 * var(--angle))); }
+  /* counter-spin keeps each chip facing the viewer; ring-depth dims it as it swings behind */
+  .brand-orbit-item-inner { animation-name: orbit-counter-spin-y, ring-depth; animation-duration: 54.0s, 54.0s;
+    animation-timing-function: linear, ease-in-out; animation-iteration-count: infinite, infinite;
+    animation-direction: reverse, normal; animation-delay: 0s, var(--d, 0s); }
+  .brand-chip { display:inline-block; white-space:nowrap; padding: 13px 26px; border-radius: var(--r-xl);
+    background: var(--c-white); border:1px solid var(--c-tertiary-light); box-shadow: 0 6px 22px rgba(56,59,74,.09);
+    font-family: var(--font-semibold); font-size: var(--fs-text-s); color: var(--c-primary); }
+  @keyframes orbit-spin-y { from { transform: rotateX(-15deg) rotateY(0deg); } to { transform: rotateX(-15deg) rotateY(360deg); } }
+  @keyframes orbit-counter-spin-y { from { transform: rotateY(0deg) rotateX(15deg); } to { transform: rotateY(360deg) rotateX(15deg); } }
+  @keyframes ring-depth { 0% { opacity:1; } 50% { opacity:.07; } 100% { opacity:1; } }
+  /* below desktop the ring would swing chips off-screen, so lay them out flat */
+  @media (max-width: 1023px) {
+    .brand-orbit-wrap { height:auto; perspective:none; }
+    .brand-orbit { position:static; display:flex; flex-wrap:wrap; justify-content:center; gap: var(--sp-2xs); animation:none; transform-style:flat; }
+    .brand-orbit-item { position:static; width:auto; height:auto; transform:none; }
+    .brand-orbit-item-inner { animation:none; }
+    .brand-chip { font-size: var(--fs-text-xs); padding: 10px 18px; }
   }
   @media (prefers-reduced-motion: reduce) { .brand-orbit, .brand-orbit-item-inner { animation: none; } }
 
@@ -363,7 +364,7 @@
   .cta-band h2 { color: var(--c-white); font-size: var(--fs-heading-xs); margin-bottom: var(--sp-2xs); }
   .cta-band p { font-family: var(--font-book); font-size: var(--fs-text-m); color: rgba(255,255,255,.72); max-width: 460px; margin-bottom: var(--sp-s); }
   .cta-visual { border-radius: var(--r-l); overflow:hidden; background: var(--c-primary-light); }
-  .cta-visual img { width:100%; aspect-ratio: 16/10; object-fit:cover; display:block; }
+  .cta-visual img { width:100%; height:auto; aspect-ratio: 16/10; object-fit:cover; display:block; }
 
   /* ============ FOOTER ============ */
   .footer { background: var(--c-tertiary-lighter); color: var(--c-primary); padding: var(--sp-m) 0 0; }
@@ -450,8 +451,10 @@
   .form-field { display:flex; flex-direction:column; gap: var(--sp-4xs); }
   .form-field label { font-family: var(--font-semibold); font-size: var(--fs-text-s); color: var(--c-primary); }
   .form-field label .req { color: var(--c-secondary-text); }
-  .form-field input, .form-field textarea { font-family: var(--font-regular); font-size: var(--fs-text-s); color: var(--c-primary); padding: var(--sp-2xs); border-radius: var(--r-s); border:1px solid var(--c-tertiary-light); background: var(--c-white); transition: border-color var(--t-default); }
-  .form-field input:focus, .form-field textarea:focus { outline:none; border-color: var(--c-secondary-dark); }
+  .form-field input, .form-field select, .form-field textarea { font-family: var(--font-regular); font-size: var(--fs-text-s); color: var(--c-primary); padding: var(--sp-2xs); border-radius: var(--r-s); border:1px solid var(--c-tertiary-light); background: var(--c-white); transition: border-color var(--t-default); width:100%; box-sizing:border-box; }
+  /* after the shared rule, whose background shorthand would reset the chevron */
+  .form-field select { appearance:none; cursor:pointer; padding-right: var(--sp-s); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235B5E6E' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position: right 12px center; background-size:16px; }
+  .form-field input:focus, .form-field select:focus, .form-field textarea:focus { outline:none; border-color: var(--c-secondary-dark); }
   .form-field textarea { resize:vertical; min-height:100px; }
   .form-field.full { grid-column: 1 / -1; }
   .form-accordion { border-radius: var(--r-s); background: var(--c-tertiary-lighter); margin-bottom: var(--sp-s); overflow:hidden; }
@@ -511,8 +514,8 @@
 <header class="hero">
   <div class="hero-inner">
     <div class="hero-text">
-      <p class="hero-eyebrow sr sr-fade-up">Möbel-Service für Unternehmen</p>
-      <h1><span class="unfold-word" style="--i:0"><span>Räume,</span></span> <span class="unfold-word" style="--i:1"><span>die</span></span> <span class="unfold-word" style="--i:2"><span>deine</span></span> <span class="unfold-word" style="--i:3"><span>Marke</span></span> <span class="unfold-word" style="--i:4"><span>formen.</span></span></h1>
+      <p class="hero-eyebrow sr sr-fade-up">Für Räume mit Wirkung</p>
+      <h1><span class="unfold-word" style="--i:0"><span>Individuelle</span></span> <span class="unfold-word" style="--i:1"><span>Möbel</span></span> <span class="unfold-word" style="--i:2"><span>für</span></span> <span class="unfold-word" style="--i:3"><span>Unternehmen</span></span></h1>
       <p class="hero-sub sr sr-fade-up" style="transition-delay:.2s">Maßgefertigte Theken, Regale und Sonderbauten für deinen Geschäftsraum. Gebaut von einer Partner-Schreinerei in deiner Nähe.</p>
       <div class="btn-group sr sr-fade-up" style="transition-delay:.4s">
         <a href="#kontakt" class="btn btn-primary js-open-contact">Beratung anfragen</a>
@@ -520,7 +523,7 @@
       </div>
     </div>
     <div class="hero-visual sr sr-fade-in">
-      <img src="assets/img/hero-theke-freiform.webp" srcset="assets/img/hero-theke-freiform-780.webp 780w, assets/img/hero-theke-freiform.webp 1068w" sizes="(max-width: 1023px) 92vw, 45vw" alt="Kinder und Erwachsene an einer baumförmigen form.bar Regal-Installation" loading="eager" fetchpriority="high" width="1068" height="705">
+      <img src="assets/img/hero-regal-sylt.webp" srcset="assets/img/hero-regal-sylt-800.webp 800w, assets/img/hero-regal-sylt.webp 1100w" sizes="(max-width: 1023px) 92vw, 45vw" alt="Freistehendes form.bar Verkaufsregal mit Produkten in einem Ladengeschäft" loading="eager" fetchpriority="high" width="1100" height="1100">
     </div>
   </div>
 </header>
@@ -636,7 +639,7 @@
       </div>
       <div class="product-card sr sr-fade-up" style="transition-delay:.1s">
         <div class="product-media">
-          <img src="assets/img/product-designregal.webp" alt="Freistehendes Designregal für den Einzelhandel" loading="lazy">
+          <img src="assets/img/product-designregal-shop.webp" alt="Wandregale mit inszenierten Produkten in einem Ladencafé" loading="lazy">
           <span class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M4 9h16M4 15h16M10 3v18"/></svg></span>
         </div>
         <div class="product-body">
@@ -709,19 +712,19 @@
   </div>
   <div class="brand-orbit-wrap">
     <div class="brand-orbit">
-      <div class="brand-orbit-item" style="--angle:0deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle"><img src="assets/img/social-proof-villeroyboch.webp" alt="Villeroy & Boch"></span><span class="brand-badge">Villeroy &amp; Boch</span></div></div></div>
-      <div class="brand-orbit-item" style="--angle:27.7deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle"><img src="assets/img/social-proof-unisaarland.webp" alt="Universität des Saarlandes"></span><span class="brand-badge">Uni Saarland</span></div></div></div>
-      <div class="brand-orbit-item" style="--angle:55.4deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle is-mono"><span>B</span></span><span class="brand-badge">Bosch</span></div></div></div>
-      <div class="brand-orbit-item" style="--angle:83.1deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle is-mono"><span>A</span></span><span class="brand-badge">Audi</span></div></div></div>
-      <div class="brand-orbit-item" style="--angle:110.8deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle is-mono"><span>A</span></span><span class="brand-badge">Adidas</span></div></div></div>
-      <div class="brand-orbit-item" style="--angle:138.5deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle is-mono"><span>G</span></span><span class="brand-badge">Google</span></div></div></div>
-      <div class="brand-orbit-item" style="--angle:166.2deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle is-mono"><span>S</span></span><span class="brand-badge">Sky</span></div></div></div>
-      <div class="brand-orbit-item" style="--angle:193.8deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle is-mono"><span>B</span></span><span class="brand-badge">Bose</span></div></div></div>
-      <div class="brand-orbit-item" style="--angle:221.5deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle is-mono"><span>S</span></span><span class="brand-badge">Spiegel</span></div></div></div>
-      <div class="brand-orbit-item" style="--angle:249.2deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle is-mono"><span>AS</span></span><span class="brand-badge">Augenklinik Sulzbach</span></div></div></div>
-      <div class="brand-orbit-item" style="--angle:276.9deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle is-mono"><span>G</span></span><span class="brand-badge">Globus</span></div></div></div>
-      <div class="brand-orbit-item" style="--angle:304.6deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle is-mono"><span>C</span></span><span class="brand-badge">Caritas</span></div></div></div>
-      <div class="brand-orbit-item" style="--angle:332.3deg"><div class="brand-orbit-item-inner"><div class="brand-avatar"><span class="brand-circle is-mono"><span>MM</span></span><span class="brand-badge">MunichMed</span></div></div></div>
+      <div class="brand-orbit-item" style="--angle:0.0deg; --d:-0.0s"><div class="brand-orbit-item-inner"><span class="brand-chip">Villeroy &amp; Boch</span></div></div>
+      <div class="brand-orbit-item" style="--angle:27.69deg; --d:-4.154s"><div class="brand-orbit-item-inner"><span class="brand-chip">Universität des Saarlandes</span></div></div>
+      <div class="brand-orbit-item" style="--angle:55.38deg; --d:-8.308s"><div class="brand-orbit-item-inner"><span class="brand-chip">Bosch</span></div></div>
+      <div class="brand-orbit-item" style="--angle:83.08deg; --d:-12.462s"><div class="brand-orbit-item-inner"><span class="brand-chip">Audi</span></div></div>
+      <div class="brand-orbit-item" style="--angle:110.77deg; --d:-16.615s"><div class="brand-orbit-item-inner"><span class="brand-chip">Adidas</span></div></div>
+      <div class="brand-orbit-item" style="--angle:138.46deg; --d:-20.769s"><div class="brand-orbit-item-inner"><span class="brand-chip">Google</span></div></div>
+      <div class="brand-orbit-item" style="--angle:166.15deg; --d:-24.923s"><div class="brand-orbit-item-inner"><span class="brand-chip">Sky</span></div></div>
+      <div class="brand-orbit-item" style="--angle:193.85deg; --d:-29.077s"><div class="brand-orbit-item-inner"><span class="brand-chip">Bose</span></div></div>
+      <div class="brand-orbit-item" style="--angle:221.54deg; --d:-33.231s"><div class="brand-orbit-item-inner"><span class="brand-chip">Spiegel</span></div></div>
+      <div class="brand-orbit-item" style="--angle:249.23deg; --d:-37.385s"><div class="brand-orbit-item-inner"><span class="brand-chip">Augenklinik Sulzbach</span></div></div>
+      <div class="brand-orbit-item" style="--angle:276.92deg; --d:-41.538s"><div class="brand-orbit-item-inner"><span class="brand-chip">Globus</span></div></div>
+      <div class="brand-orbit-item" style="--angle:304.62deg; --d:-45.692s"><div class="brand-orbit-item-inner"><span class="brand-chip">Caritas</span></div></div>
+      <div class="brand-orbit-item" style="--angle:332.31deg; --d:-49.846s"><div class="brand-orbit-item-inner"><span class="brand-chip">MunichMed</span></div></div>
     </div>
   </div>
 </section>
@@ -882,7 +885,7 @@
       </div>
     </div>
     <div class="cta-visual sr sr-fade-in" style="transition-delay:.15s">
-      <img src="assets/img/showcase-buero-1.webp" alt="Büro mit raumhohem form.bar Regal und Sitzgruppe" loading="lazy">
+      <img src="assets/img/cta-baum-installation.webp" srcset="assets/img/cta-baum-installation-780.webp 780w, assets/img/cta-baum-installation.webp 1068w" sizes="(max-width: 1023px) 92vw, 45vw" alt="Kinder und Erwachsene an einer baumförmigen form.bar Regal-Installation" loading="lazy" width="1068" height="705">
     </div>
   </div>
 </section>
@@ -962,28 +965,55 @@
 <div class="modal-backdrop" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
   <div class="modal-panel">
     <div class="modal-header">
-      <h3 id="contactModalTitle">Design-Team kontaktieren</h3>
+      <h3 id="contactModalTitle">Projekt anfragen</h3>
       <button type="button" class="modal-close" id="modalCloseBtn" aria-label="Schließen">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
       </button>
     </div>
     <div class="modal-body">
       <form class="modal-form" id="contactForm">
-        <p class="modal-intro">Hast du Fragen oder möchtest den f+ Design-Service kostenfrei nutzen? Sende uns eine kurze Nachricht, gerne auch mit Skizze oder Foto. Wir unterstützen dich auf dem Weg zu deinem individuellen Wunschmöbel.</p>
+        <p class="modal-intro">Erzähl uns von deinem Projekt: Raum, Nutzung und Zeitrahmen. Unser Design-Team meldet sich mit einem ersten Konzeptvorschlag und einer Einschätzung zu Umsetzung und Kosten. Die Planung ist für Businesskunden kostenfrei.</p>
         <div class="form-row">
           <div class="form-field">
             <label for="fieldName">Name <span class="req">*</span></label>
             <input type="text" id="fieldName" name="name" placeholder="Name" autocomplete="name" required>
           </div>
           <div class="form-field">
-            <label for="fieldEmail">E-Mail-Adresse <span class="req">*</span></label>
-            <input type="email" id="fieldEmail" name="email" placeholder="E-Mail-Adresse" autocomplete="email" required>
+            <label for="fieldCompany">Unternehmen <span class="req">*</span></label>
+            <input type="text" id="fieldCompany" name="company" placeholder="Unternehmen" autocomplete="organization" required>
           </div>
         </div>
         <div class="form-row">
-          <div class="form-field full">
+          <div class="form-field">
+            <label for="fieldEmail">E-Mail-Adresse <span class="req">*</span></label>
+            <input type="email" id="fieldEmail" name="email" placeholder="E-Mail-Adresse" autocomplete="email" required>
+          </div>
+          <div class="form-field">
             <label for="fieldPhone">Telefonnummer</label>
             <input type="tel" id="fieldPhone" name="phone" placeholder="Telefonnummer" autocomplete="tel">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="fieldProject">Projektart</label>
+            <select id="fieldProject" name="project">
+              <option value="">Bitte wählen</option>
+              <option>Empfangstheke</option>
+              <option>Design- oder Verkaufsregal</option>
+              <option>Sonderkonstruktion</option>
+              <option>Gesamtausstattung, mehrere Möbel</option>
+              <option>Noch offen</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="fieldTiming">Zeitrahmen</label>
+            <select id="fieldTiming" name="timing">
+              <option value="">Bitte wählen</option>
+              <option>So schnell wie möglich</option>
+              <option>In 1 bis 3 Monaten</option>
+              <option>In 3 bis 6 Monaten</option>
+              <option>Später oder noch offen</option>
+            </select>
           </div>
         </div>
         <div class="form-row">
@@ -993,16 +1023,17 @@
           </div>
         </div>
         <details class="form-accordion">
-          <summary>Hilfreiche Informationen für den Design-Service
+          <summary>Das hilft uns bei der Einschätzung
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </summary>
           <div class="form-accordion-body">
-            Damit wir dir schneller helfen können, freuen wir uns über:
+            Je mehr wir wissen, desto konkreter wird unser Vorschlag:
             <ul>
-              <li>Maße deines Raums bzw. der gewünschten Möbelstücke</li>
-              <li>Gewünschte Farben, Materialien und Formen</li>
-              <li>Inspirationsbilder oder Skizzen</li>
-              <li>Angaben zu Fronten, Schubladen oder Sonderwünschen</li>
+              <li>Grundriss oder Maße der Fläche</li>
+              <li>Nutzung des Raums und Anzahl der Möbel</li>
+              <li>Eröffnungs- oder Umbautermin</li>
+              <li>Corporate Design: Farben, Materialien, Logo</li>
+              <li>Budgetrahmen, falls vorhanden</li>
             </ul>
           </div>
         </details>
