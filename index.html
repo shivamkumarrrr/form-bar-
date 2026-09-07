@@ -288,31 +288,30 @@
   .audience-tags { display:flex; flex-wrap:wrap; gap: var(--sp-3xs); margin-top:auto; }
   .tag-mint { background: var(--c-secondary-lighter); border-color: var(--c-secondary-light); color: var(--c-secondary-text); font-family: var(--font-semibold); }
 
-  /* ============ SOCIAL PROOF (3D NAME RING) ============ */
-  .brand-orbit-wrap { position:relative; width:100%; max-width:1440px; height:340px; margin:0 auto; perspective:2000px; perspective-origin:50% 50%; }
-  .brand-orbit { position:absolute; inset:0; transform-style:preserve-3d; animation: orbit-spin-y 54.0s linear infinite; }
-  .brand-orbit-wrap:hover .brand-orbit,
-  .brand-orbit-wrap:hover .brand-orbit-item-inner { animation-play-state: paused; }
-  .brand-orbit-item { position:absolute; top:50%; left:50%; width:0; height:0; display:flex; align-items:center; justify-content:center; transform-style:preserve-3d; transform: rotateY(var(--angle)) translateZ(var(--radius, 470px)) rotateY(calc(-1 * var(--angle))); }
-  /* counter-spin keeps each chip facing the viewer; ring-depth dims it as it swings behind */
-  .brand-orbit-item-inner { animation-name: orbit-counter-spin-y, ring-depth; animation-duration: 54.0s, 54.0s;
-    animation-timing-function: linear, ease-in-out; animation-iteration-count: infinite, infinite;
-    animation-direction: reverse, normal; animation-delay: 0s, var(--d, 0s); }
-  .brand-chip { display:inline-block; white-space:nowrap; padding: 13px 26px; border-radius: var(--r-xl);
-    background: var(--c-white); border:1px solid var(--c-tertiary-light); box-shadow: 0 6px 22px rgba(56,59,74,.09);
-    font-family: var(--font-semibold); font-size: var(--fs-text-s); color: var(--c-primary); }
-  @keyframes orbit-spin-y { from { transform: rotateX(-15deg) rotateY(0deg); } to { transform: rotateX(-15deg) rotateY(360deg); } }
-  @keyframes orbit-counter-spin-y { from { transform: rotateY(0deg) rotateX(15deg); } to { transform: rotateY(360deg) rotateX(15deg); } }
-  @keyframes ring-depth { 0% { opacity:1; } 50% { opacity:.07; } 100% { opacity:1; } }
-  /* below desktop the ring would swing chips off-screen, so lay them out flat */
+  /* ============ SOCIAL PROOF (DEPTH CLOUD) ============ */
+  .brand-orbit-wrap { position:relative; width:100%; height:390px; margin-top: var(--sp-s); }
+  .brand-orbit { position:absolute; inset:0; }
+  .brand-orbit-item { position:absolute; left:var(--x); top:var(--y); transition: transform 140ms linear; }
+  .brand-chip { display:inline-block; white-space:nowrap; transform: translate(-50%,-50%);
+    padding: 13px 26px; border-radius: var(--r-xl); background: var(--c-white);
+    border:1px solid var(--c-tertiary-light); font-family: var(--font-semibold); color: var(--c-primary);
+    opacity:0; transition: opacity .5s cubic-bezier(.16,1,.3,1), transform .5s cubic-bezier(.16,1,.3,1),
+      box-shadow var(--t-default), color var(--t-default); will-change: opacity, transform; }
+  .brand-chip.is-in { opacity: var(--o); transform: translate(-50%,-50%); }
+  .brand-orbit-item[data-depth="2"] .brand-chip { --o:1;   font-size: var(--fs-text-m); box-shadow: 0 10px 30px rgba(56,59,74,.12); }
+  .brand-orbit-item[data-depth="1"] .brand-chip { --o:.72; font-size: var(--fs-text-s); box-shadow: 0 6px 18px rgba(56,59,74,.07); }
+  .brand-orbit-item[data-depth="0"] .brand-chip { --o:.42; font-size: var(--fs-text-xs); box-shadow:none; }
+  .brand-chip:not(.is-in) { transform: translate(-50%, calc(-50% + 12px)); }
+  @media (hover:hover) { .brand-orbit-item:hover .brand-chip { opacity:1; color: var(--c-secondary-text);
+    box-shadow: 0 16px 36px rgba(56,59,74,.16); } }
   @media (max-width: 1023px) {
-    .brand-orbit-wrap { height:auto; perspective:none; }
-    .brand-orbit { position:static; display:flex; flex-wrap:wrap; justify-content:center; gap: var(--sp-2xs); animation:none; transform-style:flat; }
-    .brand-orbit-item { position:static; width:auto; height:auto; transform:none; }
-    .brand-orbit-item-inner { animation:none; }
-    .brand-chip { font-size: var(--fs-text-xs); padding: 10px 18px; }
+    .brand-orbit-wrap { height:auto; }
+    .brand-orbit { position:static; display:flex; flex-wrap:wrap; justify-content:center; gap: var(--sp-2xs); }
+    .brand-orbit-item { position:static; }
+    .brand-chip, .brand-chip.is-in { transform:none; font-size: var(--fs-text-xs); padding:10px 18px; }
+    .brand-orbit-item[data-depth] .brand-chip { --o:1; box-shadow: 0 4px 14px rgba(56,59,74,.07); }
   }
-  @media (prefers-reduced-motion: reduce) { .brand-orbit, .brand-orbit-item-inner { animation: none; } }
+  @media (prefers-reduced-motion: reduce) { .brand-chip { transition:none; opacity: var(--o); transform: translate(-50%,-50%); } }
 
   /* ============ TESTIMONIALS ============ */
   .testi-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-xs); }
@@ -707,24 +706,24 @@
   <div class="wrap">
     <div class="section-header sr sr-fade-up">
       <p class="eyebrow">Vertrauen uns</p>
-      <h2>Unternehmen, die schon auf form.bar setzen.</h2>
+      <h2>Unternehmen und Institutionen, die auf form.bar setzen.</h2>
     </div>
-  </div>
-  <div class="brand-orbit-wrap">
+    <div class="brand-orbit-wrap">
     <div class="brand-orbit">
-      <div class="brand-orbit-item" style="--angle:0.0deg; --d:-0.0s"><div class="brand-orbit-item-inner"><span class="brand-chip">Villeroy &amp; Boch</span></div></div>
-      <div class="brand-orbit-item" style="--angle:27.69deg; --d:-4.154s"><div class="brand-orbit-item-inner"><span class="brand-chip">Universität des Saarlandes</span></div></div>
-      <div class="brand-orbit-item" style="--angle:55.38deg; --d:-8.308s"><div class="brand-orbit-item-inner"><span class="brand-chip">Bosch</span></div></div>
-      <div class="brand-orbit-item" style="--angle:83.08deg; --d:-12.462s"><div class="brand-orbit-item-inner"><span class="brand-chip">Audi</span></div></div>
-      <div class="brand-orbit-item" style="--angle:110.77deg; --d:-16.615s"><div class="brand-orbit-item-inner"><span class="brand-chip">Adidas</span></div></div>
-      <div class="brand-orbit-item" style="--angle:138.46deg; --d:-20.769s"><div class="brand-orbit-item-inner"><span class="brand-chip">Google</span></div></div>
-      <div class="brand-orbit-item" style="--angle:166.15deg; --d:-24.923s"><div class="brand-orbit-item-inner"><span class="brand-chip">Sky</span></div></div>
-      <div class="brand-orbit-item" style="--angle:193.85deg; --d:-29.077s"><div class="brand-orbit-item-inner"><span class="brand-chip">Bose</span></div></div>
-      <div class="brand-orbit-item" style="--angle:221.54deg; --d:-33.231s"><div class="brand-orbit-item-inner"><span class="brand-chip">Spiegel</span></div></div>
-      <div class="brand-orbit-item" style="--angle:249.23deg; --d:-37.385s"><div class="brand-orbit-item-inner"><span class="brand-chip">Augenklinik Sulzbach</span></div></div>
-      <div class="brand-orbit-item" style="--angle:276.92deg; --d:-41.538s"><div class="brand-orbit-item-inner"><span class="brand-chip">Globus</span></div></div>
-      <div class="brand-orbit-item" style="--angle:304.62deg; --d:-45.692s"><div class="brand-orbit-item-inner"><span class="brand-chip">Caritas</span></div></div>
-      <div class="brand-orbit-item" style="--angle:332.31deg; --d:-49.846s"><div class="brand-orbit-item-inner"><span class="brand-chip">MunichMed</span></div></div>
+      <div class="brand-orbit-item" data-depth="2" style="--x:12.4%; --y:30%"><span class="brand-chip">Villeroy &amp; Boch</span></div>
+      <div class="brand-orbit-item" data-depth="2" style="--x:45%; --y:27.2%"><span class="brand-chip">Universität des Saarlandes</span></div>
+      <div class="brand-orbit-item" data-depth="2" style="--x:74%; --y:28.5%"><span class="brand-chip">CISPA</span></div>
+      <div class="brand-orbit-item" data-depth="2" style="--x:30%; --y:67.6%"><span class="brand-chip">Luxembourg Science Center</span></div>
+      <div class="brand-orbit-item" data-depth="2" style="--x:78%; --y:66.2%"><span class="brand-chip">Caritas</span></div>
+      <div class="brand-orbit-item" data-depth="1" style="--x:15%; --y:48.8%"><span class="brand-chip">Augenklinik Sulzbach</span></div>
+      <div class="brand-orbit-item" data-depth="1" style="--x:60%; --y:50%"><span class="brand-chip">Roccat</span></div>
+      <div class="brand-orbit-item" data-depth="1" style="--x:52%; --y:87.1%"><span class="brand-chip">Evangelische Kirche Hannover</span></div>
+      <div class="brand-orbit-item" data-depth="1" style="--x:84.7%; --y:47.3%"><span class="brand-chip">Tourismus Zentrale Merzig</span></div>
+      <div class="brand-orbit-item" data-depth="0" style="--x:26%; --y:8.4%"><span class="brand-chip">MunichMed</span></div>
+      <div class="brand-orbit-item" data-depth="0" style="--x:66%; --y:8.4%"><span class="brand-chip">Kaffeehaus Soest</span></div>
+      <div class="brand-orbit-item" data-depth="0" style="--x:8%; --y:86.5%"><span class="brand-chip">Airyoga</span></div>
+      <div class="brand-orbit-item" data-depth="0" style="--x:84%; --y:86%"><span class="brand-chip">Grundschule Sudweyhe</span></div>
+    </div>
     </div>
   </div>
 </section>
@@ -1080,6 +1079,63 @@
   } else {
     srEls.forEach(function (el) { el.classList.add('sr-visible'); });
   }
+
+  // ---- Trust cloud: entrance back-to-front, depth parallax, magnetic hover ----
+  (function () {
+    var cloud = document.querySelector('.brand-orbit');
+    if (!cloud) return;
+    var items = [].slice.call(cloud.querySelectorAll('.brand-orbit-item'));
+    var chips = items.map(function (i) { return i.querySelector('.brand-chip'); });
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      chips.forEach(function (c) { c.classList.add('is-in'); }); return;
+    }
+    var desktop = window.matchMedia('(min-width:1024px)');
+
+    var reveal = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        items.forEach(function (it, i) {
+          var c = it.querySelector('.brand-chip');
+          c.style.transitionDelay = ((2 - +it.dataset.depth) * 180 + i * 45) + 'ms';
+          c.classList.add('is-in');
+        });
+        reveal.disconnect();
+      });
+    }, { threshold: 0.25 });
+    reveal.observe(cloud);
+
+    var AMP = [6, 15, 28], active = false, ticking = false;
+    function update() {
+      ticking = false;
+      if (!desktop.matches) return;
+      var r = cloud.getBoundingClientRect();
+      var p = 1 - (2 * (r.top + r.height / 2)) / (window.innerHeight + r.height);
+      items.forEach(function (it) {
+        it.style.transform = 'translateY(' + Math.round(-p * AMP[+it.dataset.depth]) + 'px)';
+      });
+    }
+    function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+    new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting && !active) { active = true; window.addEventListener('scroll', onScroll, { passive: true }); update(); }
+        else if (!e.isIntersecting && active) { active = false; window.removeEventListener('scroll', onScroll); }
+      });
+    }, { rootMargin: '100px' }).observe(cloud);
+
+    if (desktop.matches && window.matchMedia('(hover:hover)').matches) {
+      cloud.addEventListener('mousemove', function (ev) {
+        items.forEach(function (it) {
+          var b = it.getBoundingClientRect();
+          var dx = (b.left + b.width / 2) - ev.clientX, dy = (b.top + b.height / 2) - ev.clientY;
+          var dist = Math.hypot(dx, dy) || 1;
+          var base = it.style.transform.match(/translateY\([^)]*\)/);
+          var push = dist < 130 ? (1 - dist / 130) * 9 : 0;
+          it.style.transform = (base ? base[0] : '') + ' translate(' + (dx / dist * push).toFixed(1) + 'px,' + (dy / dist * push).toFixed(1) + 'px)';
+        });
+      });
+      cloud.addEventListener('mouseleave', update);
+    }
+  })();
 
   // ---- Showcase tabs ----
   var tabBtns = document.querySelectorAll('.tab-btn');
