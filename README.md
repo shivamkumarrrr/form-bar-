@@ -9,14 +9,17 @@ the site.
 ## What's in here
 
 ```
-index.html          the whole page — markup, CSS and JS in one file
-assets/img/         photos (WebP + JPG fallback, 1120×1120 or wider)
-assets/img/logos/   customer logos (SVG)
+index.html                    the whole page — markup, CSS and JS in one file
+assets/img/                   photos (WebP + JPG fallback, 1120×1120 or wider)
+assets/img/logos/             customer logos (SVG)
+assets/img/logos/SOURCES.md   where each logo came from, and what was edited
 ```
 
 No build step, no dependencies, no framework. Open `index.html` in a browser and
-it runs. `package.json` only pulls in Playwright, which was used for screenshot
-checks during development — it is not needed to run or ship the page.
+it runs — there is nothing to install, so no `npm install`, no `node_modules`, no
+`package.json` needed. Playwright was used during development for screenshot
+checks only; it plays no part in the page itself and is deliberately not part of
+this package.
 
 ## Why a single file
 
