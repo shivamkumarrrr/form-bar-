@@ -36,18 +36,18 @@ Sky, Bose or Spiegel, and the adidas problem above stands unchanged (form.bar's 
 to name the brand). Before go-live, get a per-company yes from Sandro, ideally with a project
 reference each.
 
-**OPEN TODO — three names still have no logo file (2026-09-09):** Roccat, Caritas and MunichMed
-render as text chips under the logo wall because no usable logo file was found. Wikimedia Commons has
-none of them, and roccat.com is JS-rendered with no logo file in the served HTML. Fix later: ask
-Sandro/Patrick for the files or take them from each company's press kit, drop the SVG into
-`assets/img/logos/`, then move the name from `.trust-names` into a `.logo-cell`.
-Two were solved this way already: Luxembourg Science Center's logo is an inline SVG in the header of
-`science-center.lu/en` (extracted, recoloured from its white-on-dark `#fff1f0` to `#383B4A`), and
-Augenklinik Sulzbach serves `/images/logos/augenklinik-sulzbach-logo_rot.svg` (its `width`/`height`
-of `100%` had to be replaced with the viewBox's 195×67 so it sizes correctly inside an `<img>`).
-Tourismus Zentrale Merzig was dropped from the page on Shivam's call — merzig.de only offers the
-municipality's logo, not the Tourismus Zentrale's.
-The wall holds 12 logos in a 4×3 flex layout; keep it a multiple of four when adding more.
+**Logo wall, final state (2026-09-09):** 12 logos in a 4-per-row flex layout — Villeroy & Boch,
+GLOBUS, Bosch, Audi, adidas, Bose, Sky, Der Spiegel, Universität des Saarlandes, CISPA, Luxembourg
+Science Center, Augenklinik Sulzbach. Files live in `assets/img/logos/` (Wikimedia Commons, plus
+cispa.de, science-center.lu and augenklinik-sulzbach.de). Keep the count a multiple of four so the
+rows stay even. Two files needed hand-work: Luxembourg Science Center's logo is an inline SVG in
+their page header, extracted and recoloured from white-on-dark `#fff1f0` to `#383B4A`; Augenklinik
+Sulzbach's SVG shipped with `width`/`height` of `100%`, replaced with the viewBox's 195×67 so it
+sizes inside an `<img>`.
+Roccat, Caritas, MunichMed and Tourismus Zentrale Merzig were dropped from the page entirely on
+Shivam's call — no usable logo files (Roccat's site is JS-rendered, Commons has none of them, and
+merzig.de only serves the municipality's logo rather than the Tourismus Zentrale's). The
+`.trust-names` text-chip row that used to hold them is gone, markup and CSS both.
 
 **Confirmed by Sandro 2026-09-08, no longer open:**
 - Process is the real B2B sequence and does start with Beratung (contact with the Design-Service).
