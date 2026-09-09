@@ -317,6 +317,16 @@
   .testi-quote { font-family: var(--font-book-italic); font-style:italic; font-size: var(--fs-text-m); line-height:140%; color: var(--c-primary); flex:1; }
   .testi-attr { font-family: var(--font-regular); font-size: var(--fs-text-xs); color: var(--c-primary-light); }
   .testi-attr strong { font-family: var(--font-semibold); color: var(--c-primary); }
+  .testi-card-feature { grid-column: span 2; background: var(--c-secondary-lighter); border-color: var(--c-secondary-light); }
+  .testi-card-feature .testi-quote { font-size: var(--fs-text-l); }
+  .testi-stat { display:flex; align-items:baseline; gap: var(--sp-2xs); flex-wrap:wrap; }
+  .testi-stat b { font-family: var(--font-bold); font-size: var(--fs-heading-xs); line-height:110%; white-space:nowrap; color: var(--c-secondary-text); }
+  .testi-stat span { font-family: var(--font-book); font-size: var(--fs-text-s); color: var(--c-primary-light); flex:1; min-width:200px; }
+  .testi-link { display:inline-flex; align-items:center; gap: var(--sp-3xs); align-self:flex-start;
+    font-family: var(--font-semibold); font-size: var(--fs-text-xs); color: var(--c-secondary-text);
+    text-decoration:underline; text-underline-offset:3px; transition: color var(--t-default); }
+  .testi-link svg { width:18px; height:18px; flex:none; }
+  .testi-link:hover { color: var(--c-primary); }
 
   /* ============ TRUSTED SHOPS MARQUEE ============ */
   .marquee-section { padding-bottom: var(--sp-l); overflow:hidden; }
@@ -435,6 +445,7 @@
   }
   @media (max-width: 480px) {
     .products-grid, .showcase-grid, .testi-grid { grid-template-columns: 1fr; }
+    .testi-card-feature { grid-column: auto; }
   }
 
   /* ============ CONTACT MODAL ============ */
@@ -780,10 +791,17 @@
         <p class="testi-quote">„Weil uns die Visualisierung für eine Empfangstheke in unseren neuen Agenturräumen schlicht begeistert hat.“</p>
         <p class="testi-attr"><strong>Benjamin Knur</strong> · portvier</p>
       </div>
-      <div class="testi-card sr sr-fade-up" style="transition-delay:.1s">
+      <div class="testi-card testi-card-feature sr sr-fade-up" style="transition-delay:.1s">
+        <div class="testi-stat">
+          <b>+60 %</b>
+          <span>mehr Umsatz, seit die Kaffees von Black Hen im form.bar Regal bei GLOBUS Güdingen stehen.</span>
+        </div>
         <p class="testi-quote">„Die Qualität des Regals spiegelt die Qualität unserer Produkte wider. Das Regal macht unsere Unangepasstheit sichtbar.“</p>
         <p class="testi-attr"><strong>Kolja Conrad &amp; Kai Adam</strong> · Black Hen Rösthandwerk</p>
-        <!-- Kennzahl "+60 % Umsatz (GLOBUS Güdingen)" entfernt 2026-09-09: Quelle nicht belegt, siehe CLAUDE.md. Markup + CSS in Commit 9254bf0 -->
+        <a class="testi-link" href="https://www.instagram.com/reel/DbF7s-BoyFG/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4z"/></svg>
+          Die beiden im Video erzählen
+        </a>
       </div>
     </div>
   </div>
