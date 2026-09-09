@@ -36,6 +36,15 @@ Sky, Bose or Spiegel, and the adidas problem above stands unchanged (form.bar's 
 to name the brand). Before go-live, get a per-company yes from Sandro, ideally with a project
 reference each.
 
+**OPEN TODO — five names still have no logo file (2026-09-09):** Roccat, Caritas, Augenklinik
+Sulzbach, Luxembourg Science Center and Tourismus Zentrale Merzig currently render as text chips
+under the logo wall, because no usable logo file exists for them. Wikimedia Commons has none of the
+five; roccat.com and science-center.lu are JS-rendered and expose no logo file to a plain fetch;
+merzig.de only serves a low-res JPG of the town logo, which is the municipality, not the Tourismus
+Zentrale. Fix later — either ask Sandro/Patrick for the files, or pull each from the company's own
+press kit. Same treatment as the others once available: SVG (or high-res PNG) into
+`assets/img/logos/`, then move the name from `.trust-names` into a `.logo-cell`.
+
 **Confirmed by Sandro 2026-09-08, no longer open:**
 - Process is the real B2B sequence and does start with Beratung (contact with the Design-Service).
   He noted Fertigung + Lieferung could be merged into 3 steps, but keeping Lieferung separate is
