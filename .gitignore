@@ -1,2 +1,8 @@
 node_modules/
 .vercel
+.DS_Store
+**/.DS_Store
+
+# private working files, not part of the handover
+CLAUDE.md
+.claude/
