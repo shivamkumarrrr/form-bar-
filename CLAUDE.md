@@ -36,14 +36,18 @@ Sky, Bose or Spiegel, and the adidas problem above stands unchanged (form.bar's 
 to name the brand). Before go-live, get a per-company yes from Sandro, ideally with a project
 reference each.
 
-**OPEN TODO — five names still have no logo file (2026-09-09):** Roccat, Caritas, Augenklinik
-Sulzbach, Luxembourg Science Center and Tourismus Zentrale Merzig currently render as text chips
-under the logo wall, because no usable logo file exists for them. Wikimedia Commons has none of the
-five; roccat.com and science-center.lu are JS-rendered and expose no logo file to a plain fetch;
-merzig.de only serves a low-res JPG of the town logo, which is the municipality, not the Tourismus
-Zentrale. Fix later — either ask Sandro/Patrick for the files, or pull each from the company's own
-press kit. Same treatment as the others once available: SVG (or high-res PNG) into
+**OPEN TODO — three names still have no logo file (2026-09-09):** Roccat, Caritas and MunichMed
+render as text chips under the logo wall because no usable logo file was found. Wikimedia Commons has
+none of them, and roccat.com is JS-rendered with no logo file in the served HTML. Fix later: ask
+Sandro/Patrick for the files or take them from each company's press kit, drop the SVG into
 `assets/img/logos/`, then move the name from `.trust-names` into a `.logo-cell`.
+Two were solved this way already: Luxembourg Science Center's logo is an inline SVG in the header of
+`science-center.lu/en` (extracted, recoloured from its white-on-dark `#fff1f0` to `#383B4A`), and
+Augenklinik Sulzbach serves `/images/logos/augenklinik-sulzbach-logo_rot.svg` (its `width`/`height`
+of `100%` had to be replaced with the viewBox's 195×67 so it sizes correctly inside an `<img>`).
+Tourismus Zentrale Merzig was dropped from the page on Shivam's call — merzig.de only offers the
+municipality's logo, not the Tourismus Zentrale's.
+The wall holds 12 logos in a 4×3 flex layout; keep it a multiple of four when adding more.
 
 **Confirmed by Sandro 2026-09-08, no longer open:**
 - Process is the real B2B sequence and does start with Beratung (contact with the Design-Service).
