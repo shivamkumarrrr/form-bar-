@@ -9,7 +9,7 @@
 <link rel="preload" as="image" fetchpriority="high" href="assets/img/hero-regal-sylt.webp" imagesrcset="assets/img/hero-regal-sylt-800.webp 800w, assets/img/hero-regal-sylt.webp 1100w" imagesizes="(max-width: 1023px) 92vw, 45vw">
 
 <style>
-  /* ============ FONTS (Carnero W01, hosted by form.bar) ============ */
+  /* Schriften – Carnero W01, von form.bar gehostet */
   @font-face {
     font-family: "Carnero W01 Light";
     font-display: swap;
@@ -77,7 +77,7 @@
          url("https://static.form.bar/fe-ressources/fonts/5769351/7f719f16-e879-479a-8991-3430d2e60ebf.woff") format("woff");
   }
 
-  /* ============ TOKENS ============ */
+  /* Design-Tokens aus variables-base.less */
 
   /* Metric-matched fallbacks: same line box as Carnero, so the webfont swap
      does not reflow text. Ratios measured against Arial at 100px em. */
@@ -131,7 +131,7 @@
   @media (min-width:1400px) { :root{ --margin-section:20%; } }
   @media (max-width:1023px) { :root{ --fs-heading-l:89px; --fs-heading-m:55px; } }
 
-  /* ============ RESET / BASE ============ */
+  /* Reset und Grundlagen */
   *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
   html { scroll-behavior: smooth; overflow-x: hidden; }
   body {
@@ -158,13 +158,13 @@
     }
   }
 
-  /* ============ SCROLL REVEAL ============ */
+  /* Scroll-Reveal */
   .sr { opacity:0; transition: opacity .75s cubic-bezier(.22,.61,.36,1), transform .75s cubic-bezier(.22,.61,.36,1); will-change: opacity, transform; }
   .sr-fade-up { transform: translateY(36px); }
   .sr-fade-in { transform: none; }
   .sr-visible { opacity:1; transform:none; }
 
-  /* ============ BUTTONS ============ */
+  /* Buttons */
   .btn {
     display:inline-flex; align-items:center; justify-content:center; gap:var(--sp-3xs);
     padding: var(--sp-2xs) var(--sp-s);
@@ -182,7 +182,7 @@
   .btn-outline:hover { transform: scale(1.03); border-color: var(--c-secondary-dark); }
   .btn-group { display:flex; gap: var(--sp-2xs); flex-wrap:wrap; }
 
-  /* ============ NAV ============ */
+  /* Navigation */
   .nav { position: sticky; top:0; z-index:100; background: var(--c-white); border-bottom:1px solid var(--c-tertiary-light); height: var(--menu-h); display:flex; align-items:center; }
   .nav .wrap { display:flex; align-items:center; justify-content:space-between; gap: var(--sp-s); padding: 0 var(--sp-m); max-width:1920px; margin:0 auto; width:100%; }
   .nav-links { flex-wrap: nowrap; }
@@ -210,7 +210,7 @@
     .nav-burger { display:flex; }
   }
 
-  /* ============ HERO ============ */
+  /* Hero */
   .hero { position:relative; background: var(--c-primary); overflow:hidden; }
   .hero-inner { position:relative; z-index:2; width:100%; max-width:1920px; margin:0 auto; padding: var(--sp-l) var(--sp-m); display:grid; grid-template-columns: minmax(0,620px) 1fr; align-items:center; gap: var(--sp-m); }
   .hero-text { max-width: 620px; }
@@ -229,7 +229,7 @@
     .hero-visual { order:-1; align-self:stretch; width:100%; }
   }
 
-  /* ============ BENEFIT STRIP ============ */
+  /* Vorteilsleiste */
   .benefit-strip { background: var(--c-tertiary-lighter); border-bottom:1px solid var(--c-tertiary-light); padding: var(--sp-m) 0; }
   .benefit-list { display:flex; flex-wrap:wrap; justify-content:space-between; gap: var(--sp-s); }
   .benefit-item { display:flex; align-items:center; gap: var(--sp-xs); flex:1; min-width:200px; padding: var(--sp-2xs); border-radius: var(--r-m); transition: background var(--t-default); cursor:default; }
@@ -242,7 +242,7 @@
   @media (max-width: 900px) { .benefit-list { justify-content:flex-start; } .benefit-item { min-width: 45%; } }
   @media (max-width: 560px) { .benefit-item { min-width: 100%; } }
 
-  /* ============ SECTION SHELL ============ */
+  /* Sektions-Grundgerüst */
   .section { padding: var(--sp-l) 0; }
   .section.bg-alt { background: var(--c-tertiary-lighter); }
   .section-header { max-width: 640px; margin-bottom: var(--sp-m); }
@@ -250,7 +250,7 @@
   .section h2 { font-size: var(--fs-heading-xs); color: var(--c-primary); margin-bottom: var(--sp-2xs); }
   .section-desc { font-family: var(--font-book); font-size: var(--fs-text-m); color: var(--c-primary-light); }
 
-  /* ============ SHOWCASE TABS ============ */
+  /* Projekt-Reiter */
   .tabs-bar { display:flex; gap: var(--sp-xs); margin-bottom: var(--sp-m); flex-wrap:wrap; }
   .tab-btn { font-family: var(--font-regular); font-size: var(--fs-text-s); padding: var(--sp-2xs) var(--sp-s); border-radius: var(--r-xl); border:1px solid var(--c-tertiary-light); color: var(--c-primary-light); transition: all var(--t-default); }
   .tab-btn:hover { border-color: var(--c-secondary-dark); color: var(--c-primary); }
@@ -265,7 +265,7 @@
   .showcase-cap { padding: var(--sp-2xs) var(--sp-xs); font-family: var(--font-regular); font-size: var(--fs-text-xs); color: var(--c-primary-light); }
   .showcase-cap strong { font-family: var(--font-semibold); color: var(--c-primary); display:block; font-size: var(--fs-text-s); margin-bottom:2px; }
 
-  /* ============ PRODUCTS ============ */
+  /* Produkte */
   .products-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-s); }
   .product-card { border-radius: var(--r-l); background: var(--c-white); border:1px solid var(--c-tertiary-light); transition: transform var(--t-default), box-shadow var(--t-default); display:flex; flex-direction:column; }
   .product-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(56,59,74,.12); }
@@ -277,14 +277,14 @@
   .product-body h3 { font-size: var(--fs-subheading-s); margin-bottom: var(--sp-3xs); color: var(--c-primary); }
   .product-body p { font-family: var(--font-book); font-size: var(--fs-text-s); color: var(--c-primary-light); flex:1; }
 
-  /* ============ MID CTA ============ */
+  /* CTA in der Seitenmitte */
   .mid-cta { padding: var(--sp-s) 0; }
   .mid-cta-inner { display:flex; align-items:center; justify-content:space-between; gap: var(--sp-s); padding: var(--sp-s); border-radius: var(--r-l); background: var(--c-secondary-lighter); border:1px solid var(--c-secondary-light); }
   .mid-cta-inner h3 { font-size: var(--fs-subheading-s); margin-bottom: var(--sp-4xs); }
   .mid-cta-inner p { font-family: var(--font-book); font-size: var(--fs-text-s); color: var(--c-primary-light); }
   .mid-cta .btn-group { flex:0 0 auto; }
 
-  /* ============ AUDIENCE ============ */
+  /* Zielgruppen */
   .audience-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-xs); }
   .audience-card { border-radius: var(--r-l); overflow:hidden; background: var(--c-white); border:1px solid var(--c-tertiary-light); display:flex; flex-direction:column; transition: transform var(--t-default), box-shadow var(--t-default); }
   .audience-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(56,59,74,.12); }
@@ -296,7 +296,7 @@
   .audience-tags { display:flex; flex-wrap:wrap; gap: var(--sp-3xs); margin-top:auto; }
   .tag-mint { background: var(--c-secondary-lighter); border-color: var(--c-secondary-light); color: var(--c-secondary-text); font-family: var(--font-semibold); }
 
-  /* ============ SOCIAL PROOF (LOGO WALL) ============ */
+  /* Logo-Wand */
   .logo-grid { display:flex; flex-wrap:wrap; justify-content:center; gap: var(--sp-xs); margin-top: var(--sp-m); }
   .logo-cell { flex: 0 1 calc(25% - var(--sp-xs)); display:flex; align-items:center; justify-content:center; min-height:110px; padding: var(--sp-xs);
     background: var(--c-white); border:1px solid var(--c-tertiary-light); border-radius: var(--r-m);
@@ -311,7 +311,7 @@
   .logo-cell.is-zoomed img { transform: scale(1.12); }
   @media (prefers-reduced-motion: reduce) { .logo-cell.is-zoomed, .logo-cell.is-zoomed img { transform:none; } }
 
-  /* ============ TESTIMONIALS ============ */
+  /* Kundenstimmen */
   .testi-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-xs); }
   .testi-card { background: var(--c-white); border:1px solid var(--c-tertiary-light); border-radius: var(--r-m); padding: var(--sp-s); display:flex; flex-direction:column; gap: var(--sp-xs); transition: transform var(--t-default), box-shadow var(--t-default); }
   .testi-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
@@ -329,7 +329,7 @@
   .testi-link svg { width:18px; height:18px; flex:none; }
   .testi-link:hover { color: var(--c-primary); }
 
-  /* ============ TRUSTED SHOPS MARQUEE ============ */
+  /* Trusted-Shops-Laufband */
   .marquee-section { padding-bottom: var(--sp-l); overflow:hidden; }
   .marquee-section .section-header { margin-bottom: var(--sp-m); }
   .marquee-header-row { display:flex; align-items:center; gap: var(--sp-s); }
@@ -346,7 +346,7 @@
   @keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
 
-  /* ============ PROCESS ============ */
+  /* Ablauf */
   .process-steps { display:grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-s); }
   .process-step { position:relative; background: var(--c-white); border:1px solid var(--c-tertiary-light); border-radius: var(--r-m); padding: var(--sp-s); display:flex; gap: var(--sp-xs); align-items:flex-start; transition: transform var(--t-default), box-shadow var(--t-default), border-color var(--t-default); }
   .process-step:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(56,59,74,.1); border-color: var(--c-secondary-light); }
@@ -356,7 +356,7 @@
   .process-step h4 { font-size: var(--fs-subheading-xs); margin-bottom: var(--sp-3xs); }
   .process-step p { font-family: var(--font-book); font-size: var(--fs-text-s); color: var(--c-primary-light); }
 
-  /* ============ CONTACT ============ */
+  /* Kontakt */
   .contact-grid { display:grid; grid-template-columns: repeat(5, 1fr); gap: var(--sp-2xs); }
   .contact-card { background: var(--c-white); border:1px solid var(--c-tertiary-light); border-radius: var(--r-m); padding: var(--sp-s) var(--sp-xs); text-align:center; display:flex; flex-direction:column; align-items:center; gap: var(--sp-2xs); transition: background var(--t-default), transform var(--t-default); }
   .contact-card:hover { background: var(--c-secondary-lighter); transform: translateY(-3px); }
@@ -364,7 +364,7 @@
   .contact-card span { font-family: var(--font-semibold); font-size: var(--fs-text-s); color: var(--c-primary); }
   .contact-hours { margin-top: var(--sp-m); font-family: var(--font-regular); font-size: var(--fs-text-s); color: var(--c-primary-light); text-align:center; }
 
-  /* ============ CTA BAND ============ */
+  /* CTA-Band */
   .cta-band { background: var(--c-primary); color: var(--c-white); padding: var(--sp-l) 0; position:relative; overflow:hidden; }
   .cta-band .wrap { max-width:1920px; padding: 0 var(--sp-m); display:grid; grid-template-columns: 1fr 1fr; gap: var(--sp-l); align-items:center; }
   .cta-band .btn-group { flex-wrap:wrap; }
@@ -373,7 +373,7 @@
   .cta-visual { border-radius: var(--r-l); overflow:hidden; background: var(--c-primary-light); }
   .cta-visual img { width:100%; height:auto; aspect-ratio: 1068/705; object-fit:cover; display:block; }
 
-  /* ============ FOOTER ============ */
+  /* Footer */
   .footer { background: var(--c-tertiary-lighter); color: var(--c-primary); padding: var(--sp-m) 0 0; }
   .footer-top { display:grid; grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr; gap: var(--sp-s); padding-bottom: var(--sp-m); }
   .footer-brand .nav-logo { color: var(--c-primary); }
@@ -411,7 +411,7 @@
   .mastercard-mark .c-right { left:14px; background:#F79E1B; mix-blend-mode:multiply; }
   .footer-copy { padding: var(--sp-xs) 0; text-align:center; font-family: var(--font-regular); font-size: var(--fs-text-xs); color: var(--c-primary-light); }
 
-  /* ============ RESPONSIVE ============ */
+  /* Responsive */
   @media (max-width: 1023px) {
     .products-grid { grid-template-columns: 1fr 1fr; }
     .showcase-grid { grid-template-columns: 1fr 1fr; }
@@ -449,7 +449,7 @@
     .testi-card-feature { grid-column: auto; }
   }
 
-  /* ============ CONTACT MODAL ============ */
+  /* Kontaktformular (Modal) */
   .modal-backdrop { position:fixed; inset:0; background: rgba(56,59,74,.6); z-index:200; display:flex; align-items:flex-start; justify-content:center; padding: var(--sp-m) var(--sp-xs); overflow-y:auto; opacity:0; visibility:hidden; transition: opacity var(--t-default); }
   .modal-backdrop.is-open { opacity:1; visibility:visible; }
   .modal-panel { background: var(--c-white); border-radius: var(--r-l); max-width:680px; width:100%; margin-top: var(--sp-l); box-shadow: 0 24px 64px rgba(56,59,74,.3); transform: translateY(20px); transition: transform var(--t-default); }
@@ -466,7 +466,7 @@
   .form-field label { font-family: var(--font-semibold); font-size: var(--fs-text-s); color: var(--c-primary); }
   .form-field label .req { color: var(--c-secondary-text); }
   .form-field input, .form-field select, .form-field textarea { font-family: var(--font-regular); font-size: var(--fs-text-s); color: var(--c-primary); padding: var(--sp-2xs); border-radius: var(--r-s); border:1px solid var(--c-tertiary-light); background: var(--c-white); transition: border-color var(--t-default); width:100%; box-sizing:border-box; }
-  /* after the shared rule, whose background shorthand would reset the chevron */
+  /* muss nach der gemeinsamen Regel stehen, deren background-Kurzschreibweise den Pfeil sonst überschreibt */
   .form-field select { appearance:none; cursor:pointer; padding-right: var(--sp-s); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235B5E6E' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position: right 12px center; background-size:16px; }
   .form-field input:focus, .form-field select:focus, .form-field textarea:focus { outline:none; border-color: var(--c-secondary-dark); }
   .form-field textarea { resize:vertical; min-height:100px; }
@@ -500,7 +500,7 @@
 </head>
 <body>
 
-<!-- NAV -->
+<!-- Navigation -->
 <nav class="nav">
   <div class="wrap">
     <div class="nav-brand">
@@ -523,7 +523,7 @@
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- Hero -->
 <main>
 <header class="hero">
   <div class="hero-inner">
@@ -542,7 +542,7 @@
   </div>
 </header>
 
-<!-- BENEFIT STRIP -->
+<!-- Vorteilsleiste -->
 <section class="benefit-strip">
   <div class="wrap">
     <div class="benefit-list">
@@ -570,7 +570,7 @@
   </div>
 </section>
 
-<!-- PROJEKT SHOWCASE -->
+<!-- Projekte -->
 <section class="section" id="referenzen">
   <div class="wrap">
     <div class="section-header sr sr-fade-up">
@@ -632,7 +632,7 @@
   </div>
 </section>
 
-<!-- PRODUKTE -->
+<!-- Produkte -->
 <section class="section bg-alt" id="produkte">
   <div class="wrap">
     <div class="section-header sr sr-fade-up">
@@ -675,7 +675,7 @@
   </div>
 </section>
 
-<!-- MID CTA 1 -->
+<!-- CTA Mitte 1 -->
 <section class="mid-cta">
   <div class="wrap">
     <div class="mid-cta-inner sr sr-fade-up">
@@ -690,7 +690,7 @@
   </div>
 </section>
 
-<!-- ZIELGRUPPEN -->
+<!-- Zielgruppen -->
 <section class="section" id="zielgruppen">
   <div class="wrap">
     <div class="section-header sr sr-fade-up">
@@ -744,7 +744,7 @@
   </div>
 </section>
 
-<!-- SOCIAL PROOF -->
+<!-- Logo-Wand -->
 <section class="section bg-alt">
   <div class="wrap">
     <div class="section-header sr sr-fade-up">
@@ -768,7 +768,7 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- Kundenstimmen -->
 <section class="section">
   <div class="wrap">
     <div class="section-header sr sr-fade-up">
@@ -808,7 +808,7 @@
   </div>
 </section>
 
-<!-- MID CTA 2 -->
+<!-- CTA Mitte 2 -->
 <section class="mid-cta">
   <div class="wrap">
     <div class="mid-cta-inner sr sr-fade-up">
@@ -823,7 +823,7 @@
   </div>
 </section>
 
-<!-- TRUSTED SHOPS MARQUEE -->
+<!-- Trusted Shops -->
 <section class="section bg-alt marquee-section sr sr-fade-up">
   <div class="wrap">
     <div class="section-header marquee-header-row">
@@ -858,7 +858,7 @@
   </div>
 </section>
 
-<!-- PROZESS -->
+<!-- Ablauf -->
 <section class="section bg-alt">
   <div class="wrap">
     <div class="section-header sr sr-fade-up">
@@ -902,7 +902,7 @@
   </div>
 </section>
 
-<!-- KONTAKT -->
+<!-- Kontakt -->
 <section class="section" id="kontakt">
   <div class="wrap">
     <div class="section-header sr sr-fade-up">
@@ -935,7 +935,7 @@
   </div>
 </section>
 
-<!-- CTA BAND -->
+<!-- CTA-Band -->
 <section class="cta-band">
   <div class="wrap">
     <div class="sr sr-fade-up">
@@ -952,7 +952,7 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- Footer -->
 </main>
 
 <footer class="footer">
@@ -1023,7 +1023,7 @@
   <p class="footer-copy">&copy; form.bar by Okinlab GmbH</p>
 </footer>
 
-<!-- CONTACT MODAL -->
+<!-- Kontaktformular -->
 <div class="modal-backdrop" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
   <div class="modal-panel">
     <div class="modal-header">
@@ -1119,7 +1119,7 @@
 </div>
 
 <script>
-  // ---- Scroll reveal ----
+  // Scroll-Reveal
   var srEls = document.querySelectorAll('.sr');
   if ('IntersectionObserver' in window) {
     var srObserver = new IntersectionObserver(function (entries) {
@@ -1131,8 +1131,8 @@
       });
     }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
     srEls.forEach(function (el) { srObserver.observe(el); });
-    // Safety net: if the observer never fired for content already on screen,
-    // reveal just that, so a stuck page can't leave the fold blank.
+    // Sicherheitsnetz: falls der Observer für bereits sichtbare Inhalte nie
+    // ausgelöst hat, werden nur diese eingeblendet.
     setTimeout(function () {
       srEls.forEach(function (el) {
         var r = el.getBoundingClientRect();
@@ -1143,7 +1143,7 @@
     srEls.forEach(function (el) { el.classList.add('sr-visible'); });
   }
 
-  // ---- Logo wall: click a logo to enlarge it, click again (or elsewhere) to reset ----
+  // Logo-Wand: Klick vergrößert ein Logo, erneuter Klick oder Klick daneben setzt zurück
   (function () {
     var cells = [].slice.call(document.querySelectorAll('.logo-cell'));
     if (!cells.length) return;
@@ -1176,7 +1176,7 @@
     document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape') reset(null); });
   })();
 
-  // ---- Showcase tabs ----
+  // Projekt-Reiter
   var tabBtns = document.querySelectorAll('.tab-btn');
   var tabPanels = document.querySelectorAll('.tab-panel');
   tabBtns.forEach(function (btn) {
@@ -1190,7 +1190,7 @@
     });
   });
 
-  // ---- Mobile nav ----
+  // Mobile Navigation
   var burger = document.getElementById('navBurger');
   var navLinks = document.getElementById('navLinks');
   burger.addEventListener('click', function () {
@@ -1201,7 +1201,7 @@
     a.addEventListener('click', function () { navLinks.classList.remove('is-open'); });
   });
 
-  // ---- Contact modal ----
+  // Kontaktformular
   var contactModal = document.getElementById('contactModal');
   var contactForm = document.getElementById('contactForm');
   var modalSuccess = document.getElementById('modalSuccess');
@@ -1238,7 +1238,7 @@
     if (e.key === 'Escape' && contactModal.classList.contains('is-open')) closeModal();
   });
 
-  // ---- File dropzone ----
+  // Datei-Upload
   var dropzone = document.getElementById('dropzone');
   var fileInput = document.getElementById('fieldFile');
   var dropzoneLabel = document.getElementById('dropzoneFileLabel');
@@ -1260,7 +1260,7 @@
     }
   });
 
-  // ---- Form submit ----
+  // Formularversand
   contactForm.addEventListener('submit', function (e) {
     e.preventDefault();
     contactForm.classList.add('is-hidden');

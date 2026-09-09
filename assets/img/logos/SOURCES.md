@@ -1,35 +1,37 @@
-# Logo sources
+# Herkunft der Logos
 
-Where each file came from, so the origin can be checked before publication.
-All twelve are used in the "Vertrauen uns" section of `index.html`.
+Wo jede Datei herkommt, damit die Quelle vor der Veröffentlichung geprüft werden
+kann. Alle zwölf werden im Abschnitt „Vertrauen uns" in `index.html` verwendet.
 
-| File | Company | Source |
+| Datei | Unternehmen | Quelle |
 |---|---|---|
 | `villeroy-boch.svg` | Villeroy & Boch | Wikimedia Commons, `File:Villeroy & Boch logo.svg` |
-| `globus-2022.svg` | GLOBUS (Globus Holding) | Wikimedia Commons, `File:Globus-Holding-2022.svg` — the current mark since the 2022 rebrand |
+| `globus-2022.svg` | GLOBUS (Globus Holding) | Wikimedia Commons, `File:Globus-Holding-2022.svg` — die aktuelle Marke seit dem Rebranding 2022 |
 | `bosch.svg` | Bosch | Wikimedia Commons, `File:Bosch-logo.svg` |
 | `audi.svg` | Audi | Wikimedia Commons, `File:Audi-Logo 2016.svg` |
 | `adidas.svg` | adidas | Wikimedia Commons, `File:Adidas 2022 logo.svg` |
 | `bose.svg` | Bose | Wikimedia Commons, `File:Bose logo.svg` |
 | `sky.svg` | Sky | Wikimedia Commons, `File:Sky logo 2025.svg` |
 | `spiegel.svg` | Der Spiegel | Wikimedia Commons, `File:Der Spiegel 2022 logo.svg` |
-| `uds.svg` | Universität des Saarlandes | German Wikipedia, `Datei:Logo-Universität des Saarlandes.svg` |
+| `uds.svg` | Universität des Saarlandes | Deutsche Wikipedia, `Datei:Logo-Universität des Saarlandes.svg` |
 | `cispa.svg` | CISPA Helmholtz-Zentrum | `cispa.de/dist/images/cispa-logo-txt-rgb.svg` |
-| `luxembourg-science-center.svg` | Luxembourg Science Center | Inline SVG from the header of `science-center.lu/en` |
+| `luxembourg-science-center.svg` | Luxembourg Science Center | Inline-SVG aus dem Seitenkopf von `science-center.lu/en` |
 | `augenklinik-sulzbach.svg` | Augenklinik Sulzbach | `augenklinik-sulzbach.de/images/logos/augenklinik-sulzbach-logo_rot.svg` |
 
-## Files that were modified
+## Angepasste Dateien
 
-- `luxembourg-science-center.svg` — the site serves a white-on-dark version
-  (`fill="#fff1f0"`), invisible on the page's white cards. Recoloured to
-  `#383B4A`. If the official colour version is available, prefer it.
-- `augenklinik-sulzbach.svg` — shipped with `width="100%" height="100%"`, which
-  does not size inside an `<img>`. Replaced with the viewBox's own 195×67.
+- `luxembourg-science-center.svg` — die Website liefert eine weiße Version für
+  dunklen Hintergrund (`fill="#fff1f0"`), die auf den weißen Karten der Seite
+  unsichtbar wäre. Umgefärbt auf `#383B4A`. Falls die offizielle Farbversion
+  vorliegt, ist diese vorzuziehen.
+- `augenklinik-sulzbach.svg` — die Originaldatei hatte `width="100%"` und
+  `height="100%"`, was sich innerhalb eines `<img>` nicht sauber skalieren lässt.
+  Ersetzt durch die Maße der viewBox, 195×67.
 
-## Note on usage rights
+## Hinweis zu den Nutzungsrechten
 
-Company logos are trademarks of their respective owners. form.bar confirmed in
-writing (Alessandro Quaranta, 8 September 2026) that logos may be used on this
-page. Whether each company can be presented as a form.bar customer is a separate
-question and was not verified from public sources — worth confirming per company
-before the page goes live.
+Firmenlogos sind Marken der jeweiligen Unternehmen. form.bar hat die Verwendung
+auf dieser Seite schriftlich bestätigt (Alessandro Quaranta, 8. September 2026).
+Ob jede Firma öffentlich als Kunde von form.bar dargestellt werden kann, ist eine
+davon getrennte Frage und ließ sich aus öffentlichen Quellen nicht prüfen — vor
+dem Livegang am besten pro Firma bestätigen lassen.

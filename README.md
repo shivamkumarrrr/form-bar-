@@ -1,47 +1,46 @@
-# form.bar — Business Landing Page
+# form.bar — Business-Landingpage
 
-Standalone landing page for form.bar's B2B audience, built to replace
-`form.bar/de-DE/service/business-service`.
+Eigenständige Landingpage für die B2B-Zielgruppen von form.bar, gebaut als Ersatz
+für `form.bar/de-DE/service/business-service`.
 
-German copy throughout, informal address ("du"), matching the tone of the rest of
-the site.
+Durchgehend deutsche Ansprache in der Du-Form, passend zum Rest der Seite.
 
-## What's in here
+## Inhalt
 
 ```
-index.html                    the whole page — markup, CSS and JS in one file
-assets/img/                   photos (WebP + JPG fallback, 1120×1120 or wider)
-assets/img/logos/             customer logos (SVG)
-assets/img/logos/SOURCES.md   where each logo came from, and what was edited
+index.html                    die komplette Seite – Markup, CSS und JavaScript in einer Datei
+assets/img/                   Fotos (WebP mit JPG-Fallback, 1120×1120 oder größer)
+assets/img/logos/             Kundenlogos (SVG)
+assets/img/logos/SOURCES.md   Herkunft jedes Logos und was daran angepasst wurde
 ```
 
-No build step, no dependencies, no framework. Open `index.html` in a browser and
-it runs — there is nothing to install, so no `npm install`, no `node_modules`, no
-`package.json` needed. Playwright was used during development for screenshot
-checks only; it plays no part in the page itself and is deliberately not part of
-this package.
+Kein Build-Prozess, keine Abhängigkeiten, kein Framework. `index.html` im Browser
+öffnen genügt – es gibt nichts zu installieren, also kein `npm install`, kein
+`node_modules`, keine `package.json`. Playwright kam während der Entwicklung nur
+für Screenshot-Prüfungen zum Einsatz und ist bewusst nicht Teil dieses Pakets.
 
-## Why a single file
+## Warum eine einzige Datei
 
-The page is meant to be integrated into form.bar's own stack, not deployed on its
-own. Keeping everything in one file means:
+Die Seite soll in eure bestehende Umgebung eingebaut werden, nicht eigenständig
+laufen. Alles in einer Datei bedeutet:
 
-- it can be pasted into a CMS block or a Vue/Nuxt single-file component without
-  untangling a build pipeline first,
-- there are no bundler assumptions to reconcile with the existing setup,
-- nothing loads from a third-party CDN, so there is no new external dependency to
-  review.
+- sie lässt sich als CMS-Block oder als Vue-Komponente übernehmen, ohne vorher
+  eine Build-Pipeline aufzudröseln,
+- es gibt keine Bundler-Annahmen, die zu eurem Setup passen müssen,
+- nichts lädt von einem fremden CDN, es kommt also keine neue externe
+  Abhängigkeit dazu.
 
-Splitting the CSS and JS into separate files is a five-minute job if that suits
-the integration better — the sections are already marked with comments.
+CSS und JavaScript in eigene Dateien auszulagern ist eine Sache von fünf Minuten,
+falls das für die Integration besser passt – die Abschnitte sind bereits durch
+Kommentare getrennt.
 
-## Design tokens
+## Design-Tokens
 
-Every colour, spacing value, radius and breakpoint comes from form.bar's own
-`variables-base.less` / `variables.less`, declared as CSS custom properties at the
-top of `index.html`. The mapping is one to one:
+Alle Farben, Abstände, Radien und Breakpoints stammen aus euren eigenen Dateien
+`variables-base.less` und `variables.less` und sind als CSS-Variablen am Anfang
+von `index.html` deklariert. Die Zuordnung ist eins zu eins:
 
-| CSS custom property | LESS variable | Value |
+| CSS-Variable | LESS-Variable | Wert |
 |---|---|---|
 | `--c-primary` | `@color-base-primary` | `#383B4A` |
 | `--c-primary-light` | `@color-base-primary-shade-light` | `#5B5E6E` |
@@ -55,55 +54,61 @@ top of `index.html`. The mapping is one to one:
 | `--sp-4xs` … `--sp-2xl` | `@size-4xs` … `@size-2xl` | 3 / 8 / 13 / 21 / 34 / 55 / 89 / 144 / 233 px |
 | `--r-xs` … `--r-xl` | `@radius-xs` … `@radius-xl` | 3 / 8 / 21 / 34 / 55 px |
 | `--shadow` | `.box-shadow-default()` | `3px 3px 8px 0 #ECEFF0` |
-| `--t-short` / `--t-default` / `--t-long` | transition durations | 0.1s / 0.3s / 1s |
-| `--menu-h` | menu height | 59px |
+| `--t-short` / `--t-default` / `--t-long` | Übergangsdauern | 0,1s / 0,3s / 1s |
+| `--menu-h` | Menühöhe | 59px |
 
-Breakpoints follow `@breakpoint-xs/s/m/l/xl` — 480, 768, 1023, 1400, 1700 px.
+Die Breakpoints folgen `@breakpoint-xs/s/m/l/xl` — 480, 768, 1023, 1400, 1700 px.
 
-Fonts are Carnero W01, loaded with the `@font-face` declarations from
-`fonts.less`, pointing at `static.form.bar/fe-ressources/fonts/…`. No Google
-Fonts, no self-hosted copies.
+Als Schrift kommt Carnero W01 zum Einsatz, eingebunden über die `@font-face`-
+Deklarationen aus eurer `fonts.less` mit den Pfaden auf
+`static.form.bar/fe-ressources/fonts/…`. Keine Google Fonts, keine eigenen
+Kopien der Schriftdateien.
 
-**Two deliberate deviations**, both worth a look during integration:
+**Zwei bewusste Abweichungen**, die beim Einbau einen Blick wert sind:
 
-1. `--c-secondary-text: #2F7A52` is not a form.bar token. It is a darkened mint
-   used for small text on white, where `#91E3B7` does not carry enough contrast
-   to be readable.
-2. Four extra intermediate breakpoints (420, 560, 640, 900 px) handle layouts
-   that do not exist in the base system, such as the audience cards and the logo
-   wall.
+1. `--c-secondary-text: #2F7A52` ist kein form.bar-Token, sondern ein
+   abgedunkeltes Mint für kleinen Text auf Weiß. `#91E3B7` hat dort zu wenig
+   Kontrast, um gut lesbar zu sein.
+2. Vier zusätzliche Zwischen-Breakpoints (420, 560, 640, 900 px) für Layouts, die
+   es im Grundsystem so nicht gibt, etwa die Zielgruppen-Karten und die
+   Logo-Wand.
 
-## Before this goes live
+## Vor dem Livegang
 
-The page is complete as a front end. These need someone with backend or account
-access:
+Als Frontend ist die Seite fertig. Für diese Punkte braucht es Zugriff auf euer
+Backend oder eure Konten:
 
-- **Contact form** — the modal validates and shows a success state, but submits
-  nowhere. It needs a real endpoint. Fields: name, company, email, phone,
-  project type, timing, message, optional file upload.
-- **Three contact buttons are placeholders** (`href="#"`): Live-Chat, Rückruf
-  buchen, WhatsApp. Email (`info@form.bar`) and phone
-  (`+49 681 410 976 42`) are wired up.
-- **Trusted Shops** — the rating block is static markup. form.bar's own widget
-  (ID `XD406B59FD645A9A9A3205F0F9B08D2A8`) should replace it during integration;
-  it only renders from the real domain, so it cannot be tested from a preview
-  URL.
-- **Customer logos** — form.bar confirmed in writing that logos may be used.
-  Whether each company can be presented as a customer is a separate question and
-  should be signed off per company before publication.
+- **Kontaktformular** — das Modal validiert und zeigt eine Erfolgsmeldung, sendet
+  aber an keinen Endpunkt. Felder: Name, Unternehmen, E-Mail, Telefon, Projektart,
+  Zeitrahmen, Nachricht, optionaler Datei-Upload.
+- **Drei Kontakt-Buttons sind Platzhalter** (`href="#"`): Live-Chat, Rückruf
+  buchen, WhatsApp. E-Mail (`info@form.bar`) und Telefon (`+49 681 410 976 42`)
+  sind verlinkt.
+- **Footer-Links** — FAQ, f+ Design-Service, Über uns, Team, Presse,
+  Business-Service, AGB, Datenschutz, Widerruf und Impressum zeigen noch auf `#`,
+  weil mir eure internen URLs nicht vorlagen. Impressum, Datenschutz und Widerruf
+  sind Pflichtangaben und müssen vor dem Livegang gesetzt sein.
+- **Trusted Shops** — der Bewertungsblock ist statisches Markup. Euer eigenes
+  Widget (ID `XD406B59FD645A9A9A3205F0F9B08D2A8`) sollte ihn beim Einbau
+  ersetzen; es rendert nur von der echten Domain und lässt sich daher nicht über
+  eine Vorschau-URL testen.
+- **Kundenlogos** — die Erlaubnis zur Logo-Nutzung liegt schriftlich vor. Ob jede
+  Firma öffentlich als Kunde genannt werden kann, ist eine davon getrennte Frage
+  und sollte vor der Veröffentlichung pro Firma bestätigt werden.
 
-## Motion
+## Animationen
 
-Scroll reveals use `IntersectionObserver`, fire once, and run 0.6–0.8s ease-out.
-Hover states lift cards by 4px. Clicking a logo enlarges it; clicking again,
-elsewhere, or Escape resets it. Everything is disabled under
-`prefers-reduced-motion: reduce`.
+Die Scroll-Effekte laufen über `IntersectionObserver`, lösen einmalig aus und
+dauern 0,6–0,8 s mit ease-out. Karten heben sich beim Hover um 4 px. Ein Klick auf
+ein Logo vergrößert es; ein erneuter Klick, ein Klick daneben oder Escape setzt es
+zurück. Bei `prefers-reduced-motion: reduce` ist alles davon abgeschaltet.
 
-## Browser support
+## Browser-Unterstützung
 
-Modern evergreen browsers. Uses CSS custom properties, grid, flexbox,
-`aspect-ratio`, `IntersectionObserver` and WebP with JPG fallbacks.
+Aktuelle Browser. Verwendet werden CSS-Variablen, Grid, Flexbox, `aspect-ratio`,
+`IntersectionObserver` sowie WebP mit JPG-Fallback.
 
-## Contact
+## Kontakt
 
-Built by Shivam Kumar for form.bar (Okinlab GmbH, Saarbrücken) via PPC GmbH.
+Erstellt von Shivam Kumar für form.bar (Okinlab GmbH, Saarbrücken), vermittelt
+über die PPC GmbH.
