@@ -26,6 +26,37 @@ Publishing "Unternehmen, die schon auf form.bar setzen" over these names risks i
 plus unlicensed use of the marks — the classic Abmahnung combination in Germany. Ask Patrick for
 written confirmation per company, or cut the section back to the names with project evidence.
 
+**Status update 2026-09-09 (Sandro's answer, via Patrick):** Alessandro Quaranta (founder, form.bar)
+replied in writing on 2026-09-08: *"ja, Logos dürfen verwendet werden."* That settles **permission**
+from the client's side, and the logo wall in `index.html` was built on it (Villeroy & Boch, GLOBUS,
+Bosch, Audi, adidas, Bose, Sky, Der Spiegel, Universität des Saarlandes, CISPA — Google dropped at
+Shivam's request; logo files pulled from Wikimedia Commons plus cispa.de and stored in
+`assets/img/logos/`). It does **not** settle **accuracy**: nothing new was found for Audi, Bosch,
+Sky, Bose or Spiegel, and the adidas problem above stands unchanged (form.bar's own article refuses
+to name the brand). Before go-live, get a per-company yes from Sandro, ideally with a project
+reference each.
+
+**Confirmed by Sandro 2026-09-08, no longer open:**
+- Process is the real B2B sequence and does start with Beratung (contact with the Design-Service).
+  He noted Fertigung + Lieferung could be merged into 3 steps, but keeping Lieferung separate is
+  deliberate — business customers often want Montage. 4 steps stay.
+- Trusted Shops widget will be wired in by form.bar during implementation; the static block in
+  `index.html` is a placeholder.
+- CTAs: he asked whether "only top and bottom" was intentional. It was not a considered choice, so
+  two mid-page CTAs were added (after Produkte, after Testimonials). The live business-service page
+  itself repeats "Jetzt teilnehmen" three times, which supports this.
+- New audience card "Praxen & Therapeuten" added at his suggestion. He was right that the photo used
+  for "Repräsentative Geschäftsräume" was a physio practice — verified against
+  `Bilder_Auswahl/Multifunktionales Möbel_Regal_Tresen_Schreibtisch_Physiopraxis.png`. That photo now
+  sits on the Praxen card; the representative-spaces card uses `Raumtrenner_Friserusalon.png`.
+
+**Black Hen result claim — verified 2026-09-09.** Sandro mentioned a 60 % revenue increase from the
+Black Hen video. The form.bar magazine page carries no such line, but form.bar's own Instagram reel
+(`https://www.instagram.com/reel/DbF7s-BoyFG/`) says verbatim: *"Kann gutes Design wirklich etwas
+bewirken? Ja – 60 % mehr Umsatz!"* naming BLACK HEN, GLOBUS Güdingen and form.bar. Published in the
+testimonial card as form.bar's own public claim. If it ever needs to be a customer quote instead,
+get the exact sentence from the video.
+
 **⚠️ Confirmed ERROR, found this session:** the Font Sizes table below (desktop → mobile) says Heading L goes 116px→89px and Heading M goes 89px→55px on mobile. The actual `variables-base.less` says mobile Heading L and Heading M are the **same as desktop** (116px and 89px respectively, no reduction). This doc's own table doesn't match the source it cites. My build (`index.html`) currently uses the smaller (wrong-per-source) mobile sizes anyway, since 116px unscaled on a 375px phone would genuinely be unusable — a reasonable practical override, but worth knowing it deviates from the literal LESS value.
 
 **❓ Traceable to this doc, not independently re-checked by me:**
