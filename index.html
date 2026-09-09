@@ -289,6 +289,7 @@
   .audience-card { border-radius: var(--r-l); overflow:hidden; background: var(--c-white); border:1px solid var(--c-tertiary-light); display:flex; flex-direction:column; transition: transform var(--t-default), box-shadow var(--t-default); }
   .audience-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(56,59,74,.12); }
   .audience-card img { width:100%; height:auto; aspect-ratio: 1/1; object-fit:cover; }
+  .audience-card img.focus-top { object-position: 50% 32%; }
   .audience-body { padding: var(--sp-s); flex:1; display:flex; flex-direction:column; }
   .audience-body h3 { font-size: var(--fs-subheading-xs); hyphens:manual; margin-bottom: var(--sp-3xs); }
   .audience-body p { font-family: var(--font-book); font-size: var(--fs-text-s); color: var(--c-primary-light); margin-bottom: var(--sp-s); }
@@ -416,7 +417,7 @@
     .showcase-grid { grid-template-columns: 1fr 1fr; }
     .testi-grid { grid-template-columns: 1fr 1fr; }
     .audience-grid { grid-template-columns: 1fr; }
-    .audience-card img { aspect-ratio: 16/10; }
+    .audience-card img { aspect-ratio: 4/3; }
     .logo-cell { flex-basis: calc(33.333% - var(--sp-xs)); }
     .mid-cta-inner { flex-direction:column; align-items:flex-start; gap: var(--sp-xs); }
     .contact-grid { grid-template-columns: repeat(3, 1fr); }
@@ -699,7 +700,7 @@
     </div>
     <div class="audience-grid">
       <div class="audience-card sr sr-fade-up">
-        <img src="assets/img/audience-repraesentativ.webp" alt="Organisch geformtes Regal als Raumtrenner in einem Friseursalon" loading="lazy" width="1120" height="1120">
+        <img class="focus-top" src="assets/img/audience-repraesentativ.webp" srcset="assets/img/audience-repraesentativ-560.webp 560w, assets/img/audience-repraesentativ.webp 1120w" sizes="(max-width: 640px) 92vw, (max-width: 1023px) 90vw, 30vw" alt="Organisch geformtes Regal als Raumtrenner in einem Friseursalon" loading="lazy" width="1120" height="1120">
         <div class="audience-body">
           <h3>Repräsentative Geschäftsräume</h3>
           <p>Kanzleien, Agenturen, Architekturbüros, Friseursalons: überall dort, wo der Raum Teil der Marke ist.</p>
@@ -713,7 +714,7 @@
         </div>
       </div>
       <div class="audience-card sr sr-fade-up" style="transition-delay:.1s">
-        <img src="assets/img/audience-praxis.webp" alt="Multifunktionales Möbel aus Regal, Tresen und Schreibtisch in einer Physiopraxis" loading="lazy" width="1120" height="1120">
+        <img src="assets/img/audience-praxis.webp" srcset="assets/img/audience-praxis-560.webp 560w, assets/img/audience-praxis.webp 1120w" sizes="(max-width: 640px) 92vw, (max-width: 1023px) 90vw, 30vw" alt="Multifunktionales Möbel aus Regal, Tresen und Schreibtisch in einer Physiopraxis" loading="lazy" width="1120" height="1120">
         <div class="audience-body">
           <h3>Praxen &amp; Therapeuten</h3>
           <p>Wer täglich mit Menschen und Körpern arbeitet, braucht Räume, die nicht nach Wartezimmer aussehen. Organische Formen statt Kanten.</p>
@@ -727,7 +728,7 @@
         </div>
       </div>
       <div class="audience-card sr sr-fade-up" style="transition-delay:.2s">
-        <img src="assets/img/audience-einzelhandel.webp" alt="Warenpräsentation im gehobenen Einzelhandel" loading="lazy">
+        <img src="assets/img/audience-einzelhandel.webp" srcset="assets/img/audience-einzelhandel-560.webp 560w, assets/img/audience-einzelhandel.webp 1120w" sizes="(max-width: 640px) 92vw, (max-width: 1023px) 90vw, 30vw" alt="Warenpräsentation im gehobenen Einzelhandel" loading="lazy">
         <div class="audience-body">
           <h3>Gehobener Einzelhandel</h3>
           <p>Wenn deine Produkte Premium sind, sollte die Präsentation es auch sein, egal ob Mode, Geschirr oder Kaffee.</p>
