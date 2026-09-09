@@ -296,13 +296,19 @@
   .tag-mint { background: var(--c-secondary-lighter); border-color: var(--c-secondary-light); color: var(--c-secondary-text); font-family: var(--font-semibold); }
 
   /* ============ SOCIAL PROOF (LOGO WALL) ============ */
-  .logo-grid { display:flex; flex-wrap:wrap; justify-content:center; gap: var(--sp-2xs); margin-top: var(--sp-s); }
-  .logo-cell { flex: 0 1 calc(25% - var(--sp-2xs)); display:flex; align-items:center; justify-content:center; min-height:100px; padding: var(--sp-xs);
+  .logo-grid { display:flex; flex-wrap:wrap; justify-content:center; gap: var(--sp-xs); margin-top: var(--sp-m); }
+  .logo-cell { flex: 0 1 calc(25% - var(--sp-xs)); display:flex; align-items:center; justify-content:center; min-height:110px; padding: var(--sp-xs);
     background: var(--c-white); border:1px solid var(--c-tertiary-light); border-radius: var(--r-m);
+    cursor:pointer; -webkit-tap-highlight-color: transparent;
     transition: transform var(--t-default), box-shadow var(--t-default); }
-  .logo-cell img { max-width:100%; max-height:38px; width:auto; height:auto; }
+  .logo-cell img { max-width:100%; max-height:38px; width:auto; height:auto; pointer-events:none;
+    transition: transform var(--t-default); }
   .logo-cell img.is-mark { max-height:54px; }
   @media (hover:hover) { .logo-cell:hover { transform: translateY(-4px); box-shadow: var(--shadow); } }
+  .logo-cell.is-zoomed { transform: scale(1.12); box-shadow: 0 18px 44px rgba(56,59,74,.16);
+    border-color: var(--c-secondary-light); position:relative; z-index:2; }
+  .logo-cell.is-zoomed img { transform: scale(1.12); }
+  @media (prefers-reduced-motion: reduce) { .logo-cell.is-zoomed, .logo-cell.is-zoomed img { transform:none; } }
 
   /* ============ TESTIMONIALS ============ */
   .testi-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-xs); }
@@ -404,7 +410,7 @@
     .testi-grid { grid-template-columns: 1fr 1fr; }
     .audience-grid { grid-template-columns: 1fr; }
     .audience-card img { aspect-ratio: 16/10; }
-    .logo-cell { flex-basis: calc(33.333% - var(--sp-2xs)); }
+    .logo-cell { flex-basis: calc(33.333% - var(--sp-xs)); }
     .mid-cta-inner { flex-direction:column; align-items:flex-start; gap: var(--sp-xs); }
     .contact-grid { grid-template-columns: repeat(3, 1fr); }
     .cta-band .wrap { grid-template-columns: 1fr; padding: 0 var(--margin-section); gap: var(--sp-s); }
@@ -415,7 +421,7 @@
   }
   @media (max-width: 640px) {
     .products-grid, .showcase-grid, .testi-grid, .contact-grid { grid-template-columns: 1fr 1fr; }
-    .logo-cell { flex-basis: calc(50% - var(--sp-2xs)); }
+    .logo-cell { flex-basis: calc(50% - var(--sp-xs)); }
     .logo-cell { min-height:76px; padding: var(--sp-2xs); }
     .logo-cell img { max-height:30px; }
     .process-steps { grid-template-columns: 1fr; }
@@ -1120,6 +1126,39 @@
   } else {
     srEls.forEach(function (el) { el.classList.add('sr-visible'); });
   }
+
+  // ---- Logo wall: click a logo to enlarge it, click again (or elsewhere) to reset ----
+  (function () {
+    var cells = [].slice.call(document.querySelectorAll('.logo-cell'));
+    if (!cells.length) return;
+    function reset(except) {
+      cells.forEach(function (c) {
+        if (c === except) return;
+        c.classList.remove('is-zoomed');
+        c.setAttribute('aria-pressed', 'false');
+      });
+    }
+    cells.forEach(function (cell) {
+      var img = cell.querySelector('img');
+      cell.setAttribute('role', 'button');
+      cell.setAttribute('tabindex', '0');
+      cell.setAttribute('aria-label', (img && img.alt ? img.alt + ' – ' : '') + 'Logo vergrößern');
+      cell.setAttribute('aria-pressed', 'false');
+      function toggle(ev) {
+        ev.stopPropagation();
+        var on = !cell.classList.contains('is-zoomed');
+        reset(cell);
+        cell.classList.toggle('is-zoomed', on);
+        cell.setAttribute('aria-pressed', on ? 'true' : 'false');
+      }
+      cell.addEventListener('click', toggle);
+      cell.addEventListener('keydown', function (ev) {
+        if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); toggle(ev); }
+      });
+    });
+    document.addEventListener('click', function () { reset(null); });
+    document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape') reset(null); });
+  })();
 
   // ---- Showcase tabs ----
   var tabBtns = document.querySelectorAll('.tab-btn');
