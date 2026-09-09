@@ -317,9 +317,6 @@
   .testi-quote { font-family: var(--font-book-italic); font-style:italic; font-size: var(--fs-text-m); line-height:140%; color: var(--c-primary); flex:1; }
   .testi-attr { font-family: var(--font-regular); font-size: var(--fs-text-xs); color: var(--c-primary-light); }
   .testi-attr strong { font-family: var(--font-semibold); color: var(--c-primary); }
-  .testi-stat { display:flex; align-items:baseline; gap: var(--sp-3xs); padding: var(--sp-2xs); border-radius: var(--r-s); background: var(--c-secondary-lighter); border:1px solid var(--c-secondary-light); }
-  .testi-stat b { font-family: var(--font-bold); font-size: var(--fs-subheading-xs); line-height:120%; white-space:nowrap; color: var(--c-secondary-text); }
-  .testi-stat span { font-family: var(--font-book); font-size: var(--fs-text-xs); color: var(--c-primary-light); }
 
   /* ============ TRUSTED SHOPS MARQUEE ============ */
   .marquee-section { padding-bottom: var(--sp-l); overflow:hidden; }
@@ -786,7 +783,7 @@
       <div class="testi-card sr sr-fade-up" style="transition-delay:.1s">
         <p class="testi-quote">„Die Qualität des Regals spiegelt die Qualität unserer Produkte wider. Das Regal macht unsere Unangepasstheit sichtbar.“</p>
         <p class="testi-attr"><strong>Kolja Conrad &amp; Kai Adam</strong> · Black Hen Rösthandwerk</p>
-        <p class="testi-stat"><b>+60 %</b> <span>mehr Umsatz mit dem Regal bei GLOBUS Güdingen</span></p>
+        <!-- Kennzahl "+60 % Umsatz (GLOBUS Güdingen)" entfernt 2026-09-09: Quelle nicht belegt, siehe CLAUDE.md. Markup + CSS in Commit 9254bf0 -->
       </div>
     </div>
   </div>

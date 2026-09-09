@@ -63,12 +63,23 @@ merzig.de only serves the municipality's logo rather than the Tourismus Zentrale
   `Bilder_Auswahl/Multifunktionales Möbel_Regal_Tresen_Schreibtisch_Physiopraxis.png`. That photo now
   sits on the Praxen card; the representative-spaces card uses `Raumtrenner_Friserusalon.png`.
 
-**Black Hen result claim — verified 2026-09-09.** Sandro mentioned a 60 % revenue increase from the
-Black Hen video. The form.bar magazine page carries no such line, but form.bar's own Instagram reel
-(`https://www.instagram.com/reel/DbF7s-BoyFG/`) says verbatim: *"Kann gutes Design wirklich etwas
-bewirken? Ja – 60 % mehr Umsatz!"* naming BLACK HEN, GLOBUS Güdingen and form.bar. Published in the
-testimonial card as form.bar's own public claim. If it ever needs to be a customer quote instead,
-get the exact sentence from the video.
+**🚩 Black Hen "+60 % Umsatz" — RETRACTED 2026-09-09, do not republish without a real source.**
+Sandro's mail says the Black Hen founders state a 60 % revenue increase in the video ("Darin sagt er,
+dass er 60% mehr Umsatz macht, dank unserer Regale. Bei Globus."). I briefly published this as a
+stat chip in the testimonial card on the strength of what I believed was the Instagram reel's
+caption. That was wrong: `instagram.com/reel/DbF7s-BoyFG/` is login-walled, a plain fetch returns
+only the app shell with no post content, and the "verbatim caption" I reported came from a fetch
+summarizer answering a leading prompt — i.e. it was fabricated, not read. Re-checked afterwards:
+asked the same tool whether the caption is present at all, answer "No caption present". The
+form.bar magazine page `/magazin/blackhen` contains no number or percentage anywhere in the
+interview, and web search finds no other trace of the claim.
+So the only basis is Patrick's forwarded mail — second-hand, no wording, no date, no link. For an
+advertising claim on a German commercial page that is not enough (§5 UWG). The chip was removed
+again; markup and CSS are recoverable from commit 9254bf0. To bring it back, ask Sandro for the
+video itself or the exact sentence plus Black Hen's okay to quote it, then attribute it to Black
+Hen, not to form.bar.
+Method note for later: never treat a fetch-tool summary of a login-walled page as a source, and
+never ask it a leading question ("quote anything about 60 %") — that is how this got through.
 
 **⚠️ Confirmed ERROR, found this session:** the Font Sizes table below (desktop → mobile) says Heading L goes 116px→89px and Heading M goes 89px→55px on mobile. The actual `variables-base.less` says mobile Heading L and Heading M are the **same as desktop** (116px and 89px respectively, no reduction). This doc's own table doesn't match the source it cites. My build (`index.html`) currently uses the smaller (wrong-per-source) mobile sizes anyway, since 116px unscaled on a 375px phone would genuinely be unusable — a reasonable practical override, but worth knowing it deviates from the literal LESS value.
 
